@@ -71,7 +71,7 @@ MVPリリース時に作っていたいもの
 
 # ■技術スタック
 - サーバーサイド：Ruby on Rails
-- フロントエンドJavascript：jQuery　もしくは React.js
+- フロントエンドJavascript：本リリース後にReact.jsへ徐々に移行する
 - cssフレームワーク：Bootstrap　もしくは　Tailwind CSS
 - データベース：PostgreSQL
 - Google認証：Google Identity Platform API
