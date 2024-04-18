@@ -105,3 +105,92 @@ MVPリリース時に作っていたいもの
 
 # ■画面遷移図
 https://www.figma.com/file/IyTFoHXk37hss5w02hBsEs/Tackle-Master-%E7%94%BB%E9%9D%A2%E9%81%B7%E7%A7%BB%E5%9B%B3?type=design&node-id=0%3A1&mode=design&t=WoHDNdJyvihqRo84-1
+
+# ■ER図
+```mermaid
+erDiagram
+  users ||--o{ tackles: "1人のユーザーは複数のタックルを持つ"
+  tackles ||--o{ rods: "1つのタックルに対して複数のロッドを持つ"
+  tackles ||--o{ reels: "1つのタックルに対して複数のリールを持つ"
+  tackles ||--o{ lines: "1つのタックルに対して複数のラインを持つ"
+  tackles ||--o{ lures: "1つのタックルに対して複数のルアーを持つ"
+  tackles ||--o{ leaders: "1つのタックルに対して複数のリーダーを持つ"
+  tackles ||--o{ accessorys: "1つのタックルに対して複数の小物を持つ"
+
+  users {
+    bigint id PK "ユーザーID"
+    string name "ユーザー名"
+    string email "メールアドレス"
+    string crypted_password "暗号化パスワード"
+    string salt "ソルト"
+    timestamp created_at "作成日"
+    timestamp deleted_at "更新日"
+  }
+
+  tackles {
+    bigint id PK "タックルID"
+    bigint user_id FK "ユーザーID"
+    bigint rod_id FK "ロッドID"
+    bigint reel_id FK "リールID"
+    bigint line_id FK "ラインID"
+    bigint lure_id FK "ルアーID"
+    bigint leader_id FK "リーダーID"
+    bigint accessory_id FK "小物ID"
+    string name "タックル名"
+    timestamp created_at "作成日"
+    timestamp deleted_at "更新日"
+  }
+
+  rods {
+    bigint id PK "ロッドID"
+    bigint tackle_id FK "タックルID"
+    string name "ロッド名"
+    integer year "年式"
+    string stiffness "硬さ"
+    integer lenght "長さ"
+  }
+
+  reels {
+    bigint id PK "リールID"
+    bigint tackle_id FK "タックルID"
+    string name "リール名"
+    string year "年式"
+    string model_number "番手"
+    string gear_ratio "ギア"
+  }
+
+  lines {
+    bigint id PK "ラインID"
+    bigint tackle_id FK "タックルID"
+    string name "ライン名"
+    string type "種類"
+    string size "号数"
+    integer lenght "長さ"
+  }
+
+  lures {
+    bigint id PK "ルアーID"
+    bigint tackle_id FK "タックルID"
+    string name "ルアー名"
+    string type "種類"
+    integer weight "重さ"
+    string color "色"
+  }
+
+  leaders {
+    bigint id PK "リーダーID"
+    bigint tackle_id FK "タックルID"
+    string name "リーダー名"
+    string type "種類"
+    string size "号数"
+    integer length "長さ"
+  }
+
+  accessorys {
+    bigint id PK "小物ID"
+    bigint tackle_id FK "タックルID"
+    string name "名称"
+    string type  "種類"
+    integer Quantity "数量"
+  }
+```
