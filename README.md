@@ -114,8 +114,6 @@ erDiagram
   tackles ||--o{ reels: "1つのタックルに対して複数のリールを持つ"
   tackles ||--o{ lines: "1つのタックルに対して複数のラインを持つ"
   tackles ||--o{ lures: "1つのタックルに対して複数のルアーを持つ"
-  tackles ||--o{ leaders: "1つのタックルに対して複数のリーダーを持つ"
-  tackles ||--o{ accessorys: "1つのタックルに対して複数の小物を持つ"
 
   users {
     bigint id PK "ユーザーID"
@@ -134,8 +132,6 @@ erDiagram
     bigint reel_id FK "リールID"
     bigint line_id FK "ラインID"
     bigint lure_id FK "ルアーID"
-    bigint leader_id FK "リーダーID"
-    bigint accessory_id FK "小物ID"
     string name "タックル名"
     timestamp created_at "作成日"
     timestamp deleted_at "更新日"
@@ -175,22 +171,5 @@ erDiagram
     string type "種類"
     integer weight "重さ"
     string color "色"
-  }
-
-  leaders {
-    bigint id PK "リーダーID"
-    bigint tackle_id FK "タックルID"
-    string name "リーダー名"
-    string type "種類"
-    string size "号数"
-    integer length "長さ"
-  }
-
-  accessorys {
-    bigint id PK "小物ID"
-    bigint tackle_id FK "タックルID"
-    string name "名称"
-    string type  "種類"
-    integer Quantity "数量"
   }
 ```
