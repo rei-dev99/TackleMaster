@@ -109,11 +109,15 @@ https://www.figma.com/file/IyTFoHXk37hss5w02hBsEs/Tackle-Master-%E7%94%BB%E9%9D%
 # ■ER図
 ```mermaid
 erDiagram
-  users ||--o{ tackles: "1人のユーザーは複数のタックルを持つ"
-  tackles ||--o{ rods: "1つのタックルに対して複数のロッドを持つ"
-  tackles ||--o{ reels: "1つのタックルに対して複数のリールを持つ"
-  tackles ||--o{ lines: "1つのタックルに対して複数のラインを持つ"
-  tackles ||--o{ lures: "1つのタックルに対して複数のルアーを持つ"
+  users ||--o{ tackles: "ユーザーは複数のタックルを持つ"
+  tackles ||--o{ tackle_rods: "タックルに対して複数のロッドを持つ"
+  rods ||--o{ tackle_rods: "ロッドに対して複数のタックルを持つ"
+  tackles ||--o{ tackle_reels: "タックルに対して複数のリールを持つ"
+  reels ||--o{ tackle_reels: "リールに対して複数のタックルを持つ"
+  tackles ||--o{ tackle_lines: "タックルに対して複数のラインを持つ"
+  lines ||--o{ tackle_lines: "ラインに対して複数のタックルを持つ"
+  tackles ||--o{ tackle_lures: "タックルに対して複数のルアーを持つ"
+  lures ||--o{ tackle_lures: "ルアーに対して複数のタックルを持つ"
 
   users {
     bigint id PK "ユーザーID"
@@ -142,34 +146,58 @@ erDiagram
     bigint tackle_id FK "タックルID"
     string name "ロッド名"
     integer year "年式"
-    string stiffness "硬さ"
+    string enum "硬さ"
     integer lenght "長さ"
+  }
+
+  tackle_rods {
+    bigint id PK "タックルロッドID"
+    bigint id FK "タックルID"
+    bigint id FK "ロッドID"
   }
 
   reels {
     bigint id PK "リールID"
     bigint tackle_id FK "タックルID"
     string name "リール名"
-    string year "年式"
-    string model_number "番手"
+    integer year "年式"
+    integer model_number "番手"
     string gear_ratio "ギア"
+  }
+
+  tackle_reels {
+    bigint id PK "タックルリールID"
+    bigint id FK "タックルID"
+    bigint id FK "リールID"
   }
 
   lines {
     bigint id PK "ラインID"
     bigint tackle_id FK "タックルID"
     string name "ライン名"
-    string type "種類"
-    string size "号数"
+    string kind "種類"
+    integer weight "号数"
     integer lenght "長さ"
+  }
+
+  tackle_lines {
+    bigint id PK "タックルラインID"
+    bigint id FK "タックルID"
+    bigint id FK "ラインID"
   }
 
   lures {
     bigint id PK "ルアーID"
     bigint tackle_id FK "タックルID"
     string name "ルアー名"
-    string type "種類"
+    string kind "種類"
     integer weight "重さ"
     string color "色"
+  }
+
+  tackle_lures {
+    bigint id PK "タックルルアーID"
+    bigint id FK "タックルID"
+    bigint id FK "ルアーID"
   }
 ```
