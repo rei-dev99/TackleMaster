@@ -156,7 +156,7 @@ erDiagram
     string name "リール名"
     integer year "年式"
     integer model_number "番手"
-    string gear_ratio "ギア"
+    string enum "ギア"
   }
 
   tackle_reels {
