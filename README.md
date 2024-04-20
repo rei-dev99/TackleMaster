@@ -132,10 +132,6 @@ erDiagram
   tackles {
     bigint id PK "タックルID"
     bigint user_id FK "ユーザーID"
-    bigint rod_id FK "ロッドID"
-    bigint reel_id FK "リールID"
-    bigint line_id FK "ラインID"
-    bigint lure_id FK "ルアーID"
     string name "タックル名"
     timestamp created_at "作成日"
     timestamp deleted_at "更新日"
@@ -143,7 +139,6 @@ erDiagram
 
   rods {
     bigint id PK "ロッドID"
-    bigint tackle_id FK "タックルID"
     string name "ロッド名"
     integer year "年式"
     string enum "硬さ"
@@ -158,7 +153,6 @@ erDiagram
 
   reels {
     bigint id PK "リールID"
-    bigint tackle_id FK "タックルID"
     string name "リール名"
     integer year "年式"
     integer model_number "番手"
@@ -173,7 +167,6 @@ erDiagram
 
   lines {
     bigint id PK "ラインID"
-    bigint tackle_id FK "タックルID"
     string name "ライン名"
     string kind "種類"
     integer weight "号数"
@@ -188,7 +181,6 @@ erDiagram
 
   lures {
     bigint id PK "ルアーID"
-    bigint tackle_id FK "タックルID"
     string name "ルアー名"
     string kind "種類"
     integer weight "重さ"
