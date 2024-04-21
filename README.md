@@ -105,3 +105,91 @@ MVPリリース時に作っていたいもの
 
 # ■画面遷移図
 https://www.figma.com/file/IyTFoHXk37hss5w02hBsEs/Tackle-Master-%E7%94%BB%E9%9D%A2%E9%81%B7%E7%A7%BB%E5%9B%B3?type=design&node-id=0%3A1&mode=design&t=WoHDNdJyvihqRo84-1
+
+# ■ER図
+```mermaid
+erDiagram
+  users ||--o{ tackles: "ユーザーは複数のタックルを持つ"
+  tackles ||--o{ tackle_rods: "タックルに対して複数のロッドを持つ"
+  rods ||--o{ tackle_rods: "ロッドに対して複数のタックルを持つ"
+  tackles ||--o{ tackle_reels: "タックルに対して複数のリールを持つ"
+  reels ||--o{ tackle_reels: "リールに対して複数のタックルを持つ"
+  tackles ||--o{ tackle_lines: "タックルに対して複数のラインを持つ"
+  lines ||--o{ tackle_lines: "ラインに対して複数のタックルを持つ"
+  tackles ||--o{ tackle_lures: "タックルに対して複数のルアーを持つ"
+  lures ||--o{ tackle_lures: "ルアーに対して複数のタックルを持つ"
+
+  users {
+    bigint id PK "ユーザーID"
+    string name "ユーザー名"
+    string email "メールアドレス"
+    string crypted_password "暗号化パスワード"
+    string salt "ソルト"
+    timestamp created_at "作成日"
+    timestamp deleted_at "更新日"
+  }
+
+  tackles {
+    bigint id PK "タックルID"
+    bigint user_id FK "ユーザーID"
+    string name "タックル名"
+    timestamp created_at "作成日"
+    timestamp deleted_at "更新日"
+  }
+
+  rods {
+    bigint id PK "ロッドID"
+    string name "ロッド名"
+    integer year "年式"
+    string enum "硬さ"
+    integer lenght "長さ"
+  }
+
+  tackle_rods {
+    bigint id PK "タックルロッドID"
+    bigint id FK "タックルID"
+    bigint id FK "ロッドID"
+  }
+
+  reels {
+    bigint id PK "リールID"
+    string name "リール名"
+    integer year "年式"
+    integer model_number "番手"
+    string enum "ギア"
+  }
+
+  tackle_reels {
+    bigint id PK "タックルリールID"
+    bigint id FK "タックルID"
+    bigint id FK "リールID"
+  }
+
+  lines {
+    bigint id PK "ラインID"
+    string name "ライン名"
+    string kind "種類"
+    integer weight "号数"
+    integer lenght "長さ"
+  }
+
+  tackle_lines {
+    bigint id PK "タックルラインID"
+    bigint id FK "タックルID"
+    bigint id FK "ラインID"
+  }
+
+  lures {
+    bigint id PK "ルアーID"
+    string name "ルアー名"
+    string kind "種類"
+    integer weight "重さ"
+    string color "色"
+  }
+
+  tackle_lures {
+    bigint id PK "タックルルアーID"
+    bigint id FK "タックルID"
+    bigint id FK "ルアーID"
+  }
+```
