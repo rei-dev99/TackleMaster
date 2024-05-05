@@ -1,29 +1,38 @@
 services:
   db:
     image: postgres
-    platform: linux/arm64/v8 # もしARMアーキテクチャを使っている場合はこの行を追加
     restart: always
     environment:
-      POSTGRES_USER: user
+      TZ: Asia/Tokyo
       POSTGRES_PASSWORD: password
     volumes:
       - postgresql_data:/var/lib/postgresql
+    ports:
+      - 5440:5440
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -d tacklemaster_development -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
   web:
-    build: .
-    # command: bash -c "bundle install && bundle exec rails db:prepare && rm -f tmp/pids/server.pid && ./bin/dev"
-    # command: bash -c "rm -f tmp/pids/server.pid && ./bin/dev"
-    # 通常
-    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails db:prepare && rails s -p 3000 -b '0.0.0.0'"
-    depends_on:
-      - db
-    environment:
-      POSTGRES_USER: user
-      POSTGRES_PASSWORD: password
-
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    command: bash -c "bundle install && bundle exec rails db:prepare && rm -f tmp/pids/server.pid && ./bin/dev"
+    tty: true
+    stdin_open: true
     volumes:
-      - .:/TackleMaster
+      - .:/TACKLEMASTER
+      - bundle_data:/usr/local/bundle:cached
+      - node_modules:/app/node_modules
+    environment:
+      TZ: Asia/Tokyo
     ports:
       - "3000:3000"
-    restart: always # コンテナが停止すると常に再起動
+    depends_on:
+      db:
+        condition: service_healthy
 volumes:
+  bundle_data:
   postgresql_data:
+  node_modules:
