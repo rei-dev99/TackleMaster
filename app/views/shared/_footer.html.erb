@@ -1,1 +1,20 @@
-<h1>フッター</h1>
+<footer class='bg-[#C0C0C0] p-4 text-white'>
+  <nav class='container'>
+    <div class='flex justify-between mx-auto container items-center'>
+      <div><%= link_to 'TackleMaster', root_path, class: 'text-3xl font-bold' %></div>
+      <ul class='flex space-x-6'>
+        <li><%= link_to "X" %></li>
+        <li><%= link_to "F" %></li>
+        <li><%= link_to "I" %></li>
+      </ul>
+    </div>
+    <div class='flex justify-between mx-auto container items-center mt-6'>
+      <ul class='flex space-x-6'>
+        <li><%= link_to 'お問い合わせ', class: 'text-lg hover:text-red-200 transition-all duration-300' %></li>
+        <li><%= link_to '利用規約', class: 'text-lg hover:text-red-200 transition-all duration-300' %></li>
+        <li><%= link_to 'プライバシーポリシー', class: 'text-lg hover:text-red-200 transition-all duration-300' %></li>
+      </ul>
+      <div><p>&copy; 2024 Tackle Masters</p></div>
+    </div>
+  </nav>
+</footer>
