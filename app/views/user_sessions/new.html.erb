@@ -1,1 +1,26 @@
-<h1>ユーザーログイン画面</h1>
+<div class=''>
+  <div class='py-14 max-w-lg mx-auto'>
+    <h1 class='text-center text-3xl text-black font-bold'>ログイン</h1>
+    <%= form_with(url: login_path, class: 'mt-6') do |f| %>
+      <div class='mt-4'>
+        <%= f.label :email, class: 'text-black font-bold' %>
+        <%= f.email_field :email, class: 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' %>
+      </div>
+      <div class='mt-4'>
+        <%= f.label :password, class: 'text-black font-bold' %>
+        <%= f.password_field :password, class: 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' %>
+      </div>
+      <div class='mt-4 text-center'>
+        <%#= f.submit "登録", class: "font-bold bg-blue-500 hover:bg-blue-700 text-white font-bold rounded focus:outline-none focus:shadow-outline" %>
+        <button type="submit" class="font-bold bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded focus:outline-none focus:shadow-outline">ログイン</button>
+      </div>
+    <% end %>
+    <div class='mt-4 text-center'>
+      <%= link_to '新規登録はこちら', new_user_path, class: 'underline underline-offset-2 text-link hover:orange font-bold' %>
+    </div>
+    <div class='mt-4 text-center'>
+      <%= link_to 'パスワードを忘れた方はこちら', new_user_path, class: 'underline underline-offset-2 text-orange font-bold' %>
+    </div>
+  </div>
+
+</div>
