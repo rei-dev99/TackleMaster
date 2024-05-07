@@ -3,10 +3,21 @@
     <div class='flex justify-between mx-auto container items-center'>
       <div><%= link_to 'TackleMaster', root_path, class: 'text-3xl font-bold' %></div>
       <ul class='flex space-x-6'>
-        <li><%= link_to "X" %></li>
-        <!--<li><%= link_to '<i class="fa-brands fa-x-twitter"></i>' %></li>-->
-        <li><%= link_to "F" %></li>
-        <li><%= link_to "I" %></li>
+        <li>
+            <%= link_to root_path do %>
+                <i class="fa-brands fa-x-twitter text-blue text-xl"></i>
+            <% end %>
+        </li>
+        <li>
+            <%= link_to root_path do %>
+                <i class="fa-brands fa-facebook-f text-blue text-xl"></i>
+            <% end %>
+        </li>
+        <li>
+            <%= link_to root_path do %>
+                <i class="fa-brands fa-instagram text-blue text-xl"></i>
+            <% end %>
+        </li>
       </ul>
     </div>
     <div class='flex justify-between mx-auto container items-center mt-6'>
