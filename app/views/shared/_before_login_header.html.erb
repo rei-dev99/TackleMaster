@@ -1,0 +1,10 @@
+<header class="bg-[#1E90FF] p-4">
+  <nav class="flex justify-between mx-auto container items-center">
+    <div><%= link_to 'TackleMaster', root_path, class: 'text-3xl font-bold' %></div>
+    <div class="space-x-6 font-bold">
+      <%= link_to 'タックルを探す', class: 'text-lg hover:text-red-200 transition-all duration-300' %>
+      <%= link_to 'ログイン', login_path, class: 'text-lg hover:text-red-200 transition-all duration-300' %>
+      <%= link_to '新規登録', new_user_path, class: 'text-lg hover:text-red-200 transition-all duration-300' %>
+    </div>
+  </nav>
+</header>
