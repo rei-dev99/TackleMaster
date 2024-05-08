@@ -1,9 +1,9 @@
-<header class="bg-[#1E90FF] p-4 text-white">
+<header class="bg-blue p-4 text-white">
   <nav class="flex justify-between mx-auto container items-center">
     <div class="text-3xl font-bold"><%= link_to 'TackleMaster', root_path %></div>
     <div class="space-x-6 font-bold">
       <%= link_to 'タックルを探す', class: 'text-lg hover:text-red-200 transition-all duration-300' %>
-      <%= link_to 'タックル登録', class: 'text-lg hover:text-red-200 transition-all duration-300' %>
+      <%= link_to 'タックル登録', new_tackle_path ,class: 'text-lg hover:text-red-200 transition-all duration-300' %>
       <%= link_to 'ログアウト', logout_path, class: 'text-lg hover:text-red-200 transition-all duration-300', data: { turbo_method: :delete } %>
     </div>
   </nav>
