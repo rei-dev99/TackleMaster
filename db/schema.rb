@@ -10,9 +10,89 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_05_05_120126) do
+ActiveRecord::Schema[7.1].define(version: 2024_05_09_105640) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "lines", force: :cascade do |t|
+    t.string "name"
+    t.string "kind"
+    t.integer "line_weight"
+    t.integer "length"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "lures", force: :cascade do |t|
+    t.string "name"
+    t.string "kind"
+    t.integer "lure_weight"
+    t.string "color"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "reels", force: :cascade do |t|
+    t.string "name"
+    t.integer "year"
+    t.integer "gear_ratio"
+    t.integer "length"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "rods", force: :cascade do |t|
+    t.string "name"
+    t.integer "year"
+    t.integer "power"
+    t.integer "length"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tackle_lines", force: :cascade do |t|
+    t.bigint "tackle_id", null: false
+    t.bigint "line_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["line_id"], name: "index_tackle_lines_on_line_id"
+    t.index ["tackle_id"], name: "index_tackle_lines_on_tackle_id"
+  end
+
+  create_table "tackle_lures", force: :cascade do |t|
+    t.bigint "tackle_id", null: false
+    t.bigint "lure_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["lure_id"], name: "index_tackle_lures_on_lure_id"
+    t.index ["tackle_id"], name: "index_tackle_lures_on_tackle_id"
+  end
+
+  create_table "tackle_reels", force: :cascade do |t|
+    t.bigint "tackle_id", null: false
+    t.bigint "reel_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["reel_id"], name: "index_tackle_reels_on_reel_id"
+    t.index ["tackle_id"], name: "index_tackle_reels_on_tackle_id"
+  end
+
+  create_table "tackle_rods", force: :cascade do |t|
+    t.bigint "tackle_id", null: false
+    t.bigint "rod_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["rod_id"], name: "index_tackle_rods_on_rod_id"
+    t.index ["tackle_id"], name: "index_tackle_rods_on_tackle_id"
+  end
+
+  create_table "tackles", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_tackles_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "name", null: false
@@ -24,4 +104,13 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_05_120126) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  add_foreign_key "tackle_lines", "lines"
+  add_foreign_key "tackle_lines", "tackles"
+  add_foreign_key "tackle_lures", "lures"
+  add_foreign_key "tackle_lures", "tackles"
+  add_foreign_key "tackle_reels", "reels"
+  add_foreign_key "tackle_reels", "tackles"
+  add_foreign_key "tackle_rods", "rods"
+  add_foreign_key "tackle_rods", "tackles"
+  add_foreign_key "tackles", "users"
 end
