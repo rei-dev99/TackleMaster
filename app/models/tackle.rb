@@ -4,4 +4,6 @@ class Tackle < ApplicationRecord
   has_many :rods, through: :tackle_rods
   has_many :tackles_reels
   has_many :reels, through: :tackles_reels
+  has_many :tackles_lines
+  has_many :lines, through: :tackles_lines
 end
