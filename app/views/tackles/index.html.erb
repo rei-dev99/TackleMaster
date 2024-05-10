@@ -1,8 +1,25 @@
 <div class=''>
-  <div class='py-14 max-w-lg mx-auto'>
+  <div class='py-14 max-w-5xl mx-auto'>
     <h1 class='text-center text-3xl text-black font-bold'>マイページタックル一覧</h1>
-    <div class='mt-4 text-center'>
-      <%= link_to '新しいタックルを作成する', new_tackle_path, class: 'underline underline-offset-2 text-link hover:orange font-bold' %>
+    <div class='mt-10 text-center'>
+      <%= link_to '新しいタックルを作成する', new_tackle_path, class: 'btn bg-orange text-white py-2 px-10 underline-offset-2 hover:orange font-bold ' %>
+    </div>
+    <!-- タックルを一覧表示 -->
+    <div class='flex flex-wrap mt-10'>
+      <div class='w-1/2'>
+        <h2 class='text-center text-2xl font-bold text-black'>バス釣りタックル</h2>
+        <div class='text-xl font-bold mt-6 border-2 border-orange rounded-lg py-4 px-4 '>
+        <%= link_to "tackle_path", class: 'w-full h-full' do %>
+          <p>21スコーピオン71MH</p>
+          <p class='mt-4'>21SLX 70XG</p>
+          <p class='mt-4'>シマノピットブル 2号 200m</p>
+          <p class='mt-4'>沈み虫</p>
+        <% end %>
+        </div>
+      </div>
+      <div class='flex-grow'>
+        <h2 class='text-center text-2xl font-bold text-black'>バス釣りタックル</h2>
+      </div>
     </div>
   </div>
 
