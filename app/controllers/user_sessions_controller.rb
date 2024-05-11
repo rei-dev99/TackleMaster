@@ -7,10 +7,8 @@ class UserSessionsController < ApplicationController
     @user = login(params[:email], params[:password])
     if @user
       redirect_to tackles_path
-      # redirect_back_or_to root_path
     else
-      # render :new, status: :unprocessable_entity
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
