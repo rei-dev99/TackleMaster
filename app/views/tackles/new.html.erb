@@ -1,91 +1,10 @@
 <div class=''>
   <div class='py-14 max-w-[700px] mx-auto'>
-    <%= form_with model: @tackles, class: 'mt-6' do |f| %>
+    <%= form_with model: @tackle, class: 'mt-6' do |f| %>
     <h1 class='text-center text-3xl text-black font-bold'>タックル作成</h1>
-    <div class='mt-8 flex flex-wrap justify-center'>
-      <button type="submit" class="btn font-bold bg-silver text-white hover:bg-blue-700 py-2 px-10 rounded focus:outline-none focus:shadow-outline rounded-xl">ロッド+</button>
-      <button type="submit" class="btn font-bold bg-silver text-white hover:bg-blue-700 py-2 px-10 rounded focus:outline-none focus:shadow-outline rounded-xl">リール+</button>
-      <button type="submit" class="btn font-bold bg-silver text-white hover:bg-blue-700 py-2 px-10 rounded focus:outline-none focus:shadow-outline rounded-xl">ライン+</button>
-      <button type="submit" class="btn font-bold bg-silver text-white hover:bg-blue-700 py-2 px-10 rounded focus:outline-none focus:shadow-outline rounded-xl">ルアー+</button>
-    </div>
       <div class='mt-10 flex items-center'>
-        <%= f.label :tackle_title, class: 'text-black font-bold text-xl w-[120px] text-right pr-4' %>
-        <%= f.text_field :tackle_title, class: 'flex-grow shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-blue border-2' %>
-      </div>
-      <div class='mt-10 flex items-center'>
-        <%= f.label :rod_name, class: 'text-black font-bold text-xl w-[120px] text-right pr-4' %>
-        <%= f.text_field :rod_name, class: 'flex-grow shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-blue border-2' %>
-      </div>
-      <div class='mt-4 flex items-center'>
-        <div class='flex items-center'>
-            <%= f.label :rod_year, class: 'w-[120px] text-black font-bold text-right pr-4 text-lg' %>
-            <%= f.text_field :rod_year, class: 'w-[100px] shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-blue border-2' %>
-        </div>
-        <div class='flex items-center ml-4'>
-            <%= f.label :rod_power, class: 'w-[120px] text-black font-bold text-right pr-4 text-lg' %>
-            <%= f.text_field :rod_power, class: 'w-[100px] shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-blue border-2' %>
-        </div>
-        <div class='flex items-center ml-4'>
-            <%= f.label :rod_length, class: 'w-[120px] text-black font-bold text-right pr-4 text-lg' %>
-            <%= f.text_field :rod_length, class: 'w-[100px] shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-blue border-2' %>
-        </div>
-      </div>
-
-      <div class='mt-10 flex items-center'>
-        <%= f.label :reel_name, class: 'text-black font-bold text-xl w-[120px] text-right pr-4' %>
-        <%= f.text_field :reel_name, class: 'flex-grow shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-blue border-2' %>
-      </div>
-      <div class='mt-4 flex items-center'>
-        <div class='flex items-center'>
-            <%= f.label :reel_year, class: 'w-[120px] text-black font-bold text-right pr-4 text-lg' %>
-            <%= f.text_field :reel_year, class: 'w-[100px] shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-blue border-2' %>
-        </div>
-        <div class='flex items-center ml-4'>
-            <%= f.label :number, class: 'w-[120px] text-black font-bold text-right pr-4 text-lg' %>
-            <%= f.text_field :number, class: 'w-[100px] shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-blue border-2' %>
-        </div>
-        <div class='flex items-center ml-4'>
-            <%= f.label :gear_ratio, class: 'w-[120px] text-black font-bold text-right pr-4 text-lg' %>
-            <%= f.text_field :gear_ratio, class: 'w-[100px] shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-blue border-2' %>
-        </div>
-      </div>
-
-      <div class='mt-10 flex items-center'>
-        <%= f.label :line_name, class: 'text-black font-bold text-xl w-[120px] text-right pr-4' %>
-        <%= f.text_field :line_name, class: 'flex-grow shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-blue border-2' %>
-      </div>
-      <div class='mt-4 flex items-center'>
-        <div class='flex items-center'>
-            <%= f.label :line_kind, class: 'w-[120px] text-black font-bold text-right pr-4 text-lg' %>
-            <%= f.text_field :line_kind, class: 'w-[100px] shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-blue border-2' %>
-        </div>
-        <div class='flex items-center ml-4'>
-            <%= f.label :line_weight, class: 'w-[120px] text-black font-bold text-right pr-4 text-lg' %>
-            <%= f.text_field :line_weight, class: 'w-[100px] shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-blue border-2' %>
-        </div>
-        <div class='flex items-center ml-4'>
-            <%= f.label :line_length, class: 'w-[120px] text-black font-bold text-right pr-4 text-lg' %>
-            <%= f.text_field :line_length, class: 'w-[100px] shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-blue border-2' %>
-        </div>
-      </div>
-
-      <div class='mt-10 flex items-center'>
-        <%= f.label :lure_name, class: 'text-black font-bold text-xl w-[120px] text-right pr-4' %>
-        <%= f.text_field :lure_name, class: 'flex-grow shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-blue border-2' %>
-      </div>
-      <div class='mt-4 flex items-center'>
-        <div class='flex items-center'>
-            <%= f.label :lure_kind, class: 'w-[120px] text-black font-bold text-right pr-4 text-lg' %>
-            <%= f.text_field :lure_kind, class: 'w-[100px] shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outlin border-blue border-2' %>
-        </div>
-        <div class='flex items-center ml-4'>
-            <%= f.label :lure_weight, class: 'w-[120px] text-black font-bold text-right pr-4 text-lg' %>
-            <%= f.text_field :lure_weight, class: 'w-[100px] shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-blue border-2' %>
-        </div>
-        <div class='flex items-center ml-4'>
-            <%= f.label :lure_color, class: 'w-[120px] text-black font-bold text-right pr-4 text-lg' %>
-            <%= f.text_field :lure_color, class: 'w-[100px] shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-blue border-2' %>
-        </div>
+        <%= f.label :name, class: 'text-black font-bold text-xl w-[120px] text-right pr-4' %>
+        <%= f.text_field :name, class: 'flex-grow shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-blue border-2' %>
       </div>
       <div class='mt-8 text-center'>
         <button type="submit" class="btn font-bold bg-blue text-white hover:bg-blue-700 py-2 px-10 rounded focus:outline-none focus:shadow-outline">タックル登録</button>

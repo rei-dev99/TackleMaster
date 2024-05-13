@@ -1,3 +1,8 @@
-<h1>Tackles#show</h1>
-<p>Find me in app/views/tackles/show.html.erb</p>
-
+<div class='py-14 max-w-[700px] mx-auto'>
+  <div>
+  <h1 class='text-center text-3xl text-black font-bold'><%= @tackle.name %></h1>
+  </div>
+  <div class='mt-10 text-center'>
+      <%= link_to '釣り具を登録する', new_tackle_path, class: 'btn bg-orange text-white py-2 px-10 underline-offset-2 hover:orange font-bold' %>
+    </div>
+</div>
