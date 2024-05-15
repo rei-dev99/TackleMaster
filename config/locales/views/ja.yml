@@ -1,0 +1,52 @@
+ja:
+  helpers:
+    submit:
+      create: 登録
+      submit: 保存
+      update: 更新
+    label:
+      email: メールアドレス
+      password: パスワード
+  tops:
+    index:
+      tackle_registration: タックルを登録する
+  user_sessions:
+    new:
+      title: ログイン
+      login: ログイン
+      to_register_page: 新規登録ページへ
+      password_forget: パスワードをお忘れの方はこちら
+  users:
+    new:
+      title: ユーザー登録
+      submit: 登録
+      to_login_page: ログインページへ
+  header:
+    title: Tackle Master
+    sign_up: 新規登録
+    search_tackle: タックルを探す
+    tackle_registration: タックル登録
+    login: ログイン
+    logout: ログアウト
+  footer:
+    title: Tackle Master
+    contact: お問い合わせ
+    terms_of_service: 利用規約
+    privacy_policy: プライバシーポリシー
+  tackles:
+    tackle:
+      detail: タックル詳細
+    index:
+      title: マイページタックル一覧
+      create_new_tackle: 新しいタックルを作成する
+    new:
+      title: タックル作成
+      submit: タックル登録
+      return: 戻る
+    show:
+      return: 戻る
+  rods:
+    new:
+      title: ロッド追加
+      submit: ロッド登録
+      return: 戻る
