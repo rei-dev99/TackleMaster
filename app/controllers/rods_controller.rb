@@ -10,6 +10,8 @@ class RodsController < ApplicationController
     @tackle = Tackle.find(params[:tackle_id])
     @rod = @tackle.rods.build(rod_params)
     if @rod.save
+      @tackle.rods << @rod
+      # 別の書き方TackleRod.create(tackle: @tackle, rod: @rod)
       redirect_to @tackle
     else
       render :new
@@ -23,6 +25,6 @@ class RodsController < ApplicationController
   end
 
   def rod_params
-    params.require(:rod).permit(:name, :year, :power, :length)
+    params.require(:rod).permit(:name, :memo)
   end
 end
