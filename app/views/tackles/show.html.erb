@@ -14,7 +14,7 @@
         <h2 class='font-bold text-xl'>釣り具を追加しましょう！</h2>
         <div class='mt-6'>
             <%= link_to 'ロッド+', new_tackle_rod_path(@tackle), class: 'btn bg-orange text-white py-2 px-10 underline-offset-2 hover:orange font-bold' %>
-            <%= link_to 'リール+', new_tackle_rod_path(@tackle), class: 'btn bg-orange text-white py-2 px-10 underline-offset-2 hover:orange font-bold' %>
+            <%= link_to 'リール+', new_tackle_reel_path(@tackle), class: 'btn bg-orange text-white py-2 px-10 underline-offset-2 hover:orange font-bold' %>
             <%= link_to '小物+', new_tackle_rod_path(@tackle), class: 'btn bg-orange text-white py-2 px-10 underline-offset-2 hover:orange font-bold' %>
         </div>
     </div>
@@ -24,6 +24,11 @@
         <%= render @tackle.rods %>
     <% else %>
         <p>登録されたロッドはありません。</p>
+    <% end %>
+    <% if @tackle.reels.present? %>
+        <%= render @tackle.reels %>
+    <% else %>
+        <p>登録されたリールはありません。</p>
     <% end %>
 
   </div>

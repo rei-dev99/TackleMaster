@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :users
   resources :tackles do
     resources :rods, only: [:new, :create]
+    resources :reels, only: [:new, :create]
   end
 
   get 'login', to: 'user_sessions#new'
