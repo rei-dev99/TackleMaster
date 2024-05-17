@@ -15,7 +15,7 @@
         <div class='mt-6'>
             <%= link_to 'ロッド+', new_tackle_rod_path(@tackle), class: 'btn bg-orange text-white py-2 px-10 underline-offset-2 hover:orange font-bold' %>
             <%= link_to 'リール+', new_tackle_reel_path(@tackle), class: 'btn bg-orange text-white py-2 px-10 underline-offset-2 hover:orange font-bold' %>
-            <%= link_to '小物+', new_tackle_rod_path(@tackle), class: 'btn bg-orange text-white py-2 px-10 underline-offset-2 hover:orange font-bold' %>
+            <%= link_to '小物+', new_tackle_accesory_path(@tackle), class: 'btn bg-orange text-white py-2 px-10 underline-offset-2 hover:orange font-bold' %>
         </div>
     </div>
     </dialog>
@@ -30,7 +30,11 @@
     <% else %>
         <p>登録されたリールはありません。</p>
     <% end %>
-
+    <% if @tackle.accesories.present? %>
+        <%= render @tackle.accesories %>
+    <% else %>
+        <p>登録された小物はありません。</p>
+    <% end %>
   </div>
 
   <div class='mt-4 text-center'>

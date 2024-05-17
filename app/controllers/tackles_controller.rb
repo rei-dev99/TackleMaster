@@ -4,7 +4,7 @@ class TacklesController < ApplicationController
   end
 
   def show
-    @tackle = Tackle.includes(:rods, :reels).find(params[:id])
+    @tackle = Tackle.includes(:rods, :reels, :accesories).find(params[:id])
   end
 
   def new

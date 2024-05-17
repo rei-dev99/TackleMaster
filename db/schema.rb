@@ -10,9 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_05_16_123823) do
+ActiveRecord::Schema[7.1].define(version: 2024_05_16_224854) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "accesories", force: :cascade do |t|
+    t.string "name", null: false
+    t.text "memo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "reels", force: :cascade do |t|
     t.string "name"
@@ -26,6 +33,15 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_16_123823) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "memo"
+  end
+
+  create_table "tackle_accesories", force: :cascade do |t|
+    t.bigint "tackle_id", null: false
+    t.bigint "accesory_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["accesory_id"], name: "index_tackle_accesories_on_accesory_id"
+    t.index ["tackle_id"], name: "index_tackle_accesories_on_tackle_id"
   end
 
   create_table "tackle_reels", force: :cascade do |t|
@@ -64,6 +80,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_16_123823) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  add_foreign_key "tackle_accesories", "accesories"
+  add_foreign_key "tackle_accesories", "tackles"
   add_foreign_key "tackle_reels", "reels"
   add_foreign_key "tackle_reels", "tackles"
   add_foreign_key "tackle_rods", "rods"

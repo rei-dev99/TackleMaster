@@ -10,5 +10,9 @@ class Tackle < ApplicationRecord
   has_many :reels, through: :tackle_reels
   accepts_nested_attributes_for :tackle_reels
 
+  has_many :tackle_accesories
+  has_many :accesories, through: :tackle_accesories
+  accepts_nested_attributes_for :tackle_accesories
+
   validates :name, presence: true, length: { maximum: 255 }
 end

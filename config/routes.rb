@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resources :tackles do
     resources :rods, only: [:new, :create]
     resources :reels, only: [:new, :create]
+    resources :accesories, only: [:new, :create]
   end
 
   get 'login', to: 'user_sessions#new'

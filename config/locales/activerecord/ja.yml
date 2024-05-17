@@ -12,3 +12,10 @@ ja:
         name: タックル名
       rod:
         name: ロッド名
+        memo: メモ
+      reel:
+        name: リール名
+        memo: メモ
+      accesory:
+        name: 小物名
+        memo: メモ
