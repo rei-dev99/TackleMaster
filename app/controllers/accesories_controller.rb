@@ -1,17 +1,15 @@
 class AccesoriesController < ApplicationController
+  before_action :require_login
   before_action :set_tackle, only: [:new, :create]
 
   def new
-    @tackle = Tackle.find(params[:tackle_id])
     @accesory = @tackle.accesories.build
   end
 
   def create
-    @tackle = Tackle.find(params[:tackle_id])
     @accesory = @tackle.accesories.build(accesory_params)
     if @accesory.save
       @tackle.accesories << @accesory
-      # 別の書き方TackleRod.create(tackle: @tackle, rod: @rod)
       redirect_to @tackle
     else
       render :new
@@ -21,10 +19,10 @@ class AccesoriesController < ApplicationController
   private
 
   def set_tackle
-    @tackle = Tackle.find(params[:tackle_id])
+    @tackle = current_user.tackles.find(params[:tackle_id])
   end
 
   def accesory_params
-    params.require(:accesory).permit(:name, :memo)
+    params.require(:accesory).permit(:name, :memo, :image)
   end
 end

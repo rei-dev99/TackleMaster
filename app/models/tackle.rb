@@ -17,4 +17,12 @@ class Tackle < ApplicationRecord
   validates :name, presence: true, length: { maximum: 255 }
 
   has_one_attached :image
+
+  validate :image_presence
+
+  private
+
+  def image_presence
+    errors.add(:image, 'をアップロードしてください') unless image.attached?
+  end
 end
