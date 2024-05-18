@@ -1,13 +1,13 @@
 class RodsController < ApplicationController
-  before_action :set_tackle, only: [:new, :create]
+  before_action :require_login
+  before_action :set_tackle, only: %i[new create edit update destroy]
+  before_action :set_rod, only: %i[edit update destroy]
 
   def new
-    @tackle = Tackle.find(params[:tackle_id])
     @rod = @tackle.rods.build
   end
 
   def create
-    @tackle = Tackle.find(params[:tackle_id])
     @rod = @tackle.rods.build(rod_params)
     if @rod.save
       @tackle.rods << @rod
@@ -18,10 +18,31 @@ class RodsController < ApplicationController
     end
   end
 
+  def edit; end
+
+  def update
+    if @rod.update(rod_params)
+      redirect_to @tackle
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    # rodsテーブルのレコードを削除しようとしたときに、そのレコードがtackle_rodsテーブルで参照されているため、外部キー制約に違反
+    @rod.tackle_rods.destroy_all
+    @rod.destroy
+    redirect_to @tackle
+  end
+
   private
 
   def set_tackle
-    @tackle = Tackle.find(params[:tackle_id])
+    @tackle = current_user.tackles.find(params[:tackle_id])
+  end
+
+  def set_rod
+    @rod = @tackle.rods.find(params[:id])
   end
 
   def rod_params

@@ -1,10 +1,13 @@
 class TacklesController < ApplicationController
+  before_action :require_login
+
   def index
-    @tackles = Tackle.all
+    @tackles = current_user.tackles
   end
 
   def show
-    @tackle = Tackle.includes(:rods, :reels, :accesories).find(params[:id])
+    # @tackle = Tackle.includes(:rods, :reels, :accesories).find(params[:id])
+    @tackle = current_user.tackles.includes(:rods, :reels, :accesories).find(params[:id])
   end
 
   def new
@@ -22,7 +25,23 @@ class TacklesController < ApplicationController
     end
   end
 
+  def edit
+    @tackle = current_user.tackles.find(params[:id])
+  end
+
+  def update
+    @tackle = current_user.tackles.find(params[:id])
+    if @tackle.update(tackle_params)
+      redirect_to tackles_path, notice: 'タックルを更新しました'
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
   def destroy
+    @tackle = current_user.tackles.find(params[:id])
+    @tackle.destroy
+    redirect_to tackles_path, notice: 'タックルを削除しました', status: :see_other
   end
 
   private

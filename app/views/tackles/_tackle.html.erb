@@ -1,11 +1,23 @@
-<div class='w-1/2 flex items-center justify-center h-52 shadow-2xl'>
-  <%= image_tag tackle.image, class: "w-full relative h-inherit object-cover" if tackle.image.attached? %>
-  <div class='text-center absolute z-10'>
-    <h2 class='text-2xl font-bold text-blue p-2 bg-white'>
-      <%= tackle.name %>
-    </h2>
-    <div class='mt-8'>
-      <%= link_to t('.detail'), tackle_path(tackle), class: 'btn bg-blue text-white py-2 px-10 underline-offset-2 hover:orange font-bold ' %>
+<div class='w-1/2 p-2'>
+  <div class='flex flex-col justify-between h-52 text-center shadow-xl bg-white rounded-lg overflow-hidden relative'>
+    <%= image_tag tackle.image, class: "w-full h-full object-cover" if tackle.image.attached? %>
+    <div class='absolute inset-0 flex items-center justify-center z-10'>
+      <div class='text-center'>
+        <h2 class='text-2xl font-bold text-blue p-2 bg-white'>
+          <%= tackle.name %>
+        </h2>
+        <div class='mt-8'>
+          <%= link_to t('.detail'), tackle_path(tackle), class: 'btn bg-blue text-white py-2 px-10 underline-offset-2 hover:orange font-bold' %>
+        </div>
+        <div class='flex justify-end'>
+        <%= link_to edit_tackle_path(tackle) do %>
+          <i class="fa-solid fa-pen text-blue"></i>
+        <% end %>
+        <%= link_to tackle_path(tackle), method: :delete, data: { turbo_method: :delete, turbo_confirm: t('.delete') }, class: 'ml-2' do %>
+          <i class="fa-solid fa-trash text-blue"></i>
+        <% end %>
+      </div>
+      </div>
     </div>
   </div>
 </div>

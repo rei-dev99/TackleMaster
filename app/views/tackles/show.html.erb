@@ -5,7 +5,7 @@
   </div>
   <div class='mt-10 text-center'>
     <!-- You can open the modal using ID.showModal() method -->
-    <button class="btn" onclick="my_modal_3.showModal()">釣り具を追加する</button>
+    <button class="btn bg-blue text-white" onclick="my_modal_3.showModal()">釣り具を追加する</button>
     <dialog id="my_modal_3" class="modal">
     <div class="modal-box">
         <form method="dialog">
@@ -19,22 +19,23 @@
         </div>
     </div>
     </dialog>
-
-    <% if @tackle.rods.present? %>
-        <%= render @tackle.rods %>
-    <% else %>
-        <p>登録されたロッドはありません。</p>
-    <% end %>
-    <% if @tackle.reels.present? %>
-        <%= render @tackle.reels %>
-    <% else %>
-        <p>登録されたリールはありません。</p>
-    <% end %>
-    <% if @tackle.accesories.present? %>
-        <%= render @tackle.accesories %>
-    <% else %>
-        <p>登録された小物はありません。</p>
-    <% end %>
+    <div class='flex flex-wrap mt-6'>
+        <% if @tackle.rods.present? %>
+            <%= render @tackle.rods %>
+        <% else %>
+            <p></p>
+        <% end %>
+        <% if @tackle.reels.present? %>
+            <%= render @tackle.reels %>
+        <% else %>
+            <p></p>
+        <% end %>
+        <% if @tackle.accesories.present? %>
+            <%= render @tackle.accesories %>
+        <% else %>
+            <p></p>
+        <% end %>
+    </div>
   </div>
 
   <div class='mt-4 text-center'>
