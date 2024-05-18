@@ -25,6 +25,19 @@ class TacklesController < ApplicationController
     end
   end
 
+  def edit
+    @tackle = current_user.tackles.find(params[:id])
+  end
+
+  def update
+    @tackle = current_user.tackles.find(params[:id])
+    if @tackle.update(tackle_params)
+      redirect_to tackles_path, notice: 'タックルを更新しました'
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
   def destroy
     @tackle = current_user.tackles.find(params[:id])
     @tackle.destroy

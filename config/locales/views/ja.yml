@@ -36,6 +36,7 @@ ja:
   tackles:
     tackle:
       detail: タックル詳細
+      delete: 削除しますか？
     index:
       title: マイページタックル一覧
       create_new_tackle: 新しいタックルを作成する
@@ -45,18 +46,40 @@ ja:
       return: 戻る
     show:
       return: 戻る
+    edit:
+      title: タックル編集
+      submit: タックル変更
+      return: 戻る
   rods:
     new:
       title: ロッド追加
       submit: ロッド登録
+      return: 戻る
+    rod:
+      delete: 削除しますか？
+    edit:
+      title: ロッド編集
+      submit: ロッド変更
       return: 戻る
   reels:
     new:
       title: リール追加
       submit: リール登録
       return: 戻る
+    reel:
+      delete: 削除しますか？
+    edit:
+      title: リール編集
+      submit: リール変更
+      return: 戻る
   accesories:
     new:
       title: 小物追加
       submit: 小物登録
+      return: 戻る
+    accesory:
+      delete: 削除しますか？
+    edit:
+      title: 小物編集
+      submit: 小物変更
       return: 戻る

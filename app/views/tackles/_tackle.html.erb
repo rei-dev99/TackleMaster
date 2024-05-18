@@ -7,8 +7,16 @@
           <%= tackle.name %>
         </h2>
         <div class='mt-8'>
-          <%= link_to t('.detail'), tackle_path(tackle), class: 'btn bg-blue text-white py-2 px-10 underline-offset-2 hover:orange font-bold ' %>
+          <%= link_to t('.detail'), tackle_path(tackle), class: 'btn bg-blue text-white py-2 px-10 underline-offset-2 hover:orange font-bold' %>
         </div>
+        <div class='flex justify-end'>
+        <%= link_to edit_tackle_path(tackle) do %>
+          <i class="fa-solid fa-pen text-blue"></i>
+        <% end %>
+        <%= link_to tackle_path(tackle), method: :delete, data: { turbo_method: :delete, turbo_confirm: t('.delete') }, class: 'ml-2' do %>
+          <i class="fa-solid fa-trash text-blue"></i>
+        <% end %>
+      </div>
       </div>
     </div>
   </div>

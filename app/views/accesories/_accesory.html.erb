@@ -4,6 +4,14 @@
     <div class='text-center flex flex-col flex-1 p-4'>
       <h2 class='text-lg font-bold text-black'><%= accesory.name %></h2>
       <p class='grow text-sm'><%= accesory.memo %></p>
+      <div class='flex justify-end'>
+        <%= link_to edit_tackle_accesory_path(@tackle, accesory) do %>
+          <i class="fa-solid fa-pen text-blue"></i>
+        <% end %>
+        <%= link_to tackle_accesory_path(@tackle, accesory), method: :delete, data: { turbo_method: :delete, turbo_confirm: t('.delete') }, class: 'ml-2' do %>
+          <i class="fa-solid fa-trash text-blue"></i>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>

@@ -9,9 +9,9 @@ Rails.application.routes.draw do
   root "tops#index"
   resources :users
   resources :tackles do
-    resources :rods, only: [:new, :create]
-    resources :reels, only: [:new, :create]
-    resources :accesories, only: [:new, :create]
+    resources :rods, only: %i[new create edit update destroy]
+    resources :reels, only: %i[new create edit update destroy]
+    resources :accesories, only: %i[new create edit update destroy]
   end
 
   get 'login', to: 'user_sessions#new'
