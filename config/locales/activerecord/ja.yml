@@ -10,12 +10,16 @@ ja:
         password_confirmation: パスワード確認
       tackle:
         name: タックル名
+        image: 画像
       rod:
         name: ロッド名
+        image: 画像
         memo: メモ
       reel:
         name: リール名
+        image: 画像
         memo: メモ
       accesory:
         name: 小物名
+        image: 画像
         memo: メモ

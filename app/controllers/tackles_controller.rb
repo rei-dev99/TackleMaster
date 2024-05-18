@@ -28,6 +28,6 @@ class TacklesController < ApplicationController
   private
 
   def tackle_params
-    params.require(:tackle).permit(:name)
+    params.require(:tackle).permit(:name, :image)
   end
 end

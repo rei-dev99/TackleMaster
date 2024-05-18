@@ -50,3 +50,13 @@ ja:
       title: ロッド追加
       submit: ロッド登録
       return: 戻る
+  reels:
+    new:
+      title: リール追加
+      submit: リール登録
+      return: 戻る
+  accesories:
+    new:
+      title: 小物追加
+      submit: 小物登録
+      return: 戻る

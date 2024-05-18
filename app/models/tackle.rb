@@ -15,4 +15,6 @@ class Tackle < ApplicationRecord
   accepts_nested_attributes_for :tackle_accesories
 
   validates :name, presence: true, length: { maximum: 255 }
+
+  has_one_attached :image
 end

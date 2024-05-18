@@ -8,3 +8,9 @@
     -webkit-text-stroke-color: black;
     line-height: 1.5;
 }
+
+.h-inherit {
+  height: inherit;
+  /* width: inherit; */
+}
+.
