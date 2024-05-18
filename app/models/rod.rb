@@ -4,4 +4,6 @@ class Rod < ApplicationRecord
 
   validates :name, presence: true
   validates :memo, length: { maximum: 500 }
+
+  has_one_attached :image
 end
