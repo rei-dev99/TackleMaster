@@ -1,8 +1,8 @@
 <header class="bg-blue p-4 text-white">
   <nav class="flex justify-between mx-auto container items-center">
-    <div><%= link_to t('header.title'), root_path, class: 'text-3xl font-bold' %></div>
+    <div><%= link_to t('header.title'), tackles_path, class: 'text-3xl font-bold' %></div>
     <div class="space-x-6 font-bold">
-      <%= link_to t('header.search_tackle'), class: 'text-lg hover:text-red-200 transition-all duration-300' %>
+      <%= link_to t('header.search_tackle'), fishing_gears_path ,class: 'text-lg hover:text-red-200 transition-all duration-300' %>
       <%= link_to t('header.tackle_registration'), new_tackle_path ,class: 'text-lg hover:text-red-200 transition-all duration-300' %>
       <%= link_to t('header.logout'), logout_path, class: 'text-lg hover:text-red-200 transition-all duration-300', data: { turbo_method: :delete } %>
     </div>

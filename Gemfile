@@ -89,3 +89,9 @@ gem 'rails-i18n', '~> 7.0.0'
 
 # Active Storageを用いてS3とRailsアプリを繋げる
 gem 'aws-sdk-s3', require: false
+
+# 楽天API
+gem 'rakuten_web_service'
+
+# アプリIDの悪用防止
+gem 'dotenv-rails'

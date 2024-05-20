@@ -16,11 +16,19 @@ ja:
       login: ログイン
       to_register_page: 新規登録ページへ
       password_forget: パスワードをお忘れの方はこちら
+    create:
+      success: ログイン完了です
+      failure: ログイン失敗です
+    destroy:
+      success: ログアウトしました
   users:
     new:
       title: ユーザー登録
       submit: 登録
       to_login_page: ログインページへ
+    create:
+      success: ユーザー登録が完了しました
+      failure: ユーザー登録に失敗しました
   header:
     title: Tackle Master
     sign_up: 新規登録
@@ -44,12 +52,20 @@ ja:
       title: タックル作成
       submit: タックル登録
       return: 戻る
+    create:
+      success: タックル作成完了です
+      failure: タックス作成に失敗しました
     show:
       return: 戻る
     edit:
       title: タックル編集
       submit: タックル変更
       return: 戻る
+    update:
+      success: タックルを更新しました
+      failure: タックス更新に失敗しました
+    destroy:
+      success: タックルを削除しました
   rods:
     new:
       title: ロッド追加
@@ -57,6 +73,9 @@ ja:
       return: 戻る
     rod:
       delete: 削除しますか？
+    create:
+      success: ロッドを作成しました
+      failure: ロッドの作成に失敗しました
     edit:
       title: ロッド編集
       submit: ロッド変更

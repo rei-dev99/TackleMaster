@@ -1,0 +1,22 @@
+<div class="max-w-3xl mx-auto">
+    <h1>Fishing Gears</h1>
+
+    <%= form_with url: fishing_gears_path, method: :get, local: true do %>
+        <div>
+            <label for="keyword">検索キーワード:</label>
+            <%= text_field_tag :keyword, params[:keyword] %>
+            <%= submit_tag '検索' %>
+        </div>
+    <% end %>
+
+    <% @items.each do |item| %>
+    <div>
+      <h3><%= item[:name] %></h3>
+      <p><%= item[:price] %> 円</p>
+      <a href="<%= item[:url] %>">商品リンク</a>
+      <div>
+        <img src="<%= item[:image] %>" alt="<%= item[:name] %>">
+      </div>
+    </div>
+  <% end %>
+</div>
