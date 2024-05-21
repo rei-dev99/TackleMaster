@@ -1,21 +1,21 @@
 <div class="max-w-3xl mx-auto">
     <h1>Fishing Gears</h1>
 
-    <%= form_with url: fishing_gears_path, method: :get, local: true do %>
+    <%= form_with url: fishing_gears_path, method: :get, local: true do %><!-- fishing_gears_pathにGETリクエストを送るフォームを非Ajaxで作成 -->
         <div>
             <label for="keyword">検索キーワード:</label>
-            <%= text_field_tag :keyword, params[:keyword] %>
+            <%= text_field_tag :keyword, params[:keyword] %><!-- params[:keyword]は現在のキーワードをデフォルト値として設定 -->
             <%= submit_tag '検索' %>
         </div>
     <% end %>
 
-    <% @items.each do |item| %>
+    <% @items.each do |item| %><!-- @items配列の各アイテムに対してループ -->
     <div>
-      <h3><%= item[:name] %></h3>
-      <p><%= item[:price] %> 円</p>
-      <a href="<%= item[:url] %>">商品リンク</a>
+      <h3><%= item[:name] %></h3><!-- アイテムの名前を表示 -->
+      <p><%= item[:price] %> 円</p><!-- アイテムの価格を表示 -->
+      <a href="<%= item[:url] %>">商品リンク</a><!-- アイテムのURLへのリンクを表示 -->
       <div>
-        <img src="<%= item[:image] %>" alt="<%= item[:name] %>">
+        <img src="<%= item[:image] %>" alt="<%= item[:name] %>"><!-- アイテムの画像を表示 -->
       </div>
     </div>
   <% end %>

@@ -95,3 +95,6 @@ gem 'rakuten_web_service'
 
 # アプリIDの悪用防止
 gem 'dotenv-rails'
+
+# Open AI API gem
+gem 'openai-ruby'
