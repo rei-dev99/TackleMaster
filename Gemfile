@@ -93,8 +93,8 @@ gem 'aws-sdk-s3', require: false
 # 楽天API
 gem 'rakuten_web_service'
 
-# アプリIDの悪用防止
-gem 'dotenv-rails'
-
 # Open AI API gem
-gem 'openai-ruby'
+gem 'ruby-openai'
+
+# 環境変数読み込み
+gem 'dotenv-rails', groups: [:development, :test]
