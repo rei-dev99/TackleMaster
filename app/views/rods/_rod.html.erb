@@ -1,9 +1,9 @@
 <div class='w-1/2 md:w-1/4 p-2'>
   <div class='flex flex-col justify-between text-center shadow-xl bg-white rounded-lg overflow-hidden h-full'>
-    <%= image_tag rod.image, class: "w-full md:h-36 h-28 object-cover" if rod.image.attached? %>
+    <%= image_tag rod.image, class: "w-full md:h-36 sm:h-32 h-28 object-cover" if rod.image.attached? %>
     <div class='text-center flex flex-col flex-1 p-4'>
-      <h2 class='md:text-lg text-base font-bold text-black'><%= rod.name %></h2>
-      <p class='grow md:text-sm text-xs'><%= rod.memo %></p>
+      <h2 class='md:text-lg text-base font-bold text-blue'><%= rod.name %></h2>
+      <p class='grow md:text-sm text-xs text-black'><%= rod.memo %></p>
       <div class='flex justify-end mt-auto'>
         <%= link_to edit_tackle_rod_path(@tackle, rod) do %>
           <i class="fa-solid fa-pen text-blue"></i>

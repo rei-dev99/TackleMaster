@@ -1,13 +1,13 @@
 <div class='md:w-1/2 p-3 w-full z-1'>
-  <div class='flex flex-col justify-between h-40 md:h-52 text-center shadow-xl bg-white rounded-lg overflow-hidden relative'>
+  <div class='flex flex-col justify-between h-44 md:h-56 text-center shadow-xl bg-white rounded-lg overflow-hidden relative'>
     <%= image_tag tackle.image, class: "w-full h-full object-cover" if tackle.image.attached? %>
     <div class='absolute inset-0 flex items-center justify-center z-10'>
       <div class='text-center'>
-        <h2 class='text-2xl font-bold text-blue p-2 bg-white'>
+        <h2 class='text-xl md:text-2xl font-bold text-white font-bold text-stroke'>
           <%= tackle.name %>
         </h2>
         <div class='mt-8'>
-          <%= link_to t('.detail'), tackle_path(tackle), class: 'btn bg-blue text-white py-2 px-10 underline-offset-2 hover:orange font-bold' %>
+          <%= link_to t('.detail'), tackle_path(tackle), class: 'btn bg-blue text-white md:px-10 underline-offset-2 font-bold text-xs md:text-sm' %>
         </div>
       </div>
     </div>
