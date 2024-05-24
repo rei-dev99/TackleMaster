@@ -1,1 +1,16 @@
-タックル提案機能
+<div class='py-14 max-w-[700px] mx-auto'>
+    <%= form_with url: fishing_gears_path, method: :post, local: true do |form| %>
+        <div>
+            <%= form.label :message, "Your Message", class: 'text-black font-bold text-xl w-[120px] text-right pr-4' %>
+            <%= form.text_area :message, class: 'flex-grow shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-blue border-2' %>
+        </div>
+        <div>
+            <%= form.submit "Send", class: "btn font-bold bg-blue text-white hover:bg-blue-700 py-2 px-10 rounded focus:outline-none focus:shadow-outline" %>
+        </div>
+    <% end %>
+
+    <% if @response.present? %>
+        <h2>Response:</h2>
+        <p><%= @response %></p>
+    <% end %>
+</div>
