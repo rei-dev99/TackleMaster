@@ -1,27 +1,64 @@
-<main>
-  <div class='w-full h-[500px] relative'>
+<div>
+  <div class='w-full md:h-[500px] sm:h-[400px] h-[300px] relative'>
     <%= image_tag 'fv2.jpg', class: 'w-full max-w-full h-full bg-cover bg-center object-cover' %>
     <div class='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center w-full '>
-      <h1 class='font-bold text-5xl text-white text-stroke'>釣りの楽しさは、選び抜かれた道具から<br>あなたの釣り道具、ここで見つけよう</h1>
+      <h1 class='font-bold text-2xl md:text-5xl sm:text-4xl text-white text-stroke'>釣りの楽しさは、選び抜かれた道具から</h1>
       <%= link_to t('.tackle_registration'), login_path, class: 'btn text-white bg-orange mt-8 px-10' %>
     </div>
   </div>
 
-  <div class='py-14 mx-auto container text-center'>
-    <h2 class='text-blue font-bold text-4xl'>Tackle Master</h2>
+  <div class='py-14 mx-auto container text-center px-4'>
+    <h2 class='text-blue font-bold text-3xl'>Tackle Master</h2>
     <p class='text-blue'>〜タックルマスター〜</p>
-    <p class='font-bold text-lg text-black mt-6'>Tacle Mastersは、釣り愛好家のための最も包括的な釣り道具アプリです。<br>あなたのタックルを管理したり、最新の釣りギアを探索しましょう！</p>
-    <div class='flex w-full mt-6'>
-      <%= image_tag 'top-rods.jpg', class: 'w-80 h-56 bg-contain bg-center object-cover' %>
-      <%= image_tag 'top-reels.jpg', class: 'w-80 h-56 bg-contain bg-center object-cover' %>
-      <%= image_tag 'top-lines.jpg', class: 'w-80 h-56 bg-contain bg-center object-cover' %>
-      <%= image_tag 'top-lures.jpg', class: 'w-80 h-56 bg-contain bg-center object-cover' %>
+    <p class='font-bold text-black mt-6'>Tacle Masterは、釣り愛好家のための最も包括的な釣り道具アプリです。<br>あなたのタックルを管理したり、最新の釣りギアを探索しましょう！</p>
+    <div class='flex w-full mt-6 flex-wrap justify-center'>
+      <div class='md:w-1/4 sm:w-1/2 w-full p-1'>
+        <%= image_tag 'top-rods.jpg', class: 'w-full h-full bg-contain bg-center object-cover' %>
+      </div>
+      <div class='md:w-1/4 sm:w-1/2 w-full p-1'>
+        <%= image_tag 'top-reels.jpg', class: 'w-full h-full bg-contain bg-center object-cover' %>
+      </div>
+      <div class='md:w-1/4 sm:w-1/2 w-full p-1'>
+        <%= image_tag 'top-lines.jpg', class: 'w-full h-full bg-contain bg-center object-cover' %>
+      </div>
+      <div class='md:w-1/4 sm:w-1/2 w-full p-1'>
+        <%= image_tag 'top-lures.jpg', class: 'w-full h-full bg-contain bg-center object-cover' %>
+      </div>
     </div>
-    <h2 class='text-center text-blue font-bold text-4xl mt-10'>特徴</h2>
-    <p class='font-bold text-lg text-black mt-6'>アプリの特徴が入ります。アプリの特徴が入ります。<br>アプリの特徴が入ります。アプリの特徴が入ります。<br>アプリの特徴が入ります。アプリの特徴が入ります。</p>
-    <h2 class='text-center text-blue font-bold text-4xl mt-10'>使い方</h2>
-    <p class='font-bold text-lg text-black mt-6'>アプリの使い方が入ります。アプリの使い方が入ります。<br>アプリの使い方が入ります。アプリの使い方が入ります。<br>アプリの使い方が入ります。アプリの使い方が入ります。</p>
-    <h2 class='text-center text-orange font-bold text-4xl mt-14'>タックルを登録してさらに釣りを楽しみませんか？</h2>
+    <div class='max-w-4xl mx-auto p-6'>
+      <h2 class='text-center text-blue font-bold text-3xl mt-10'>特徴</h2>
+      <div class="flex w-full mt-6 flex-wrap justify-center">
+        <div class="md:w-1/3 sm:w-1/2 w-full p-4 m-2 border-2 rounded-lg shadow-lg bg-white">
+          <h3 class="text-xl font-bold text-black">簡単登録</h3>
+          <p class='font-bold text-gray-700 mt-4 leading-relaxed'>釣り具の登録が簡単</p>
+        </div>
+        <div class="md:w-1/3 sm:w-1/2 w-full p-4 m-2 border-2 rounded-lg shadow-lg bg-white">
+          <h3 class="text-xl font-bold text-black">釣り具提案機能</h3>
+          <p class='font-bold text-gray-700 mt-4 leading-relaxed'>ユーザーの好みに合わせて釣具を提案</p>
+        </div>
+        <div class="md:w-1/3 sm:w-1/2 w-full p-4 m-2 border-2 rounded-lg shadow-lg bg-white">
+          <h3 class="text-xl font-bold text-black">シンプルな操作</h3>
+          <p class='font-bold text-gray-700 mt-4 leading-relaxed'>直感的な操作で使いやすいはず</p>
+        </div>
+      </div>
+
+      <h2 class='text-center text-blue font-bold text-3xl mt-10'>使い方</h2>
+      <div class="flex w-full mt-6 flex-wrap justify-center">
+        <div class="md:w-1/3 sm:w-1/2 w-full p-4 m-2 border-2 rounded-lg shadow-lg bg-white">
+          <h3 class="text-xl font-bold text-black">アカウント登録</h3>
+          <p class='font-bold text-gray-700 mt-4 leading-relaxed'>まずはアカウントを作成しましょう。</p>
+        </div>
+        <div class="md:w-1/3 sm:w-1/2 w-full p-4 m-2 border-2 rounded-lg shadow-lg bg-white">
+          <h3 class="text-xl font-bold text-black">釣り具登録</h3>
+          <p class='font-bold text-gray-700 mt-4 leading-relaxed'>タックル作成後に、ロッド、リール、小物をお好きな分追加してください。</p>
+        </div>
+        <div class="md:w-1/3 sm:w-1/2 w-full p-4 m-2 border-2 rounded-lg shadow-lg bg-white">
+          <h3 class="text-xl font-bold text-black">釣り具の提案</h3>
+          <p class='font-bold text-gray-700 mt-4 leading-relaxed'>いくつか必要な情報を入力してください。そこからあなたに合いそうな釣り具の提案を行います。</p>
+        </div>
+      </div>
+    </div>
+    <h2 class='text-center text-orange font-bold text-3xl mt-14'>さらに釣りを楽しみませんか？</h2>
     <%= link_to t('.tackle_registration'), login_path, class: 'btn text-white bg-blue mt-8 px-10 btn' %>
   </div>
-</main>
+</div>
