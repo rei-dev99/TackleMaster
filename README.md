@@ -17,7 +17,7 @@
 釣り具の選択から管理まで、このアプリがあれば、ユーザーは釣り具に関するストレスを大幅に減らすことができます。
 初心者でも、どのような条件の下でどの釣り具を選べばいいのか、迷うことなく知ることができるようになります。
 
-このサービスを通じて、釣り具選びの「楽しさ」はそのままに、「わからない」「管理が大変」といったネガティブな部分を解消し、より多くの人が釣りという趣味を楽しめるようになることを目指しています。 
+このサービスを通じて、釣り具選びの「楽しさ」はそのままに、「わからない」「管理が大変」といったネガティブな部分を解消し、より多くの人が釣りという趣味を楽しめるようになることを目指しています。
 
 一人でも多く、釣りという素晴らしい趣味を全うできるよう、このアプリは釣り具の選択と管理のサポートをします。
 
@@ -46,14 +46,13 @@
 - 難易度は高いが、インフルエンサー・影響力のある人に使ってもらい、宣伝していただく
 
 # ■ サービスの差別化ポイント・推しポイント
-- **完全カスタマイズのタックル登録**: 類似のサービスでは部分的なタックル登録が可能ですが、本サービスではロッド、リール、ライン、ルアー・小物を含むタックル一式を登録できます。これにより、釣り具の管理と選択を効率化し、差別化を図りたいと考えております。
+- **完全カスタマイズのタックル登録**: 類似のサービスでは部分的なタックル登録が可能ですが、本サービスではロッド、リール、その他を含むタックル一式を登録できます。これにより、釣り具の管理と選択を効率化し、差別化を図りたいと考えております。
 - **釣り道具に特化したサポート**: 多くの釣りアプリが釣り場情報や天気予報、釣果共有に焦点を当てていますが、本サービスは釣り道具に特化しています。これによりユーザーが釣り道具を選ぶところから楽しめるよう、サポートを提供します。
 - **パーソナライズされた釣具提案**: ユーザーの狙う魚種、釣り場知識、予算などを考慮し、最適な釣り具を提案します。これにより、釣り初心者から上級者まで、より多くの人が釣りを楽しめるようになります。
 
 # ■ 機能候補
 MVPリリース時に作っていたいもの
 - タックル登録機能
-- タックル登録機能に検索機能もつける
 - 最適な釣り具提案機能
 
 本リリースまでに作っていたいもの
@@ -68,27 +67,27 @@ MVPリリース時に作っていたいもの
 # ■ 機能の実装方針予定
 - Google認証　→ Google Identity Platform
 - 最適な釣り具提案機能　→　OpenAI API
+- 釣り具の提案とともに商品を表示させる → 楽天API
 
 # ■技術スタック
 - サーバーサイド：Ruby on Rails
 - フロントエンドJavascript：本リリース後にReact.jsへ徐々に移行する
-- cssフレームワーク：Bootstrap　もしくは　Tailwind CSS
+- cssフレームワーク：TailwindCSS、DaisyUI
 - データベース：PostgreSQL
 - Google認証：Google Identity Platform API
 - 最適な釣り具提案機能：Open AI API
+- 釣り具の商品表示:楽天API
 
 # ■追加サービスの案
-- タックル登録画面で、入力したロッドやリールなどの画像を登録できる機能を追加するか、amazonか楽天などで釣具の画像を拾ってくれるようにする。
+- タックル登録画面で、入力したロッドやリールなどの画像を登録できるようにする。
 - 釣りに行く予定も追加する。予定をタックル登録機能と似た感じで追加できるようにする。↓
-- 主に、釣り場所、登録したタックルを追加する機能、日付を入力すると自動で予報も表示されるようにする。さらに通知機能も追加し、釣りの予定が近づいてきたらメールで通知。
+- 主に、釣り場所(地図)、登録したタックルを追加する機能、日付を入力すると自動で予報も表示されるようにする。さらに通知機能も追加し、釣りの予定が近づいてきたらメールで通知。
 - 釣り条件に最適な時期推薦機能：ユーザーが狙っている魚種や釣り場所を入力すると、過去のデータや天候予測を基に、最適な釣りの時期や時間をAIが推薦してくれる。
-- 釣具の機種比較機能、リールやロッド、ルアーなどの釣具のスペック（重さ、長さ、対象魚種など）や価格、ユーザーレビューを比較できるようにする。複数の釣具を並べて詳細な情報を比較。
 
 ■技術スタック
 - OpenWeatherMap APIで天気予報
 - Action MailerもしくはFirebase Cloud Messagingで通知
-- Amazonや楽天のAPI
-- 釣具の機種比較機能の検索：Elasticsearch。大量の釣具データから高速に検索・フィルタリングする
+- 楽天API
 - Google Maps API
 
 # ■「タックル登録機能に検索機能もつける」の検索機能について
@@ -98,10 +97,10 @@ MVPリリース時に作っていたいもの
 - カテゴリー検索：ロッド、リール、ルアーなど、各カテゴリーに分けて検索できる機能
 
 # ■「最適な釣り具提案機能」について
-ユーザーに向けて、「ターゲット魚種」、「釣り場の種類」、「釣法」、「予算」を入力してもらい、最適なタックルを一式提案する。
+ユーザーに向けて、「ターゲット魚種」、「釣り場の種類」、「釣法」、「予算」、「レベル(初心者〜上級者)」を入力してもらい、最適なタックルを一式提案する。
 そこから、タックル結果のような感じで、一式表示されるようにする。
 ここでOpen AI APIで結果が返されるようにする。
-発展させるなら、「釣り具」の入力欄を追加して、一式、ロッド、リール、ライン、ルアーなどが選べるようにして個別に提案できるようにする。
+発展させるなら、「釣り具」の入力欄を追加して、タックル一式、ロッド、リール、ライン、ルアーなどが選べるようにして個別に提案できるようにする。
 
 # ■画面遷移図
 https://www.figma.com/file/IyTFoHXk37hss5w02hBsEs/Tackle-Master-%E7%94%BB%E9%9D%A2%E9%81%B7%E7%A7%BB%E5%9B%B3?type=design&node-id=0%3A1&mode=design&t=WoHDNdJyvihqRo84-1
@@ -114,10 +113,8 @@ erDiagram
   rods ||--o{ tackle_rods: "ロッドに対して複数のタックルを持つ"
   tackles ||--o{ tackle_reels: "タックルに対して複数のリールを持つ"
   reels ||--o{ tackle_reels: "リールに対して複数のタックルを持つ"
-  tackles ||--o{ tackle_lines: "タックルに対して複数のラインを持つ"
-  lines ||--o{ tackle_lines: "ラインに対して複数のタックルを持つ"
-  tackles ||--o{ tackle_lures: "タックルに対して複数のルアーを持つ"
-  lures ||--o{ tackle_lures: "ルアーに対して複数のタックルを持つ"
+  tackles ||--o{ tackle_accesories: "タックルに対して複数の小物を持つ"
+  accesories ||--o{ tackle_accesories: "小物に対して複数のタックルを持つ"
 
   users {
     bigint id PK "ユーザーID"
@@ -140,56 +137,48 @@ erDiagram
   rods {
     bigint id PK "ロッドID"
     string name "ロッド名"
-    integer year "年式"
-    string enum "硬さ"
-    integer lenght "長さ"
+    text memo "メモ"
+    timestamp created_at "作成日"
+    timestamp deleted_at "更新日"
   }
 
   tackle_rods {
     bigint id PK "タックルロッドID"
     bigint id FK "タックルID"
     bigint id FK "ロッドID"
+    timestamp created_at "作成日"
+    timestamp deleted_at "更新日"
   }
 
   reels {
     bigint id PK "リールID"
     string name "リール名"
-    integer year "年式"
-    integer model_number "番手"
-    string enum "ギア"
+    text memo "メモ"
+    timestamp created_at "作成日"
+    timestamp deleted_at "更新日"
   }
 
   tackle_reels {
     bigint id PK "タックルリールID"
     bigint id FK "タックルID"
     bigint id FK "リールID"
+    timestamp created_at "作成日"
+    timestamp deleted_at "更新日"
   }
 
-  lines {
-    bigint id PK "ラインID"
-    string name "ライン名"
-    string kind "種類"
-    integer weight "号数"
-    integer lenght "長さ"
+  accesories {
+    bigint id PK "小物ID"
+    string name "小物名"
+    text memo "メモ"
+    timestamp created_at "作成日"
+    timestamp deleted_at "更新日"
   }
 
-  tackle_lines {
-    bigint id PK "タックルラインID"
+  tackle_accesories {
+    bigint id PK "タックル小物ID"
     bigint id FK "タックルID"
-    bigint id FK "ラインID"
-  }
-
-  lures {
-    bigint id PK "ルアーID"
-    string name "ルアー名"
-    string kind "種類"
-    integer weight "重さ"
-    string color "色"
-  }
-
-  tackle_lures {
-    bigint id PK "タックルルアーID"
-    bigint id FK "タックルID"
-    bigint id FK "ルアーID"
+    bigint id FK "小物ID"
+    timestamp created_at "作成日"
+    timestamp deleted_at "更新日"
   }
 ```

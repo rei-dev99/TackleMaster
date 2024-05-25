@@ -27,6 +27,7 @@ class FishingGearsController < ApplicationController
   def create
     if params[:message].present?
       @response = OpenAIService.get_chat_response(params[:message])
+      Rails.logger.info("Response from OpenAI Service: #{@response}")
     else
       @response = "Message cannot be blank"
     end
