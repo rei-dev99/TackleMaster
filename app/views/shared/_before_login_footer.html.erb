@@ -1,0 +1,32 @@
+<footer class='bg-silver p-2 text-white md:p-4'>
+  <nav class='container mx-auto'>
+    <div class='flex justify-between mx-auto container items-center'>
+      <div><%= link_to t('footer.title'), root_path, class: 'text-xl md:text-3xl font-bold' %></div>
+      <ul class='flex space-x-6'>
+        <li>
+            <%= link_to root_path do %>
+                <i class="fa-brands fa-x-twitter text-blue hover:opacity-70 transition-all duration-300 text-sm md:text-xl"></i>
+            <% end %>
+        </li>
+        <li>
+            <%= link_to root_path do %>
+                <i class="fa-brands fa-facebook-f text-blue hover:opacity-70 transition-all duration-300 text-sm md:text-xl"></i>
+            <% end %>
+        </li>
+        <li>
+            <%= link_to root_path do %>
+                <i class="fa-brands fa-instagram text-blue hover:opacity-70 transition-all duration-300 text-sm md:text-xl"></i>
+            <% end %>
+        </li>
+      </ul>
+    </div>
+    <div class='flex flex-col mx-auto container mt-2 md:justify-between md:flex-row md:mt-6'>
+      <ul class='flex space-x-6 font-bold justify-center text-sm md:text-base'>
+        <li><%= link_to t('footer.contact'), class: 'hover:opacity-70 transition-all duration-300 ' %></li>
+        <li><%= link_to t('footer.terms_of_service'), class: 'hover:opacity-70 transition-all duration-300' %></li>
+        <li><%= link_to t('footer.privacy_policy'), class: 'hover:opacity-70 transition-all duration-300' %></li>
+      </ul>
+      <div class='text-center text-sm md:text-base mt-2 md:mt-0'><p>&copy; 2024 Tackle Master</p></div>
+    </div>
+  </nav>
+</footer>
