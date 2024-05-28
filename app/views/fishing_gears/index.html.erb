@@ -1,11 +1,11 @@
-<div class="py-14 max-w-3xl mx-auto">
+<div class="py-14 max-w-3xl mx-auto px-4">
     <h1 class="text-center text-3xl text-black font-bold">タックル提案</h1>
 
     <div class="mt-8">
     <%= form_with url: fishing_gears_path, method: :get, local: true do |f| %>
         <div class="flex flex-col space-y-4">
             <div class="flex items-center">
-                <%= f.label :fish_type, "魚種", class: 'text-black font-bold text-xl w-[120px] text-right pr-4' %>
+                <%= f.label :fish_type, "狙う魚", class: 'text-black font-bold text-xl w-[120px] text-right pr-4' %>
                 <%= f.text_field :fish_type, class: 'flex-grow shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-blue border-2', value: params[:fish_type] %>
             </div>
             <div class="flex items-center">
@@ -13,34 +13,37 @@
                 <%= f.text_field :budget, class: 'flex-grow shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-blue border-2', value: params[:budget] %>
             </div>
             <div class="flex items-center">
-                <%= f.label :location, "場所", class: 'text-black font-bold text-xl w-[120px] text-right pr-4' %>
+                <%= f.label :location, "釣りの場所", class: 'text-black font-bold text-xl w-[120px] text-right pr-4' %>
                 <%= f.text_field :location, class: 'flex-grow shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-blue border-2', value: params[:location] %>
             </div>
             <div class="flex items-center">
-                <%= f.label :method, "釣法", class: 'text-black font-bold text-xl w-[120px] text-right pr-4' %>
+                <%= f.label :method, "釣りの種類", class: 'text-black font-bold text-xl w-[120px] text-right pr-4' %>
                 <%= f.text_field :method, class: 'flex-grow shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-blue border-2', value: params[:method] %>
             </div>
             <div class="flex items-center">
-                <%= f.label :skill_level, "レベル", class: 'text-black font-bold text-xl w-[120px] text-right pr-4' %>
+                <%= f.label :skill_level, "釣りの経験レベル", class: 'text-black font-bold text-xl w-[120px] text-right pr-4' %>
                 <%= f.select :skill_level, options_for_select(['初心者', '中級者', '上級者'], params[:skill_level]), {}, class: 'flex-grow shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-blue border-2' %>
             </div>
-            <div class="flex items-center">
+            <div class="flex items-center justify-center">
                 <%= f.submit '提案を受ける', class: 'underline underline-offset-2 text-link font-bold px-4 py-2 ml-8 bg-orange text-white rounded no-underline cursor-pointer hover:opacity-70' %>
             </div>
-            <%= link_to 'アドバイスを受ける', new_fishing_gear_path, class: 'btn bg-blue text-white py-2 px-10 underline-offset-2 hover:orange font-bold' %>
         </div>
     <% end %>
     </div>
+
+    <% if @suggestion.present? %>
+        <h2 class="text-black font-bold font-bold text-xl">提案内容:</h2>
+        <p class="p-4 border border-2 mt-2 text-black"><%= @suggestion %></p>
+    <% end %>
 
     <% if @items.any? %>
     <div class="items flex flex-wrap -mx-2">
         <% @items.each do |item| %>
         <div class="item w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-2">
-            <div class="border rounded-lg p-4">
-                <a href="<%= item[:url] %>" target="_blank">
+            <div class="border rounded-lg p-4 h-full flex flex-col">
+                <%= link_to item[:url], target: "_blank" do %>
                     <img src="<%= item[:image] %>" alt="<%= item[:name] %>" class="w-full h-auto text-sm">
-                </a>
-                <h2 class="font-bold"><%= item[:name] %></h2>
+                <% end %>
                 <p class="text-gray-700">価格: ¥<%= item[:price] %></p>
             </div>
         </div>

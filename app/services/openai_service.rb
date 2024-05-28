@@ -1,27 +1,30 @@
 class OpenAIService
-  def self.get_chat_response(message)
-    client = OpenAI::Client.new(
-      access_token: ENV['OPENAI_API_KEY'],
-      log_errors: true
-    )
+  def self.get_chat_response(params)
+    client = OpenAI::Client.new
+    # プロンプト生成
+    prompt = <<~PROMPT
+      あなたは釣りのプロです。以下の条件に合った釣り具を200文字以内で提案してください：
+      狙う魚: #{params[:fish_type]}
+      予算: #{params[:budget]}
+      釣りの場所: #{params[:location]}
+      釣りの種類: #{params[:method]}
+      釣りの経験レベル: #{params[:skill_level]}
+    PROMPT
+
     response = client.chat(
       parameters: {
         model: "gpt-4o",
-        messages: [{ role: "user", content: message }],
-        max_tokens: 50
+        # roleはメッセージの「役割」を表している。この場合は「user」（ユーザー）としており、ユーザーからのメッセージであることを示している。contentはメッセージの「内容」を表しており、promptという変数に格納される。
+        messages: [{ role: "user", content: prompt }],
+        max_tokens: 500
       }
     )
-
-    Rails.logger.info("OpenAI API Response: #{response}")
-
+    # レスポンスチェック
     choices = response.dig("choices", 0, "message", "content")
-    if choices
-      choices.strip
+    if choices # choices配列の最初のメッセージ内容を取り出している
+      choices.strip # 存在する場合は、内容をトリムして返す
     else
-      "No response from OpenAI API"
+      "No response from OpenAI API" # 存在しない場合は、"No response from OpenAI API"というメッセージを返す
     end
-  rescue StandardError => e
-    Rails.logger.error("OpenAI API error: #{e.message}")
-    "Error: Unable to get response from OpenAI API"
   end
 end
