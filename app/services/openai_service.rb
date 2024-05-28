@@ -16,7 +16,7 @@ class OpenAIService
         model: "gpt-4o",
         # roleはメッセージの「役割」を表している。この場合は「user」（ユーザー）としており、ユーザーからのメッセージであることを示している。contentはメッセージの「内容」を表しており、promptという変数に格納される。
         messages: [{ role: "user", content: prompt }],
-        max_tokens: 500
+        max_tokens: 10
       }
     )
     # レスポンスチェック

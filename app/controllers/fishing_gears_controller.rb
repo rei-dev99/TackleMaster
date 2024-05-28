@@ -1,19 +1,28 @@
 require_relative '../services/openai_service'
 class FishingGearsController < ApplicationController
   before_action :require_login
+  before_action :set_user
 
   def index
-    # ユーザーがフォームで入力したデータを取得
-    if params[:fish_type].present? && params[:budget].present? && params[:location].present? && params[:method].present? && params[:skill_level].present?
-      # OpenAI APIで提案をもらう
-      @suggestion = OpenAIService.get_chat_response(params)
-      Rails.logger.info("OpenAI Suggestion: #{@suggestion}")# ここでビューに渡す
-      keyword = params[:location] # 提案を元に検索キーワードを決定
-    else
-      keyword = params[:keyword] || '釣り具' # デフォルト値を設定、値が存在しなければ釣具で検索される
-    end
+    if @user.can_suggest?
+      # ユーザーがフォームで入力したデータを取得
+      if params[:fish_type].present? && params[:budget].present? && params[:location].present? && params[:method].present? && params[:skill_level].present?
+        # OpenAI APIで提案をもらう
+        @suggestion = OpenAIService.get_chat_response(params)
+        Rails.logger.info("OpenAI Suggestion: #{@suggestion}")# ここでビューに渡す
+        keyword = params[:location] # 提案を元に検索キーワードを決定
 
-    @items = search_rakuten_api(keyword) # search_rakuten_apiメソッドを呼び出し結果を@itemsインスタンス変数に代入。これにより、ビューで@itemsを使って検索結果を表示できるようになる
+        # 提案回数を増加させる
+        @user.increment_suggestion_count
+      else
+        keyword = params[:keyword] || '釣り具' # デフォルト値を設定、値が存在しなければ釣具で検索される
+      end
+      @items = search_rakuten_api(keyword) # search_rakuten_apiメソッドを呼び出し結果を@itemsインスタンス変数に代入。これにより、ビューで@itemsを使って検索結果を表示できるようになる
+    else
+      # 提案回数の上限に達した場合の処理
+      flash.now[:alert] = '提案回数の上限に達しました。'
+      redirect_to tackles_path
+    end
   end
 
   private
@@ -29,5 +38,9 @@ class FishingGearsController < ApplicationController
         image: item['mediumImageUrls'].first['imageUrl']
       }
     end
+  end
+
+  def set_user
+    @user = current_user
   end
 end
