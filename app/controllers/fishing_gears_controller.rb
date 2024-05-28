@@ -7,7 +7,7 @@ class FishingGearsController < ApplicationController
     if params[:fish_type].present? && params[:budget].present? && params[:location].present? && params[:method].present? && params[:skill_level].present?
       # OpenAI APIで提案をもらう
       suggestion = OpenAIService.get_chat_response(params)
-      Rails.logger.info("OpenAI Suggestion: #{suggestion}")
+      Rails.logger.info("OpenAI Suggestion: #{suggestion}")# ここでビューに渡す
       keyword = params[:location] # 提案を元に検索キーワードを決定
     else
       keyword = params[:keyword] || '釣り具' # デフォルト値を設定、値が存在しなければ釣具で検索される
@@ -22,7 +22,7 @@ class FishingGearsController < ApplicationController
   def search_rakuten_api(keyword)
     items = RakutenWebService::Ichiba::Item.search(keyword: keyword).first(10) # 指定されたkeywordを基にアイテムを検索し、結果はitemsに代入
     items.map do |item| # itemsをループし、各アイテムを特定のフォーマットに変換
-      { # 各アイテムから必要な情報（名前、価格、URL、画像URL）を抽出し、ハッシュ形式で返す
+      { # 各アイテムから必要な情報（名前、価格、URL、画像URL）を抽出
         name: item['itemName'],
         price: item['itemPrice'],
         url: item['itemUrl'],
