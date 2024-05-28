@@ -8,12 +8,22 @@ class User < ApplicationRecord
   validates :name, presence: true, length: { maximum: 255 }
   validates :email, presence: true, uniqueness: true
 
-  # 提案回数をチェックし、増加させるメソッド
+  # 提案回数をチェックし、リセットも行う
   def can_suggest?
+    reset_suggestion_count_if_needed
     suggestion_count < 3
   end
 
   def increment_suggestion_count
+    update(last_suggestion_at: Time.current) if suggestion_count.zero?
     increment!(:suggestion_count)
+  end
+
+  private
+
+  def reset_suggestion_count_if_needed
+    if last_suggestion_at.nil? || last_suggestion_at < 1.day.ago
+      update(suggestion_count: 0, last_suggestion_at: Time.current)
+    end
   end
 end
