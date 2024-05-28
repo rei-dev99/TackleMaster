@@ -6,8 +6,8 @@ class FishingGearsController < ApplicationController
     # ユーザーがフォームで入力したデータを取得
     if params[:fish_type].present? && params[:budget].present? && params[:location].present? && params[:method].present? && params[:skill_level].present?
       # OpenAI APIで提案をもらう
-      suggestion = OpenAIService.get_chat_response(params)
-      Rails.logger.info("OpenAI Suggestion: #{suggestion}")# ここでビューに渡す
+      @suggestion = OpenAIService.get_chat_response(params)
+      Rails.logger.info("OpenAI Suggestion: #{@suggestion}")# ここでビューに渡す
       keyword = params[:location] # 提案を元に検索キーワードを決定
     else
       keyword = params[:keyword] || '釣り具' # デフォルト値を設定、値が存在しなければ釣具で検索される

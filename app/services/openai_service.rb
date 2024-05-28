@@ -3,7 +3,7 @@ class OpenAIService
     client = OpenAI::Client.new
     # プロンプト生成
     prompt = <<~PROMPT
-      あなたは釣りのプロです。以下の条件に合った釣り具を提案してください：
+      あなたは釣りのプロです。以下の条件に合った釣り具を200文字以内で提案してください：
       狙う魚: #{params[:fish_type]}
       予算: #{params[:budget]}
       釣りの場所: #{params[:location]}
@@ -16,7 +16,7 @@ class OpenAIService
         model: "gpt-4o",
         # roleはメッセージの「役割」を表している。この場合は「user」（ユーザー）としており、ユーザーからのメッセージであることを示している。contentはメッセージの「内容」を表しており、promptという変数に格納される。
         messages: [{ role: "user", content: prompt }],
-        max_tokens: 50
+        max_tokens: 500
       }
     )
     # レスポンスチェック

@@ -31,9 +31,9 @@
     <% end %>
     </div>
 
-    <% if @response.present? %>
-        <h2 class="text-black font-bold font-bold text-xl">回答:</h2>
-        <p class="p-4 border border-2 mt-2 text-black"><%= @response %></p>
+    <% if @suggestion.present? %>
+        <h2 class="text-black font-bold font-bold text-xl">提案内容:</h2>
+        <p class="p-4 border border-2 mt-2 text-black"><%= @suggestion %></p>
     <% end %>
 
     <% if @items.any? %>
