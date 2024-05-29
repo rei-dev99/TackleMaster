@@ -28,6 +28,7 @@ module Tacklemaster
     # Common ones are `templates`, `generators`, or `middleware`, for example.
     config.autoload_lib(ignore: %w(assets tasks))
     config.time_zone = 'Tokyo'
+    config.autoload_paths += %W(#{config.root}/app/services)
 
     # Configuration for the application, engines, and railties goes here.
     #
