@@ -1,4 +1,6 @@
-class OpenAIService
+require 'ruby/openai'
+
+class OpenaiService
   def self.get_chat_response(params)
     client = OpenAI::Client.new
     # プロンプト生成
