@@ -1,4 +1,4 @@
-require_relative '../services/open_ai_service'
+require_relative '../services/openai_service'
 class FishingGearsController < ApplicationController
   before_action :require_login
   before_action :set_user
@@ -8,7 +8,7 @@ class FishingGearsController < ApplicationController
       # ユーザーがフォームで入力したデータを取得
       if params[:fish_type].present? && params[:budget].present? && params[:location].present? && params[:method].present? && params[:skill_level].present?
         # OpenAI APIで提案をもらう
-        @suggestion = OpenAIService.get_chat_response(params)
+        @suggestion = OpenaiService.get_chat_response(params)
         Rails.logger.info("OpenAI Suggestion: #{@suggestion}")# ここでビューに渡す
         keyword = params[:location] # 提案を元に検索キーワードを決定
 
