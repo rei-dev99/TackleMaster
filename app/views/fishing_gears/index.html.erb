@@ -44,7 +44,8 @@
                 <%= link_to item[:url], target: "_blank" do %>
                     <img src="<%= item[:image] %>" alt="<%= item[:name] %>" class="w-full h-auto text-sm">
                 <% end %>
-                <p class="text-gray-700">価格: ¥<%= item[:price] %></p>
+                <p class="text-gray-700"><%= item[:name] %></p> <!-- 名前を表示 -->
+                <p class="text-gray-700">価格: ¥<%= item[:price] %></p> <!-- 価格を表示 -->
             </div>
         </div>
         <% end %>
