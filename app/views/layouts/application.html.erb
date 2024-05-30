@@ -3,6 +3,11 @@
   <head>
     <title><%= page_title(yield(:title)) %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@your_twitter_handle">
+    <meta name="twitter:title" content="<%= page_title(yield(:title)) %>">
+    <meta name="twitter:description" content="Tackle Master Tacle Mastersは、釣り愛好家のための最も包括的な釣り道具アプリです。あなたのタックルを管理したり、最新の釣りギアを探索しましょう！">
+    <meta name="twitter:image" content="<%= asset_path('fv.jpeg') %>">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
