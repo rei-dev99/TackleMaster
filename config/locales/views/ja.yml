@@ -102,3 +102,12 @@ ja:
       title: 小物編集
       submit: 小物変更
       return: 戻る
+  fishing_gears:
+    index:
+      title: タックル提案
+      fish_type: 狙う魚
+      budget: 予算
+      location: 釣りの場所
+      method: 釣りの種類
+      skill_level: 釣りの経験レベル
+      submit: 提案を受ける
