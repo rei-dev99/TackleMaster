@@ -28,7 +28,7 @@ class FishingGearsController < ApplicationController
 
   # 楽天APIを使ってアイテムを検索する
   def search_rakuten_api(keyword)
-    items = RakutenWebService::Ichiba::Item.search(keyword: keyword).first(10) # 指定されたkeywordを基にアイテムを検索し、結果はitemsに代入
+    items = RakutenWebService::Ichiba::Item.search(keyword: keyword).first(8) # 指定されたkeywordを基にアイテムを検索し、結果はitemsに代入
     items.map do |item| # itemsをループし、各アイテムを特定のフォーマットに変換
       # puts item.inspect # デバッグ用に追加
       { # 各アイテムから必要な情報（名前、価格、URL、画像URL）を抽出

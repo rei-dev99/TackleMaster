@@ -71,12 +71,15 @@ MVPリリース時に作っていたいもの
 
 # ■技術スタック
 - サーバーサイド：Ruby on Rails
-- フロントエンドJavascript：本リリース後にReact.jsへ徐々に移行する
+- フロントエンド：本リリース後にReact.jsへ徐々に移行する
 - cssフレームワーク：TailwindCSS、DaisyUI
 - データベース：PostgreSQL
+- 開発環境:Docker
 - Google認証：Google Identity Platform API
 - 最適な釣り具提案機能：Open AI API
 - 釣り具の商品表示:楽天API
+- インフラ:render
+- 画像保存先:AWS S3
 
 # ■追加サービスの案
 - タックル登録画面で、入力したロッドやリールなどの画像を登録できるようにする。

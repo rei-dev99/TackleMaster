@@ -1,31 +1,32 @@
+<% content_for(:title, t('.title')) %>
 <div class="py-14 max-w-3xl mx-auto px-4">
-    <h1 class="text-center text-3xl text-black font-bold">タックル提案</h1>
+    <h1 class="text-center text-3xl text-black font-bold"><%= t('.title') %></h1>
 
     <div class="mt-8">
     <%= form_with url: fishing_gears_path, method: :get, local: true do |f| %>
         <div class="flex flex-col space-y-4">
             <div class="flex items-center">
-                <%= f.label :fish_type, "狙う魚", class: 'text-black font-bold text-xl w-[120px] text-right pr-4' %>
+                <%= f.label :fish_type, t('fishing_gears.index.fish_type'), class: 'text-black font-bold text-xl w-[120px] text-right pr-4' %>
                 <%= f.text_field :fish_type, class: 'flex-grow shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-blue border-2', value: params[:fish_type] %>
             </div>
             <div class="flex items-center">
-                <%= f.label :budget, "予算", class: 'text-black font-bold text-xl w-[120px] text-right pr-4' %>
+                <%= f.label :budget, t('fishing_gears.index.budget'), class: 'text-black font-bold text-xl w-[120px] text-right pr-4' %>
                 <%= f.text_field :budget, class: 'flex-grow shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-blue border-2', value: params[:budget] %>
             </div>
             <div class="flex items-center">
-                <%= f.label :location, "釣りの場所", class: 'text-black font-bold text-xl w-[120px] text-right pr-4' %>
+                <%= f.label :location, t('fishing_gears.index.location'), class: 'text-black font-bold text-xl w-[120px] text-right pr-4' %>
                 <%= f.text_field :location, class: 'flex-grow shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-blue border-2', value: params[:location] %>
             </div>
             <div class="flex items-center">
-                <%= f.label :method, "釣りの種類", class: 'text-black font-bold text-xl w-[120px] text-right pr-4' %>
+                <%= f.label :method, t('fishing_gears.index.method'), class: 'text-black font-bold text-xl w-[120px] text-right pr-4' %>
                 <%= f.text_field :method, class: 'flex-grow shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-blue border-2', value: params[:method] %>
             </div>
             <div class="flex items-center">
-                <%= f.label :skill_level, "釣りの経験レベル", class: 'text-black font-bold text-xl w-[120px] text-right pr-4' %>
+                <%= f.label :skill_level, t('fishing_gears.index.skill_level'), class: 'text-black font-bold text-xl w-[120px] text-right pr-4' %>
                 <%= f.select :skill_level, options_for_select(['初心者', '中級者', '上級者'], params[:skill_level]), {}, class: 'flex-grow shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-blue border-2' %>
             </div>
             <div class="flex items-center justify-center">
-                <%= f.submit '提案を受ける', class: 'underline underline-offset-2 text-link font-bold px-4 py-2 ml-8 bg-orange text-white rounded no-underline cursor-pointer hover:opacity-70' %>
+                <%= f.submit t('fishing_gears.index.submit'), class: 'underline underline-offset-2 text-link font-bold px-4 py-2 ml-8 bg-orange text-white rounded no-underline cursor-pointer hover:opacity-70' %>
             </div>
         </div>
     <% end %>
@@ -37,7 +38,7 @@
     <% end %>
 
     <% if @items.any? %>
-    <div class="items flex flex-wrap -mx-2">
+    <div class="items flex flex-wrap -mx-2 mt-6">
         <% @items.each do |item| %>
         <div class="item w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-2">
             <div class="border rounded-lg p-4 h-full flex flex-col">
