@@ -1,0 +1,2 @@
+sorcery:
+  google_callback_url: 'https://your_app_url/oauth/callback?provider=google'
