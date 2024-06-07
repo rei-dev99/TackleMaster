@@ -1,0 +1,2 @@
+sorcery:
+  google_callback_url: 'https://tacklemaster.onrender.com/oauth/callback?provider=google'
