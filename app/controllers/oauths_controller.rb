@@ -7,8 +7,9 @@ class OauthsController < ApplicationController
   end
 
   def callback
+    # binding.pry
     provider = auth_params[:provider]
-    Rails.logger.debug "Provider: #{provider}"
+    # Rails.logger.debug "Provider: #{provider}"
 
     if auth_params[:code].blank?
       Rails.logger.error "Missing required parameter: code"
@@ -18,6 +19,8 @@ class OauthsController < ApplicationController
 
     # 既存のユーザーをプロバイダ情報を元に検索し、存在すればログイン
     if (@user = login_from(provider))
+      # Rails.logger.debug "User logged in: #{@user.id}"
+      # binding.pry
       redirect_to tackles_path, success: "#{provider.titleize}アカウントでログインしました"
     else
       begin
@@ -42,6 +45,7 @@ class OauthsController < ApplicationController
 
   def signup_and_login(provider)
     @user = create_from(provider)
+    Rails.logger.debug "Created user: #{@user.inspect}"
     reset_session
     auto_login(@user)
   end
