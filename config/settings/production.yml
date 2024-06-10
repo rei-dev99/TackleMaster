@@ -1,5 +1,6 @@
 sorcery:
   google_callback_url: 'https://tacklemaster.onrender.com/oauth/callback?provider=google'
+
 default_url_options:
   protcol: 'https'
   host: 'https://tacklemaster.onrender.com'
