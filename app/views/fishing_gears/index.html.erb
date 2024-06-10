@@ -7,19 +7,19 @@
         <div class="flex flex-col space-y-4">
             <div class="flex items-center">
                 <%= f.label :fish_type, t('fishing_gears.index.fish_type'), class: 'text-black font-bold text-xl w-[120px] text-right pr-4' %>
-                <%= f.text_field :fish_type, class: 'flex-grow shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-blue border-2', value: params[:fish_type] %>
+                <%= f.text_field :fish_type, class: 'flex-grow shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-blue border-2', value: params[:fish_type], placeholder: "例：アジ" %>
             </div>
             <div class="flex items-center">
                 <%= f.label :budget, t('fishing_gears.index.budget'), class: 'text-black font-bold text-xl w-[120px] text-right pr-4' %>
-                <%= f.text_field :budget, class: 'flex-grow shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-blue border-2', value: params[:budget] %>
+                <%= f.text_field :budget, class: 'flex-grow shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-blue border-2', value: params[:budget], placeholder: "例：1万円" %>
             </div>
             <div class="flex items-center">
                 <%= f.label :location, t('fishing_gears.index.location'), class: 'text-black font-bold text-xl w-[120px] text-right pr-4' %>
-                <%= f.text_field :location, class: 'flex-grow shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-blue border-2', value: params[:location] %>
+                <%= f.text_field :location, class: 'flex-grow shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-blue border-2', value: params[:location], placeholder: "例：漁港" %>
             </div>
             <div class="flex items-center">
                 <%= f.label :method, t('fishing_gears.index.method'), class: 'text-black font-bold text-xl w-[120px] text-right pr-4' %>
-                <%= f.text_field :method, class: 'flex-grow shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-blue border-2', value: params[:method] %>
+                <%= f.text_field :method, class: 'flex-grow shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-blue border-2', value: params[:method], placeholder: "例：サビキ釣り" %>
             </div>
             <div class="flex items-center">
                 <%= f.label :skill_level, t('fishing_gears.index.skill_level'), class: 'text-black font-bold text-xl w-[120px] text-right pr-4' %>

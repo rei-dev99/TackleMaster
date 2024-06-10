@@ -1,0 +1,13 @@
+<% content_for(:title, t('.title')) %>
+<div class="py-14 max-w-[700px] mx-auto px-4">
+    <h1 class="text-center text-3xl text-black font-bold"><%= t('.title') %></h1>
+    <%= form_with url: password_resets_path, class: 'mt-6' do |f| %>
+    <div class='mt-4'>
+        <%= f.label :email, class: 'text-black font-bold' %>
+        <%= f.email_field :email, class: 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' %>
+    </div>
+    <div class='mt-8 text-center'>
+        <button type="submit" class="font-bold bg-orange text-white hover:bg-blue-700 py-2 px-10 rounded focus:outline-none focus:shadow-outline btn">申請</button>
+    </div>
+    <% end %>
+</div>
