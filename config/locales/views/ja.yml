@@ -29,6 +29,11 @@ ja:
     create:
       success: ユーザー登録が完了しました
       failure: ユーザー登録に失敗しました
+  password_resets:
+    new:
+      title: パスワードリセット申請
+    edit:
+      title: パスワードリセット
   header:
     title: Tackle Master
     sign_up: 新規登録
