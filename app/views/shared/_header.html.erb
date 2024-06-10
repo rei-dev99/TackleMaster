@@ -13,9 +13,9 @@
     <div class="modal-box bg-silver flex flex-col justify-center text-center">
       <div class="flex justify-center flex-col text-bold">
         <%= link_to 'ログアウト', logout_path, class: 'text-lg hover:opacity-70 transition-all duration-300', data: { turbo_method: :delete } %>
-        <%= link_to t('footer.contact'), class: 'text-lg hover:opacity-70 transition-all duration-300' %>
-        <%= link_to t('footer.terms_of_service'), class: 'text-lg hover:opacity-70 transition-all duration-300' %>
-        <%= link_to t('footer.privacy_policy'), class: 'text-lg hover:opacity-70 transition-all duration-300' %>
+        <%= link_to t('footer.contact'), 'https://docs.google.com/forms/d/e/1FAIpQLScL-iN4VsmofpoysNffvmbGMVUPAZTgsvtGoIPGMjQys7DBWQ/viewform', class: 'text-lg hover:opacity-70 transition-all duration-300' %>
+        <%= link_to t('footer.terms_of_service'), '#',class: 'text-lg hover:opacity-70 transition-all duration-300' %>
+        <%= link_to t('footer.privacy_policy'), '#',class: 'text-lg hover:opacity-70 transition-all duration-300' %>
       </div>
       <ul class='flex space-x-6 justify-center mt-4'>
         <li>
