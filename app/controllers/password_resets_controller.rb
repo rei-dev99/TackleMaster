@@ -7,11 +7,12 @@ class PasswordResetsController < ApplicationController
     @user = User.find_by(email: params[:email])
     if @user
       @user.deliver_reset_password_instructions!
+      redirect_to login_path
       flash[:notice] = 'パスワードリセットのメールを送信しました'
     else
       flash[:alert] = 'Emailが見つかりません'
+      render :new, status: :unprocessable_entity
     end
-    redirect_to login_path
   end
 
   def edit
