@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   authenticates_with_sorcery!
   has_many :tackles, dependent: :destroy
-  has_many :authentications, :dependent => :destroy
+  has_many :authentications, dependent: :destroy
   accepts_nested_attributes_for :authentications
 
   validates :password, length: { minimum: 3 }, if: -> { new_record? || changes[:crypted_password] }
@@ -25,8 +25,8 @@ class User < ApplicationRecord
   private
 
   def reset_suggestion_count_if_needed
-    if last_suggestion_at.nil? || last_suggestion_at < 1.day.ago
-      update(suggestion_count: 0, last_suggestion_at: Time.current)
-    end
+    return unless last_suggestion_at.nil? || last_suggestion_at < 1.day.ago
+
+    update(suggestion_count: 0, last_suggestion_at: Time.current)
   end
 end
