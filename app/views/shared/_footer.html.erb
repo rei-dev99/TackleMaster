@@ -21,11 +21,9 @@
       </ul>
     </div>
     <div class='hidden md:flex justify-between mx-auto container items-center mt-6'>
-      <ul class='flex space-x-6 font-bold'>
-        <li><%= link_to t('footer.contact'), 'https://docs.google.com/forms/d/e/1FAIpQLScL-iN4VsmofpoysNffvmbGMVUPAZTgsvtGoIPGMjQys7DBWQ/viewform',class: 'text-lg hover:opacity-70 transition-all duration-300' %></li>
-        <li><%= link_to t('footer.terms_of_service'),'#', class: 'text-lg hover:opacity-70 transition-all duration-300' %></li>
-        <li><%= link_to t('footer.privacy_policy'), '#', class: 'text-lg hover:opacity-70 transition-all duration-300' %></li>
-      </ul>
+      <div class='flex space-x-6 font-bold'>
+        <%= render 'shared/common_footer_links' %>
+      </div>
       <div><p>&copy; 2024 Tackle Master</p></div>
     </div>
   </nav>

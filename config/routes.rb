@@ -25,5 +25,10 @@ Rails.application.routes.draw do
   get 'oauth/callback', to: 'oauths#callback'
   get 'oauth/:provider', to: 'oauths#oauth', as: :auth_at_provider
 
+  # ポリシー
+  get "/privacy_policy", to: "tops#privacy_policy"
+  # 利用規約
+  get "/terms_of_service", to: "tops#terms_of_service"
+
   resources :fishing_gears, only: %i[index new create]
 end
