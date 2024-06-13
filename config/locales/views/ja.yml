@@ -45,8 +45,9 @@ ja:
   header:
     title: Tackle Master
     sign_up: 新規登録
-    search_tackle: タックルを探す
-    my_page: マイページ
+    search_tackle: タックル提案
+    tackles_page: タックル一覧
+    fishing_plan_page: 釣行プラン
     login: ログイン
     logout: ログアウト
   footer:
@@ -54,7 +55,7 @@ ja:
     contact: お問い合わせ
     terms_of_service: 利用規約
     privacy_policy: プライバシーポリシー
-    my_page: マイページ
+    tackles_page: タックル一覧
     suggestion_page: タックル提案
     fishing_plan_page: 釣行プラン
   tackles:
