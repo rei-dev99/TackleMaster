@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_06_12_214906) do
+ActiveRecord::Schema[7.1].define(version: 2024_06_14_045751) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -58,6 +58,30 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_12_214906) do
     t.index ["provider", "uid"], name: "index_authentications_on_provider_and_uid"
   end
 
+  create_table "fish_types", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "fishing_plan_fish_types", force: :cascade do |t|
+    t.bigint "fishing_plan_id", null: false
+    t.bigint "fish_type_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["fish_type_id"], name: "index_fishing_plan_fish_types_on_fish_type_id"
+    t.index ["fishing_plan_id"], name: "index_fishing_plan_fish_types_on_fishing_plan_id"
+  end
+
+  create_table "fishing_plan_tackles", force: :cascade do |t|
+    t.bigint "fishing_plan_id", null: false
+    t.bigint "tackle_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["fishing_plan_id"], name: "index_fishing_plan_tackles_on_fishing_plan_id"
+    t.index ["tackle_id"], name: "index_fishing_plan_tackles_on_tackle_id"
+  end
+
   create_table "fishing_plans", force: :cascade do |t|
     t.date "fishing_date", null: false
     t.string "location", null: false
@@ -67,6 +91,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_12_214906) do
     t.float "precipitation_probability"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
   end
 
   create_table "reels", force: :cascade do |t|
@@ -137,6 +162,10 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_12_214906) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "fishing_plan_fish_types", "fish_types"
+  add_foreign_key "fishing_plan_fish_types", "fishing_plans"
+  add_foreign_key "fishing_plan_tackles", "fishing_plans"
+  add_foreign_key "fishing_plan_tackles", "tackles"
   add_foreign_key "tackle_accesories", "accesories"
   add_foreign_key "tackle_accesories", "tackles"
   add_foreign_key "tackle_reels", "reels"
