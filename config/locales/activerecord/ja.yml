@@ -23,3 +23,11 @@ ja:
         name: 小物名
         image: 画像
         memo: メモ
+      fishing_plan:
+        fishing_date: 釣行日
+        fish_types: 目的魚種
+        location: 釣行場所
+        temperature: 気温
+        wind_speed: 風速
+        weather_condition: 天気状態
+        precipitation_probability: 降水確率

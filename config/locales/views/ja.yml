@@ -134,3 +134,12 @@ ja:
       method: 釣りの種類
       skill_level: 釣りの経験レベル
       submit: 提案を受ける
+  fishing_plans:
+    index:
+      title: 釣行プラン
+      create_new_plan: 釣行プランを作成する
+      please_create_plan: 釣行プランを作成しましょう
+    new:
+      title: 釣行予定作成
+      return: 戻る
+      submit: 登録
