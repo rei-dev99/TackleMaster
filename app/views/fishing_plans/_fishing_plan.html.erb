@@ -3,10 +3,12 @@
     <h3 class="text-lg leading-6 font-medium text-gray-900">
       <%= plan.fish_types %> ： <%= plan.location %>
     </h3>
-    <p class="mt-1 max-w-2xl text-sm text-gray-500">
-      日付: <%= plan.fishing_date %>
-    </p>
-    <div class='flex justify-end absolute right-2 bottom-2 z-10'>
+    <p class="mt-1 max-w-2xl text-sm text-gray-500"><%= plan.fishing_date %></p>
+    <p class="mt-1 max-w-2xl text-sm text-gray-500">使用タックル:</p>
+    <ul>
+        <li><%= plan.tackle.name %></li>
+    </ul>
+    <div class='flex justify-end absolute right-2 bottom-2 z-9'>
         <%= link_to edit_fishing_plan_path(plan) do %>
           <i class="fa-solid fa-pen text-blue"></i>
         <% end %>

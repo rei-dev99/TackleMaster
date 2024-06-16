@@ -143,3 +143,9 @@ ja:
       title: 釣行予定作成
       return: 戻る
       submit: 登録
+    fishing_plan:
+      delete: 削除しますか？
+    edit:
+      title: 釣行プラン編集
+      return: 戻る
+      submit: 登録

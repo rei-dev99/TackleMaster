@@ -24,9 +24,10 @@ ja:
         image: 画像
         memo: メモ
       fishing_plan:
-        fishing_date: 釣行日
         fish_types: 目的魚種
+        tackles: 使用するタックル
         location: 釣行場所
+        fishing_date: 釣行日
         temperature: 気温
         wind_speed: 風速
         weather_condition: 天気状態

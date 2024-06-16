@@ -1,6 +1,5 @@
 class FishingPlan < ApplicationRecord
-  has_many :fishing_plan_tackles, dependent: :destroy
-  has_many :tackles, through: :fishing_plan_tackles
+  belongs_to :tackle
   belongs_to :user
 
   validates :fishing_date, presence: true
