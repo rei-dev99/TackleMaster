@@ -14,8 +14,7 @@ class Tackle < ApplicationRecord
   has_many :accesories, through: :tackle_accesories
   accepts_nested_attributes_for :tackle_accesories
 
-  has_many :fishing_plan_tackles, dependent: :destroy
-  has_many :fishing_plans, through: :fishing_plan_tackles
+  has_many :fishing_plans, dependent: :destroy
 
   validates :name, presence: true, length: { maximum: 255 }
 
