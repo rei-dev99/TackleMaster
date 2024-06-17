@@ -10,10 +10,15 @@ ja:
   tops:
     index:
       tackle_registration: タックルを登録する
+    privacy_policy:
+      title: プライバシーポリシー
+    terms_of_service:
+      title: 利用規約
   user_sessions:
     new:
       title: ログイン
       login: ログイン
+      google_login: Googleでログインする
       to_register_page: 新規登録ページへ
       password_forget: パスワードをお忘れの方はこちら
     create:
@@ -24,6 +29,7 @@ ja:
   users:
     new:
       title: ユーザー登録
+      description: 〜自分だけのタックルが登録できるようになります〜
       submit: 登録
       to_login_page: ログインページへ
     create:
@@ -32,13 +38,16 @@ ja:
   password_resets:
     new:
       title: パスワードリセット申請
+      submit: 申請
     edit:
       title: パスワードリセット
+      submit: リセット
   header:
     title: Tackle Master
     sign_up: 新規登録
-    search_tackle: タックルを探す
-    my_page: マイページ
+    search_tackle: タックル提案
+    tackles_page: タックル一覧
+    fishing_plan_page: 釣行プラン
     login: ログイン
     logout: ログアウト
   footer:
@@ -46,6 +55,9 @@ ja:
     contact: お問い合わせ
     terms_of_service: 利用規約
     privacy_policy: プライバシーポリシー
+    tackles_page: タックル一覧
+    suggestion_page: タックル提案
+    fishing_plan_page: 釣行プラン
   tackles:
     tackle:
       detail: タックル詳細
@@ -53,6 +65,7 @@ ja:
     index:
       title: マイページタックル一覧
       create_new_tackle: 新しいタックルを作成する
+      please_create_tackle: タックルを登録しましょう
     new:
       title: タックル作成
       submit: タックル登録
@@ -61,6 +74,11 @@ ja:
       success: タックル作成完了です
       failure: タックス作成に失敗しました
     show:
+      add_fishing_gear: 釣り具を追加する
+      please_add_fishing_gear: 釣り具を追加しましょう！
+      add_rod: ロッド+
+      add_reel: リール+
+      add_accesory: 小物+
       return: 戻る
     edit:
       title: タックル編集
@@ -116,3 +134,18 @@ ja:
       method: 釣りの種類
       skill_level: 釣りの経験レベル
       submit: 提案を受ける
+  fishing_plans:
+    index:
+      title: 釣行プラン
+      create_new_plan: 釣行プランを作成する
+      please_create_plan: 釣行プランを作成しましょう
+    new:
+      title: 釣行予定作成
+      return: 戻る
+      submit: 登録
+    fishing_plan:
+      delete: 削除しますか？
+    edit:
+      title: 釣行プラン編集
+      return: 戻る
+      submit: 登録

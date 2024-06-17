@@ -102,3 +102,6 @@ gem 'dotenv-rails', groups: [:development, :test]
 
 # 環境別に管理(Google認証)
 gem 'config'
+
+# APIを叩く際に使用
+gem 'httparty'

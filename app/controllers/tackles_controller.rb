@@ -6,7 +6,6 @@ class TacklesController < ApplicationController
   end
 
   def show
-    # @tackle = Tackle.includes(:rods, :reels, :accesories).find(params[:id])
     @tackle = current_user.tackles.includes(:rods, :reels, :accesories).find(params[:id])
   end
 

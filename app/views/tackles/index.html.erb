@@ -10,7 +10,7 @@
       <% if @tackles.present? %>
         <%= render @tackles %>
       <% else %>
-        <div class="mb-3">タックルを登録しましょう</div>
+        <div class="mb-3"><%= t('.please_create_tackle') %></div>
       <% end %>
     </div>
   </div>

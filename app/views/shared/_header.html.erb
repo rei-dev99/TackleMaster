@@ -2,8 +2,9 @@
   <nav class="flex justify-between mx-auto container items-center">
     <div><%= link_to t('header.title'), tackles_path, class: 'text-xl font-bold md:text-3xl' %></div>
     <div class="space-x-6 font-bold hidden md:block">
-      <%= link_to t('header.my_page'), tackles_path, class: 'text-lg hover:opacity-70 transition-all duration-300' %>
+      <%= link_to t('header.tackles_page'), tackles_path, class: 'text-lg hover:opacity-70 transition-all duration-300' %>
       <%= link_to t('header.search_tackle'), fishing_gears_path, class: 'text-lg hover:opacity-70 transition-all duration-300' %>
+      <%= link_to t('header.fishing_plan_page'), fishing_plans_path, class: 'text-lg hover:opacity-70 transition-all duration-300' %>
       <%= link_to t('header.logout'), logout_path, class: 'text-lg hover:opacity-70 transition-all duration-300', data: { turbo_method: :delete } %>
     </div>
     <button class="block md:hidden" onclick="my_modal_2.showModal()"><i class="fa-solid fa-gear md:hidden text-white text-xl"></i></button>
@@ -12,7 +13,7 @@
   <dialog id="my_modal_2" class="modal"><!-- モーダルウィンドウ -->
     <div class="modal-box bg-silver flex flex-col justify-center text-center">
       <div class="flex justify-center flex-col text-bold">
-        <%= link_to 'ログアウト', logout_path, class: 'text-lg hover:opacity-70 transition-all duration-300', data: { turbo_method: :delete } %>
+        <%= link_to t('header.logout'), logout_path, class: 'text-lg hover:opacity-70 transition-all duration-300', data: { turbo_method: :delete } %>
         <%= render 'shared/common_footer_links' %>
       </div>
       <ul class='flex space-x-6 justify-center mt-4'>
@@ -32,7 +33,7 @@
             <% end %>
         </li>
       </ul>
-      <p class="py-4">© 2024 Tackle Master</p>
+      <p class="py-4">&copy; 2024 Tackle Master</p>
     </div>
     <form method="dialog" class="modal-backdrop">
       <button>close</button>

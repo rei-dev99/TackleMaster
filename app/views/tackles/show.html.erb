@@ -5,17 +5,17 @@
   </div>
   <div class='mt-10 text-center'>
     <!-- You can open the modal using ID.showModal() method -->
-    <button class="btn bg-blue text-white" onclick="my_modal_3.showModal()">釣り具を追加する</button>
+    <button class="btn bg-blue text-white" onclick="my_modal_3.showModal()"><%= t('.add_fishing_gear') %></button>
     <dialog id="my_modal_3" class="modal">
     <div class="modal-box">
         <form method="dialog">
         <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
         </form>
-        <h2 class='font-bold text-xl'>釣り具を追加しましょう！</h2>
+        <h2 class='font-bold text-xl'><%= t('.please_add_fishing_gear') %></h2>
         <div class='mt-6'>
-            <%= link_to 'ロッド+', new_tackle_rod_path(@tackle), class: 'btn bg-orange text-white py-2 px-10 underline-offset-2 hover:orange font-bold' %>
-            <%= link_to 'リール+', new_tackle_reel_path(@tackle), class: 'btn bg-orange text-white py-2 px-10 underline-offset-2 hover:orange font-bold' %>
-            <%= link_to '小物+', new_tackle_accesory_path(@tackle), class: 'btn bg-orange text-white py-2 px-10 underline-offset-2 hover:orange font-bold' %>
+            <%= link_to t('.add_rod'), new_tackle_rod_path(@tackle), class: 'btn bg-orange text-white py-2 px-10 underline-offset-2 hover:orange font-bold' %>
+            <%= link_to t('.add_reel'), new_tackle_reel_path(@tackle), class: 'btn bg-orange text-white py-2 px-10 underline-offset-2 hover:orange font-bold' %>
+            <%= link_to t('.add_accesory'), new_tackle_accesory_path(@tackle), class: 'btn bg-orange text-white py-2 px-10 underline-offset-2 hover:orange font-bold' %>
         </div>
     </div>
     </dialog>

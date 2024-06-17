@@ -45,12 +45,10 @@ class OauthsController < ApplicationController
 
   # ユーザーが存在しない場合はプロバイダ情報を元に新規ユーザーを作成し、ログイン
   def handle_new_user(provider)
-    begin
-      signup_and_login(provider)
-      redirect_to tackles_path, success: "#{provider.titleize}アカウントでログインしました"
-    rescue StandardError => e
-      flash.now[:alert] = "#{provider.titleize}アカウントでのログインに失敗しました: #{e.message}"
-      redirect_to root_path
-    end
+    signup_and_login(provider)
+    redirect_to tackles_path, success: "#{provider.titleize}アカウントでログインしました"
+  rescue StandardError => e
+    flash.now[:alert] = "#{provider.titleize}アカウントでのログインに失敗しました: #{e.message}"
+    redirect_to root_path
   end
 end
