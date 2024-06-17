@@ -6,8 +6,8 @@ class FishingPlan < ApplicationRecord
   validates :location, presence: true
 
   def not_past_date
-    if fishing_date.present? && fishing_date < Date.today
-        errors.add(:fishing_date, "過去の日付は登録できません。")
-    end
+    return unless fishing_date.present? && fishing_date < Date.today
+
+    errors.add(:fishing_date, "過去の日付は登録できません。")
   end
 end

@@ -3,37 +3,39 @@
   <div class='py-14 md:max-w-[700px] mx-auto px-4'>
     <h1 class='text-center text-3xl text-black font-bold'><%= t('.title') %></h1>
     <%= form_with model: @plan, class: 'mt-6' do |f| %>
-    <div class='mt-6'>
-      <%= f.label :fish_types, class: 'text-black font-bold text-xl' %>
-      <%= f.text_field :fish_types, placeholder: '例：アジ, イナダ', class: 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-blue border-2' %>
-    </div>
-    <div class='mt-6'>
-      <%= f.label :location, class: 'text-black font-bold text-xl' %>
-      <%= f.text_field :location, placeholder: '例：防波堤', class: 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-blue border-2' %>
-    </div>
-    <div class='mt-6'>
-      <%= f.label :tackles, class: 'text-black font-bold text-xl' %>
-      <%= f.collection_select :tackle_id, @tackles, :id, :name, { include_blank: false }, { class: 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-blue border-2' } %>
-    </div>
-    <div class='mt-6'>
-        <%= f.label :fishing_date, class: 'text-black font-bold text-xl' %>
-        <%= f.date_field :fishing_date, class: 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-blue border-2' %>
-    </div>
-    <div class='mt-6'>
-      <%= f.label :temperature, class: 'text-black font-bold text-xl' %>
-      <%= f.text_field :temperature, placeholder: "例：20", class: 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-blue border-2' %>
-    </div>
-    <div class='mt-6'>
-      <%= f.label :wind_speed, class: 'text-black font-bold text-xl' %>
-      <%= f.text_field :wind_speed, placeholder: "例：3", class: 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-blue border-2' %>
-    </div>
-    <div class='mt-6'>
-      <%= f.label :weather_condition, class: 'text-black font-bold text-xl' %>
-      <%= f.text_field :weather_condition, placeholder: "例：晴れのち雨", class: 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-blue border-2' %>
-    </div>
-    <div class='mt-6'>
-      <%= f.label :precipitation_probability, class: 'text-black font-bold text-xl' %>
-      <%= f.text_field :precipitation_probability, placeholder: "例：30", class: 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-blue border-2' %>
+    <div class='grid grid-cols-1 md:grid-cols-2 gap-6'>
+        <div class='mt-6'>
+            <%= f.label :fish_types, class: 'text-black font-bold text-xl' %>
+            <%= f.text_field :fish_types, placeholder: '例：アジ, イナダ', class: 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-blue border-2' %>
+        </div>
+        <div class='mt-6'>
+            <%= f.label :location, class: 'text-black font-bold text-xl' %>
+            <%= f.text_field :location, placeholder: '例：防波堤', class: 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-blue border-2' %>
+        </div>
+        <div class='mt-6'>
+            <%= f.label :tackles, class: 'text-black font-bold text-xl' %>
+            <%= f.collection_select :tackle_id, @tackles, :id, :name, { include_blank: false }, { class: 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-blue border-2' } %>
+        </div>
+        <div class='mt-6'>
+            <%= f.label :fishing_date, class: 'text-black font-bold text-xl' %>
+            <%= f.date_field :fishing_date, class: 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-blue border-2' %>
+        </div>
+        <div class='mt-6'>
+            <%= f.label :temperature, class: 'text-black font-bold text-xl' %>
+            <%= f.text_field :temperature, placeholder: "例：20", class: 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-blue border-2' %>
+        </div>
+        <div class='mt-6'>
+            <%= f.label :wind_speed, class: 'text-black font-bold text-xl' %>
+            <%= f.text_field :wind_speed, placeholder: "例：3", class: 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-blue border-2' %>
+        </div>
+        <div class='mt-6'>
+            <%= f.label :weather_condition, class: 'text-black font-bold text-xl' %>
+            <%= f.text_field :weather_condition, placeholder: "例：晴れのち雨", class: 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-blue border-2' %>
+        </div>
+        <div class='mt-6'>
+            <%= f.label :precipitation_probability, class: 'text-black font-bold text-xl' %>
+            <%= f.text_field :precipitation_probability, placeholder: "例：30", class: 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-blue border-2' %>
+        </div>
     </div>
     <div class='mt-8 text-center'>
       <button type="submit" class="btn font-bold bg-blue text-white hover:bg-blue-700 py-2 px-10 rounded focus:outline-none focus:shadow-outline"><%= t('.submit') %></button>

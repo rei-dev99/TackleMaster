@@ -1,8 +1,3 @@
-# gem httparty読み込み
-require 'httparty'
-# URIモジュールを読み込む（URLのエンコードや解析に使われる）
-require 'uri'
-
 class FishingPlansController < ApplicationController
   before_action :require_login
   before_action :set_plan, only: %i[edit update destroy]
@@ -56,11 +51,16 @@ class FishingPlansController < ApplicationController
   end
 
   def fishing_plan_params
-    params.require(:fishing_plan).permit(:fishing_date, :location, :tackle_id, :temperature, :wind_speed, :weather_condition, :precipitation_probability, :fish_types)
-  end
-
-  def weather_service
-    api_key = ENV['OPEN_WEATHER_ID']
-    @options 
+    required_params = [
+      :fishing_date,
+      :location,
+      :tackle_id,
+      :temperature,
+      :wind_speed,
+      :weather_condition,
+      :precipitation_probability,
+      :fish_types
+    ]
+    params.require(:fishing_plan).permit(*required_params)
   end
 end
