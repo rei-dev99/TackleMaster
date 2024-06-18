@@ -133,6 +133,8 @@ ja:
       location: 釣りの場所
       method: 釣りの種類
       skill_level: 釣りの経験レベル
+      tackle_type: 釣り具の種類
+      tackle_maker: メーカー
       submit: 提案を受ける
   fishing_plans:
     index:
