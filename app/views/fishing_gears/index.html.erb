@@ -25,6 +25,14 @@
                 <%= f.label :skill_level, t('fishing_gears.index.skill_level'), class: 'text-black font-bold text-xl w-[120px] text-right pr-4' %>
                 <%= f.select :skill_level, options_for_select(['初心者', '中級者', '上級者'], params[:skill_level]), {}, class: 'flex-grow shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-blue border-2' %>
             </div>
+            <div class="flex items-center">
+                <%= f.label :tackle_type, t('fishing_gears.index.tackle_type'), class: 'text-black font-bold text-xl w-[120px] text-right pr-4' %>
+                <%= f.select :tackle_type, options_for_select(['ロッド', 'リール', 'ライン', 'ルアー', 'タックル一式'], params[:tackle_type]), {}, class: 'flex-grow shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-blue border-2' %>
+            </div>
+            <div class="flex items-center">
+                <%= f.label :tackle_maker, t('fishing_gears.index.tackle_maker'), class: 'text-black font-bold text-xl w-[120px] text-right pr-4' %>
+                <%= f.select :tackle_maker, options_for_select(['全て','シマノ', 'ダイワ', 'アブガルシア', 'がまかつ', 'テイルフォーク', 'オリムピック', 'メジャークラフト'], params[:tackle_maker]), {}, class: 'flex-grow shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-blue border-2' %>
+            </div>
             <div class="flex items-center justify-center">
                 <%= f.submit t('fishing_gears.index.submit'), class: 'underline underline-offset-2 text-link font-bold px-4 py-2 ml-8 bg-orange text-white rounded no-underline cursor-pointer hover:opacity-70' %>
             </div>

@@ -9,7 +9,9 @@ class FishingGearsController < ApplicationController
         # OpenAI APIで提案をもらう
         @suggestion = OpenaiService.get_chat_response(params)
         Rails.logger.info("OpenAI Suggestion: #{@suggestion}") # ここでビューに渡す
-        keyword = params[:location] # 提案を元に検索キーワードを決定
+        # 商品名を提案から抽出
+        keyword = self.class.extract_product_name(@suggestion)
+        Rails.logger.info("Extracted Keyword: #{keyword}")
         # 提案回数を増加させる
         @user.increment_suggestion_count
       else
@@ -29,13 +31,22 @@ class FishingGearsController < ApplicationController
   end
 
   def all_params_present?
-    required_params = [:fish_type, :budget, :location, :method, :skill_level]
+    required_params = [:fish_type, :budget, :location, :method, :tackle_type, :tackle_maker, :skill_level]
     required_params.all? { |param| params[param].present? }
   end
 
   def suggestion_limit
     flash.now[:alert] = '提案回数の上限に達しました。'
     redirect_to tackles_path
+  end
+
+  def self.extract_product_name(text)
+    # 商品名を抽出するための正規表現を定義
+    if text =~ /(?:「|")([^「」"]+)(?:」|")/
+      $1.strip
+    else
+      "商品名が見つかりませんでした"
+    end
   end
 
   # 楽天APIを使ってアイテムを検索する

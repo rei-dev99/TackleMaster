@@ -10,6 +10,8 @@ class OpenaiService
       予算: #{params[:budget]}
       釣りの場所: #{params[:location]}
       釣りの種類: #{params[:method]}
+      提案する釣り具の種類: #{params[:tackle_type]}
+      提案するメーカー: #{params[:tackle_maker]}
       釣りの経験レベル: #{params[:skill_level]}
     PROMPT
 
