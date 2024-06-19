@@ -41,9 +41,9 @@ class FishingGearsController < ApplicationController
   end
 
   def self.extract_product_name(text)
-    # 商品名を抽出するための正規表現を定義
+    # 商品名を抽出するための正規表現を定義「」の中の商品をとって代入
     if text =~ /(?:「|")([^「」"]+)(?:」|")/
-      $1.strip
+      $1.strip # $1で([^「」"]+)の部分をとり、.stripは文字列のメソッドで、文字列の先頭と末尾にある空白文字（スペースやタブ、改行など）を取り除く
     else
       "商品名が見つかりませんでした"
     end
