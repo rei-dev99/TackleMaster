@@ -1,27 +1,64 @@
 class FishingGearsController < ApplicationController
   before_action :require_login
   before_action :set_user
+  before_action :set_fishing_gear, only: %i[show edit update destroy]
 
   def index
+    @fishing_gears = @user.fishing_gears
+  end
+
+  def show
+    keyword = self.class.extract_product_name(@fishing_gear.suggestion) # 提案内容から商品名を抽出
+    @items = search_rakuten_api(keyword) # 抽出した商品名で楽天APIを検索
+  end
+
+  def new
+    @fishing_gear = @user.fishing_gears.build # buildは親インスタンスに子インスタンスを作成するときに必要
+    keyword = params[:keyword] || '釣り具' # デフォルト値を設定、値が存在しなければ釣具で検索される
+    @items = search_rakuten_api(keyword) # search_rakuten_apiメソッドを呼び出し結果を@itemsインスタンス変数に代入。これにより、ビューで@itemsを使って検索結果を表示できるようになる
+  end
+
+  def create
+    @fishing_gear = @user.fishing_gears.build(fishing_gear_params)
     if @user.can_suggest?
-      # ユーザーがフォームで入力したデータを取得
-      if all_params_present?
-        # OpenAI APIで提案をもらう
-        @suggestion = OpenaiService.get_chat_response(params)
+      if all_params_present? # ユーザーがフォームで入力したデータを取得
+        @suggestion = OpenaiService.get_chat_response(fishing_gear_params) # OpenAI APIで提案をもらう
         Rails.logger.info("OpenAI Suggestion: #{@suggestion}") # ここでビューに渡す
-        # 商品名を提案から抽出
-        keyword = self.class.extract_product_name(@suggestion)
+        keyword = self.class.extract_product_name(@suggestion) # 商品名を提案から抽出
         Rails.logger.info("Extracted Keyword: #{keyword}")
-        # 提案回数を増加させる
-        @user.increment_suggestion_count
+
+        @fishing_gear.suggestion = @suggestion
+
+        if @fishing_gear.save
+          @user.increment_suggestion_count # 提案回数を増加させる
+          redirect_to @fishing_gear
+        else
+          render :new
+        end
       else
-        keyword = params[:keyword] || '釣り具' # デフォルト値を設定、値が存在しなければ釣具で検索される
+        keyword = params[:keyword] || '釣り具'
+        @items = search_rakuten_api(keyword)
+        render :new
       end
-      @items = search_rakuten_api(keyword) # search_rakuten_apiメソッドを呼び出し結果を@itemsインスタンス変数に代入。これにより、ビューで@itemsを使って検索結果を表示できるようになる
     else
       # 提案回数の上限に達した場合の処理
       suggestion_limit
     end
+  end
+
+  def edit; end
+
+  def update
+    if @fishing_gear.update(fishing_gear_params)
+      redirect_to fishing_gear_path(@fishing_gear)
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    @fishing_gear.destroy
+    redirect_to fishing_gears_path, notice: "提案内容を削除しました", status: :see_other
   end
 
   private
@@ -30,9 +67,17 @@ class FishingGearsController < ApplicationController
     @user = current_user
   end
 
+  def set_fishing_gear
+    @fishing_gear = @user.fishing_gears.find(params[:id])
+  end
+
+  def fishing_gear_params
+    params.require(:fishing_gear).permit(:fish_type, :budget, :location, :fishing_type, :tackle_type, :tackle_maker, :skill_level, :memo)
+  end
+
   def all_params_present?
-    required_params = [:fish_type, :budget, :location, :method, :tackle_type, :tackle_maker, :skill_level]
-    required_params.all? { |param| params[param].present? }
+    required_params = [:fish_type, :budget, :location, :fishing_type, :tackle_type, :tackle_maker, :skill_level]
+    required_params.all? { |param| params[:fishing_gear][param].present? }
   end
 
   def suggestion_limit
@@ -41,8 +86,7 @@ class FishingGearsController < ApplicationController
   end
 
   def self.extract_product_name(text)
-    # 商品名を抽出するための正規表現を定義「」の中の商品をとって代入
-    if text =~ /(?:「|")([^「」"]+)(?:」|")/
+    if text =~ /(?:「|")([^「」"]+)(?:」|")/ # 商品名を抽出するための正規表現を定義「」の中の商品をとって代入
       $1.strip # $1で([^「」"]+)の部分をとり、.stripは文字列のメソッドで、文字列の先頭と末尾にある空白文字（スペースやタブ、改行など）を取り除く
     else
       "商品名が見つかりませんでした"

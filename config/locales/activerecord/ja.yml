@@ -23,6 +23,16 @@ ja:
         name: 小物名
         image: 画像
         memo: メモ
+      fishing_gear:
+        fish_type: 狙う魚
+        budget: 予算
+        location: 釣りの場所
+        fishing_type: 釣りの種類
+        skill_level: 釣りの経験レベル
+        tackle_type: 釣り具の種類
+        tackle_maker: メーカー
+        memo: メモ
+        create_new_suggestion: 新しく提案を受ける
       fishing_plan:
         fish_types: 目的魚種
         tackles: 使用するタックル
