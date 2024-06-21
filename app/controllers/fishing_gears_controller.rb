@@ -98,7 +98,7 @@ class FishingGearsController < ApplicationController
   end
 
   def self.extract_product_name(text)
-    if text =~ /(?:「|")([^「」"]+)(?:」|")/ # 商品名を抽出するための正規表現を定義「」の中の商品をとって代入
+    if text =~ /(?:「)([^」]+)(?:」)/ # 「」の中の商品名を抽出する正規表現
       $1.strip
     else
       nil
