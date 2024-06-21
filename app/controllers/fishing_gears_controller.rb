@@ -4,7 +4,7 @@ class FishingGearsController < ApplicationController
   before_action :set_fishing_gear, only: %i[show edit update destroy]
 
   def index
-    @fishing_gears = @user.fishing_gears
+    @fishing_gears = @user.fishing_gears.page(params[:page]).per(4)
   end
 
   def show
