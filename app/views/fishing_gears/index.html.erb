@@ -1,65 +1,16 @@
 <% content_for(:title, t('.title')) %>
-<div class="py-14 max-w-3xl mx-auto px-4">
+<div class="py-14 md:max-w-screen-lg mx-auto px-4">
     <h1 class="text-center text-3xl text-black font-bold"><%= t('.title') %></h1>
-
-    <div class="mt-8">
-    <%= form_with url: fishing_gears_path, method: :get, local: true do |f| %>
-        <div class="flex flex-col space-y-4">
-            <div class="flex items-center">
-                <%= f.label :fish_type, t('fishing_gears.index.fish_type'), class: 'text-black font-bold text-xl w-[120px] text-right pr-4' %>
-                <%= f.text_field :fish_type, class: 'flex-grow shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-blue border-2', value: params[:fish_type], placeholder: "例：アジ" %>
-            </div>
-            <div class="flex items-center">
-                <%= f.label :budget, t('fishing_gears.index.budget'), class: 'text-black font-bold text-xl w-[120px] text-right pr-4' %>
-                <%= f.text_field :budget, class: 'flex-grow shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-blue border-2', value: params[:budget], placeholder: "例：1万円" %>
-            </div>
-            <div class="flex items-center">
-                <%= f.label :location, t('fishing_gears.index.location'), class: 'text-black font-bold text-xl w-[120px] text-right pr-4' %>
-                <%= f.text_field :location, class: 'flex-grow shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-blue border-2', value: params[:location], placeholder: "例：漁港" %>
-            </div>
-            <div class="flex items-center">
-                <%= f.label :method, t('fishing_gears.index.method'), class: 'text-black font-bold text-xl w-[120px] text-right pr-4' %>
-                <%= f.text_field :method, class: 'flex-grow shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-blue border-2', value: params[:method], placeholder: "例：サビキ釣り" %>
-            </div>
-            <div class="flex items-center">
-                <%= f.label :skill_level, t('fishing_gears.index.skill_level'), class: 'text-black font-bold text-xl w-[120px] text-right pr-4' %>
-                <%= f.select :skill_level, options_for_select(['初心者', '中級者', '上級者'], params[:skill_level]), {}, class: 'flex-grow shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-blue border-2' %>
-            </div>
-            <div class="flex items-center">
-                <%= f.label :tackle_type, t('fishing_gears.index.tackle_type'), class: 'text-black font-bold text-xl w-[120px] text-right pr-4' %>
-                <%= f.select :tackle_type, options_for_select(['ロッド', 'リール', 'ライン', 'ルアー', 'タックル一式'], params[:tackle_type]), {}, class: 'flex-grow shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-blue border-2' %>
-            </div>
-            <div class="flex items-center">
-                <%= f.label :tackle_maker, t('fishing_gears.index.tackle_maker'), class: 'text-black font-bold text-xl w-[120px] text-right pr-4' %>
-                <%= f.select :tackle_maker, options_for_select(['全て','シマノ', 'ダイワ', 'アブガルシア', 'がまかつ', 'テイルフォーク', 'オリムピック', 'メジャークラフト'], params[:tackle_maker]), {}, class: 'flex-grow shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-blue border-2' %>
-            </div>
-            <div class="flex items-center justify-center">
-                <%= f.submit t('fishing_gears.index.submit'), class: 'underline underline-offset-2 text-link font-bold px-4 py-2 ml-8 bg-orange text-white rounded no-underline cursor-pointer hover:opacity-70' %>
-            </div>
-        </div>
-    <% end %>
+    <div class='mt-10 text-center'>
+      <%= link_to t('.create_new_suggestion'), new_fishing_gear_path, class: 'btn bg-orange text-white py-2 px-10 underline-offset-2 hover:orange font-bold ' %>
     </div>
-
-    <% if @suggestion.present? %>
-        <h2 class="text-black font-bold font-bold text-xl">提案内容:</h2>
-        <p class="p-4 border border-2 mt-2 text-black"><%= @suggestion %></p>
-    <% end %>
-
-    <% if @items.any? %>
-    <div class="items flex flex-wrap -mx-2 mt-6">
-        <% @items.each do |item| %>
-        <div class="item w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-2">
-            <div class="border rounded-lg p-4 h-full flex flex-col">
-                <%= link_to item[:url], target: "_blank" do %>
-                    <img src="<%= item[:image] %>" alt="<%= item[:name] %>" class="w-full h-auto text-sm">
-                <% end %>
-                <p class="text-gray-700"><%= item[:name] %></p> <!-- 名前を表示 -->
-                <p class="text-gray-700">価格: ¥<%= item[:price] %></p> <!-- 価格を表示 -->
-            </div>
-        </div>
-        <% end %>
+    <!-- 提案を一覧表示 -->
+    <div class='block md:flex md:flex-wrap mt-10'>
+      <% if @fishing_gears.present? %>
+        <%= render partial: 'fishing_gear', collection: @fishing_gears %>
+      <% else %>
+        <div class="mb-3"><%= t('.please_create_suggestion') %></div>
+      <% end %>
     </div>
-    <% else %>
-        <p class="text-center text-gray-700">商品が見つかりませんでした。</p>
-    <% end %>
+    <%= paginate @fishing_gears %>
 </div>

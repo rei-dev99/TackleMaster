@@ -7,6 +7,13 @@ ja:
     label:
       email: メールアドレス
       password: パスワード
+  views:
+    pagination:
+      first: <i class="fas fa-angle-double-left"></i>
+      last: <i class="fas fa-angle-double-right"></i>
+      previous: <i class="fas fa-angle-left"></i>
+      next: <i class="fas fa-angle-right"></i>
+      truncate: "&hellip;"
   tops:
     index:
       tackle_registration: タックルを登録する
@@ -127,15 +134,92 @@ ja:
       return: 戻る
   fishing_gears:
     index:
+      title: タックル提案一覧
+      create_new_suggestion: 提案を受ける
+      please_create_suggestion: 釣り具の提案を受けましょう！
+    new:
       title: タックル提案
+      submit: 提案を受ける
       fish_type: 狙う魚
       budget: 予算
       location: 釣りの場所
-      method: 釣りの種類
+      fishing_type: 釣りの種類
       skill_level: 釣りの経験レベル
       tackle_type: 釣り具の種類
       tackle_maker: メーカー
-      submit: 提案を受ける
+      example_products: 商品例
+      price: 価格：¥
+      not_found_products: 商品が見つかりませんでした。
+      return: 戻る
+      placeholder:
+        fish_type: 例：アジ
+        budget: 例：1万円
+        location: 例：漁港
+        fishing_type: 例：サビキ釣り
+        memo: 例：何かメモしたいことがあればお書き下さい。提案内容に影響されません。
+      skill_level:
+        beginner: 初心者
+        intermediate: 中級者
+        advanced: 上級者
+      tackle_type:
+        rod: ロッド
+        reel: リール
+        line: ライン
+        lure: ルアー
+        all: タックル一式
+      tackle_maker:
+        all: 全て
+        shimano: シマノ
+        daiwa: ダイワ
+        abugarcia: アブガルシア
+        gamakatsu: ガマカツ
+        tailwalk: テイルウォーク
+        olympic: オリムピック
+        major_craft: メジャークラフト
+    show:
+      title: 提案詳細
+      edit: 編集
+      destroy: 削除
+      content: 内容
+      fish_type: 狙う魚
+      budget: 予算
+      location: 釣りの場所
+      fishing_type: 釣りの種類
+      skill_level: 釣りの経験レベル
+      tackle_type: 釣り具の種類
+      tackle_maker: メーカー
+      suggestion_content: 提案内容
+      memo: メモ
+      none: なし
+      connection_products: 関連商品
+      price: 価格：¥
+      not_found_products: 商品が見つかりませんでした。
+      return: 戻る
+      delete: 削除しますか？
+    fishing_gear:
+      target: 狙い
+      view_details: 詳細
+      budget: 予算
+      location: 場所
+      fishing_type: 釣り方
+      tackle_type: タックルの種類
+      tackle_maker: タックルのメーカー
+      skill_level: スキルレベル
+      suggestion: 提案内容
+      memo: メモ
+    edit:
+      title: 提案編集
+      content: 内容
+      target_fish: 狙う魚
+      budget: 予算
+      location: 釣りの場所
+      fishing_type: 釣りの種類
+      skill_level: 釣りの経験レベル
+      tackle_type: 釣り具の種類
+      tackle_maker: メーカー
+      suggestion: 提案内容
+      return: 戻る
+      submit: 変更
   fishing_plans:
     index:
       title: 釣行プラン

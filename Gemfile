@@ -105,3 +105,6 @@ gem 'config'
 
 # APIを叩く際に使用
 gem 'httparty'
+
+# ページネーション
+gem 'kaminari'

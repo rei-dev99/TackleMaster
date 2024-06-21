@@ -30,7 +30,7 @@ Rails.application.routes.draw do
   # 利用規約
   get "/terms_of_service", to: "tops#terms_of_service"
 
-  resources :fishing_gears, only: %i[index new create]
+  resources :fishing_gears
 
   resources :fishing_plans
 

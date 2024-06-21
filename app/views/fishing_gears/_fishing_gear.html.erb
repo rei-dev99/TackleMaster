@@ -1,0 +1,15 @@
+<div class="w-full md:w-1/2 p-4 text-black">
+    <%= link_to fishing_gear_path(fishing_gear), class: 'block h-full' do %>
+        <div class="bg-white rounded-lg p-6 mb-6 flex flex-col h-full border-[#1E90FF] border-2 hover:shadow-lg transition transform hover:scale-105">
+            <h2 class="text-2xl font-bold mb-4 flex-shrink-0"><%= fishing_gear.fish_type %><%= t('fishing_gears.fishing_gear.target') %></h2>
+            <p class="text-gray-700 mb-2 flex-shrink-0"><strong><%= t('fishing_gears.fishing_gear.budget') %>:</strong> <%= fishing_gear.budget %></p>
+            <p class="text-gray-700 mb-2 flex-shrink-0"><strong><%= t('fishing_gears.fishing_gear.location') %>:</strong> <%= fishing_gear.location %></p>
+            <p class="text-gray-700 mb-2 flex-shrink-0"><strong><%= t('fishing_gears.fishing_gear.fishing_type') %>:</strong> <%= fishing_gear.fishing_type %></p>
+            <p class="text-gray-700 mb-2 flex-shrink-0"><strong><%= t('fishing_gears.fishing_gear.tackle_type') %>:</strong> <%= fishing_gear.tackle_type %></p>
+            <p class="text-gray-700 mb-2 flex-shrink-0"><strong><%= t('fishing_gears.fishing_gear.tackle_maker') %>:</strong> <%= fishing_gear.tackle_maker %></p>
+            <p class="text-gray-700 mb-4 flex-shrink-0"><strong><%= t('fishing_gears.fishing_gear.skill_level') %>:</strong> <%= fishing_gear.skill_level %></p>
+            <p class="text-gray-700 mb-4 flex-grow"><strong><%= t('fishing_gears.fishing_gear.suggestion') %>:</strong><br><%= fishing_gear.suggestion %></p>
+            <p class="text-gray-700"><strong><%= t('fishing_gears.fishing_gear.memo') %>:</strong><br><%= fishing_gear.memo %></p>
+        </div>
+    <% end %>
+</div>
