@@ -9,7 +9,18 @@ class FishingGearsController < ApplicationController
 
   def show
     keyword = self.class.extract_product_name(@fishing_gear.suggestion) # 提案内容から商品名を抽出
-    @items = search_rakuten_api(keyword) # 抽出した商品名で楽天APIを検索
+    if keyword.present?
+      begin
+        @items = search_rakuten_api(keyword) # 抽出した商品名で楽天APIを検索
+      rescue RakutenWebService::WrongParameter => e
+        Rails.logger.error("Rakuten API Error: #{e.message}")
+        @items = [] # 検索が失敗した場合、空の配列を設定
+        @error_message = "商品が見つかりません"
+      end
+    else
+      @items = [] # キーワードが無効な場合、空の配列を設定
+      @error_message = "商品が見つかりません"
+    end
   end
 
   def new
@@ -33,7 +44,8 @@ class FishingGearsController < ApplicationController
           @user.increment_suggestion_count # 提案回数を増加させる
           redirect_to @fishing_gear
         else
-          render :new
+          flash.now[:alert] = '提案の作成に失敗しました'
+          render :new, status: :unprocessable_entity
         end
       else
         keyword = params[:keyword] || '釣り具'
@@ -87,17 +99,17 @@ class FishingGearsController < ApplicationController
 
   def self.extract_product_name(text)
     if text =~ /(?:「|")([^「」"]+)(?:」|")/ # 商品名を抽出するための正規表現を定義「」の中の商品をとって代入
-      $1.strip # $1で([^「」"]+)の部分をとり、.stripは文字列のメソッドで、文字列の先頭と末尾にある空白文字（スペースやタブ、改行など）を取り除く
+      $1.strip
     else
-      "商品名が見つかりませんでした"
+      nil
     end
   end
 
   # 楽天APIを使ってアイテムを検索する
   def search_rakuten_api(keyword)
+    return [] if keyword.blank? # キーワードが空の場合は空の配列を返す
     items = RakutenWebService::Ichiba::Item.search(keyword:).first(8) # 指定されたkeywordを基にアイテムを検索し、結果はitemsに代入
     items.map do |item| # itemsをループし、各アイテムを特定のフォーマットに変換
-      # puts item.inspect # デバッグ用に追加
       { # 各アイテムから必要な情報（名前、価格、URL、画像URL）を抽出
         name: item['itemName'],
         price: item['itemPrice'],

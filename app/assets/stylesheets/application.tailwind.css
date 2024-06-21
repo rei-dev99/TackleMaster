@@ -29,13 +29,13 @@
 
 .card-shine::after {
   content:"";
-height:100%;
-width:30px;
-position:absolute;
-top:-180px;
-left:0;
-background-color: #fff;
-opacity:0;
--webkit-transform: rotate(45deg);
--webkit-animation: shine 3s ease-in-out infinite;
+  height:100%;
+  width:30px;
+  position:absolute;
+  top:-180px;
+  left:0;
+  background-color: #fff;
+  opacity:0;
+  -webkit-transform: rotate(45deg);
+  -webkit-animation: shine 3s ease-in-out infinite;
 }

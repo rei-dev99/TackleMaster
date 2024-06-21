@@ -76,7 +76,9 @@
                     <% end %>
                 </div>
             <% else %>
-                <p class="text-center text-gray-700 mt-4"><%= t('.not_found_products') %></p>
+                <p class="text-center text-gray-700 mt-4">
+                    <%= @error_message.present? ? @error_message : t('.not_found_products') %>
+                </p>
             <% end %>
         </div>
     </div>
