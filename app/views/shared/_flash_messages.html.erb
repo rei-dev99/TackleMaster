@@ -1,5 +1,14 @@
 <% flash.each do |message_type, message| %>
-  <div class="<%= flash_background_color(message_type) %> px-4 py-2 rounded-md text-black">
-    <%= message %>
-  </div>
+  <% case message_type %>
+  <% when "notice" %>
+    <div class="animate-flash fixed md:top-24 top-12 translate-x-1/2 right-6 sm:translate-x-0 z-30 w-fit max-w-[90%] sm:max-w-1/2 md:py-4 py-2 md:px-6 px-4 flex justify-center items-center bg-white shadow-lg border border-blue rounded-[3px]">
+      <p class="text-base font-bold text-blue !leading-none"><%= message %></p>
+    </div>
+  <% when "alert" %>
+    <div class="animate-flash fixed md:top-24 top-12 translate-x-1/2 right-6 sm:translate-x-0 z-30 w-fit max-w-[90%] sm:max-w-1/2 md:py-4 py-2 md:px-6 px-4 flex justify-center items-center bg-white shadow-lg border border-orange rounded-[3px]">
+      <p class="text-base font-bold text-orange text-secondary-200"><%= message %></p>
+    </div>
+  <% else %>
+    <p class="alert alert-<%= key %>"><%= message %></p>
+  <% end %>
 <% end %>

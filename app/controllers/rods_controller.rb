@@ -11,10 +11,10 @@ class RodsController < ApplicationController
     @rod = @tackle.rods.build(rod_params)
     if @rod.save
       @tackle.rods << @rod
-      # 別の書き方TackleRod.create(tackle: @tackle, rod: @rod)
-      redirect_to @tackle
+      redirect_to @tackle, notice: t('rods.create.success')
     else
-      render :new
+      flash.now[:alert] = t('rods.create.failure')
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -22,9 +22,10 @@ class RodsController < ApplicationController
 
   def update
     if @rod.update(rod_params)
-      redirect_to @tackle
+      redirect_to @tackle, notice: t('rods.update.success')
     else
-      render :edit
+      flash.now[:alert] = t('rods.update.failure')
+      render :edit, status: :unprocessable_entity
     end
   end
 
@@ -32,7 +33,7 @@ class RodsController < ApplicationController
     # rodsテーブルのレコードを削除しようとしたときに、そのレコードがtackle_rodsテーブルで参照されているため、外部キー制約に違反
     @rod.tackle_rods.destroy_all
     @rod.destroy
-    redirect_to @tackle
+    redirect_to @tackle, notice: t('rods.destroy.success'), status: :see_other
   end
 
   private

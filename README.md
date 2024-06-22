@@ -83,11 +83,42 @@ MVPリリース時に作っていたいもの
 - Action MailerもしくはFirebase Cloud Messagingで通知
 - Google Maps API
 
-# ■「最適な釣り具提案機能」について
+# ■「釣り具提案機能」について
 ユーザーに向けて、「ターゲット魚種」、「釣り場の種類」、「釣法」、「予算」、「レベル(初心者〜上級者)」を入力してもらい、最適なタックルを一式提案する。
 そこから、タックル結果のような感じで、一式表示されるようにする。
 ここでOpen AI APIで結果が返されるようにする。
 発展させるなら、「釣り具」の入力欄を追加して、タックル一式、ロッド、リール、ライン、ルアーなどが選べるようにして個別に提案できるようにする。
+
+# ■技術構成
+## 使用技術
+<table>
+  <thead>
+    <tr>
+      <th>カテゴリ</th> <th>技術内容</th>
+    </tr>
+  </thead>
+  <tr>
+    <td>バックエンド</td> <td>Ruby3.2.3/Ruby on Rails7.1.3.2</td>
+  </tr>
+  <tr>
+    <td>フロントエンド</td> <td>Tailwindcss/daisyUI</td>
+  </tr>
+  <tr>
+    <td>CSSフレームワーク</td> <td>Ruby on Rails</td>
+  </tr>
+  <tr>
+    <td>Web API</td> <td>OpenAI API(GPT-4o)/Rakuten API/Google OAuth</td>
+  </tr>
+  <tr>
+    <td>データベース</td> <td>PostgreSQL</td>
+  </tr>
+  <tr>
+    <td>環境構築</td> <td>Docker</td>
+  </tr>
+  <tr>
+    <td>インフラ</td> <td>Render/AWS S3</td>
+  </tr>
+</table>
 
 # ■画面遷移図
 https://www.figma.com/file/IyTFoHXk37hss5w02hBsEs/Tackle-Master-%E7%94%BB%E9%9D%A2%E9%81%B7%E7%A7%BB%E5%9B%B3?type=design&node-id=0%3A1&mode=design&t=WoHDNdJyvihqRo84-1
@@ -95,6 +126,8 @@ https://www.figma.com/file/IyTFoHXk37hss5w02hBsEs/Tackle-Master-%E7%94%BB%E9%9D%
 # ■ER図
 ```mermaid
 erDiagram
+  users ||--o{ fishing_gear: "ユーザーは複数の釣り具提案内容を持つ"
+  users ||--o{ fishing_plans: "ユーザーは複数の釣行プランを持つ"
   users ||--o{ tackles: "ユーザーは複数のタックルを持つ"
   tackles ||--o{ tackle_rods: "タックルに対して複数のロッドを持つ"
   rods ||--o{ tackle_rods: "ロッドに対して複数のタックルを持つ"
@@ -102,6 +135,7 @@ erDiagram
   reels ||--o{ tackle_reels: "リールに対して複数のタックルを持つ"
   tackles ||--o{ tackle_accesories: "タックルに対して複数の小物を持つ"
   accesories ||--o{ tackle_accesories: "小物に対して複数のタックルを持つ"
+  tackles ||--o{ fishing_plans: "タックルに対して複数の釣行プランタックルが関連付けられている"
 
   users {
     bigint id PK "ユーザーID"
@@ -110,7 +144,21 @@ erDiagram
     string crypted_password "暗号化パスワード"
     string salt "ソルト"
     timestamp created_at "作成日"
-    timestamp deleted_at "更新日"
+    timestamp updated_at "更新日"
+  }
+
+  fishing_gear {
+    bigint id PK "釣り具提案ID"
+    bigint user_id FK "ユーザーID"
+    string fish_type "狙う魚種"
+    string budget "予算"
+    string location "釣りの場所"
+    string fishing_type "釣りの種類"
+    string skill_level "釣りの経験レベル"
+    string tackle_type "釣り具の種類"
+    string maker "メーカー"
+    text suggestion "提案内容"
+    text memo "メモ"
   }
 
   tackles {
@@ -118,7 +166,7 @@ erDiagram
     bigint user_id FK "ユーザーID"
     string name "タックル名"
     timestamp created_at "作成日"
-    timestamp deleted_at "更新日"
+    timestamp updated_at "更新日"
   }
 
   rods {
@@ -126,7 +174,7 @@ erDiagram
     string name "ロッド名"
     text memo "メモ"
     timestamp created_at "作成日"
-    timestamp deleted_at "更新日"
+    timestamp updated_at "更新日"
   }
 
   tackle_rods {
@@ -134,7 +182,7 @@ erDiagram
     bigint id FK "タックルID"
     bigint id FK "ロッドID"
     timestamp created_at "作成日"
-    timestamp deleted_at "更新日"
+    timestamp updated_at "更新日"
   }
 
   reels {
@@ -142,7 +190,7 @@ erDiagram
     string name "リール名"
     text memo "メモ"
     timestamp created_at "作成日"
-    timestamp deleted_at "更新日"
+    timestamp updated_at "更新日"
   }
 
   tackle_reels {
@@ -150,7 +198,7 @@ erDiagram
     bigint id FK "タックルID"
     bigint id FK "リールID"
     timestamp created_at "作成日"
-    timestamp deleted_at "更新日"
+    timestamp updated_at "更新日"
   }
 
   accesories {
@@ -158,7 +206,7 @@ erDiagram
     string name "小物名"
     text memo "メモ"
     timestamp created_at "作成日"
-    timestamp deleted_at "更新日"
+    timestamp updated_at "更新日"
   }
 
   tackle_accesories {
@@ -166,6 +214,21 @@ erDiagram
     bigint id FK "タックルID"
     bigint id FK "小物ID"
     timestamp created_at "作成日"
-    timestamp deleted_at "更新日"
+    timestamp updated_at "更新日"
+  }
+
+  fishing_plans {
+    bigint id PK "釣行プランID"
+    bigint tackle_id FK "タックルID"
+    bigint user_id FK "ユーザーID"
+    string fish_type "魚種名称"
+    data fishing_date "釣行日"
+    string location "釣行場所"
+    float temperature "気温"
+    float wind_speed "風速"
+    string weather_condition "天気状態"
+    float precipitation_probability "降水確率"
+    timestamp created_at "作成日"
+    timestamp updated_at "更新日"
   }
 ```

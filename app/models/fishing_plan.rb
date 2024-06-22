@@ -4,6 +4,7 @@ class FishingPlan < ApplicationRecord
 
   validates :fishing_date, presence: true
   validates :location, presence: true
+  validates :fish_types, presence: true
 
   def not_past_date
     return unless fishing_date.present? && fishing_date < Date.today

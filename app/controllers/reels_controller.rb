@@ -11,9 +11,10 @@ class ReelsController < ApplicationController
     @reel = @tackle.reels.build(reel_params)
     if @reel.save
       @tackle.reels << @reel
-      redirect_to @tackle
+      redirect_to @tackle, notice: t('reels.create.success')
     else
-      render :new
+      flash.now[:alert] = t('reels.create.failure')
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -21,16 +22,17 @@ class ReelsController < ApplicationController
 
   def update
     if @reel.update(reel_params)
-      redirect_to @tackle
+      redirect_to @tackle, notice: t('reels.update.success')
     else
-      render :edit
+      flash.now[:alert] = t('reels.update.failure')
+      render :edit, status: :unprocessable_entity
     end
   end
 
   def destroy
     @reel.tackle_reels.destroy_all
     @reel.destroy
-    redirect_to @tackle
+    redirect_to @tackle, notice: t('reels.destroy.success'), status: :see_other
   end
 
   private
