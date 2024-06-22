@@ -88,7 +88,7 @@ class FishingGearsController < ApplicationController
   end
 
   def suggestion_limit
-    redirect_to tackles_path, alert: t('fishing_gears.suggestion_limit.failure')
+    redirect_to fishing_gears_path, alert: t('fishing_gears.suggestion_limit.failure')
   end
 
   def self.extract_product_name(text)
