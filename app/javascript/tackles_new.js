@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("turbo:load", function() {
     var button = document.getElementById("suggestion");
     button.addEventListener("click", function() {
         var message = document.getElementById("wait");
