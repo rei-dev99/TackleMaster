@@ -29,10 +29,14 @@ ja:
       to_register_page: 新規登録ページへ
       password_forget: パスワードをお忘れの方はこちら
     create:
-      success: ログイン完了です
-      failure: ログイン失敗です
+      success: ログインに成功しました
+      failure: ログインに失敗しました
     destroy:
       success: ログアウトしました
+  oauths:
+    cancel: "Google認証がキャンセルされました"
+    success: "%{provider}アカウントでログインしました"
+    failure: "%{provider}アカウントでのログインに失敗しました: %{error}"
   users:
     new:
       title: ユーザー登録
@@ -40,15 +44,21 @@ ja:
       submit: 登録
       to_login_page: ログインページへ
     create:
-      success: ユーザー登録が完了しました
+      success: ユーザー登録に成功しました
       failure: ユーザー登録に失敗しました
   password_resets:
     new:
       title: パスワードリセット申請
       submit: 申請
+    create:
+      send_mail: パスワードリセットのメールを送信しました
+      not_found: Emailが見つかりません
     edit:
       title: パスワードリセット
       submit: リセット
+    update:
+      success: パスワードのリセットが完了しました
+      failure: パスワードのリセットに失敗しました
   header:
     title: Tackle Master
     sign_up: 新規登録
@@ -78,8 +88,8 @@ ja:
       submit: タックル登録
       return: 戻る
     create:
-      success: タックル作成完了です
-      failure: タックス作成に失敗しました
+      success: タックルの作成が完了しました
+      failure: タックスの作成に失敗しました
     show:
       add_fishing_gear: 釣り具を追加する
       please_add_fishing_gear: 釣り具を追加しましょう！
@@ -92,8 +102,8 @@ ja:
       submit: タックル変更
       return: 戻る
     update:
-      success: タックルを更新しました
-      failure: タックス更新に失敗しました
+      success: タックルの更新が完了しました
+      failure: タックスの更新に失敗しました
     destroy:
       success: タックルを削除しました
   rods:
@@ -110,28 +120,49 @@ ja:
       title: ロッド編集
       submit: ロッド変更
       return: 戻る
+    update:
+      success: ロッドの更新が完了しました
+      failure: ロッドの更新に失敗しました
+    destroy:
+      success: ロッドを削除しました
   reels:
     new:
       title: リール追加
       submit: リール登録
       return: 戻る
+    create:
+      success: リールを作成しました
+      failure: リールの作成に失敗しました
     reel:
       delete: 削除しますか？
     edit:
       title: リール編集
       submit: リール変更
       return: 戻る
+    update:
+      success: リールの更新が完了しました
+      failure: リールの更新に失敗しました
+    destroy:
+      success: リールを削除しました
   accesories:
     new:
       title: 小物追加
       submit: 小物登録
       return: 戻る
+    create:
+      success: 小物を作成しました
+      failure: 小物の作成に失敗しました
     accesory:
       delete: 削除しますか？
     edit:
       title: 小物編集
       submit: 小物変更
       return: 戻る
+    update:
+      success: 小物の更新が完了しました
+      failure: 小物の更新に失敗しました
+    destroy:
+      success: 小物を削除しました
   fishing_gears:
     index:
       title: タックル提案一覧
@@ -149,6 +180,7 @@ ja:
       tackle_maker: メーカー
       example_products: 商品例
       price: 価格：¥
+      fishing_gear: 釣り具
       not_found_products: 商品が見つかりませんでした。
       return: 戻る
       placeholder:
@@ -193,7 +225,7 @@ ja:
       none: なし
       connection_products: 関連商品
       price: 価格：¥
-      not_found_products: 商品が見つかりませんでした。
+      not_found_products: 商品が見つかりませんでした
       return: 戻る
       delete: 削除しますか？
     fishing_gear:
@@ -207,6 +239,9 @@ ja:
       skill_level: スキルレベル
       suggestion: 提案内容
       memo: メモ
+    create:
+      success: 提案の作成が完了しました
+      failure: 提案の作成に失敗しました
     edit:
       title: 提案編集
       content: 内容
@@ -220,6 +255,13 @@ ja:
       suggestion: 提案内容
       return: 戻る
       submit: 変更
+    update:
+      success: 提案の更新が完了しました
+      failure: 提案の更新に失敗しました
+    destroy:
+      success: 提案を削除しました
+    suggestion_limit:
+      failure: 提案回数の上限に達しました
   fishing_plans:
     index:
       title: 釣行プラン
@@ -229,9 +271,17 @@ ja:
       title: 釣行予定作成
       return: 戻る
       submit: 登録
+    create:
+      success: 釣行プランを作成しました
+      failure: 釣行プランの作成に失敗しました
     fishing_plan:
       delete: 削除しますか？
     edit:
       title: 釣行プラン編集
       return: 戻る
       submit: 登録
+    update:
+      success: 釣行プランの更新が完了しました
+      failure: 釣行プランの更新に失敗しました
+    destroy:
+      success: 釣行プランを削除しました

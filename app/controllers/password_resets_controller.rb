@@ -7,10 +7,9 @@ class PasswordResetsController < ApplicationController
     @user = User.find_by(email: params[:email])
     if @user
       @user.deliver_reset_password_instructions!
-      redirect_to login_path
-      flash[:notice] = 'パスワードリセットのメールを送信しました'
+      redirect_to login_path, notice: t('password_resets.create.send_mail')
     else
-      flash[:alert] = 'Emailが見つかりません'
+      flash.now[:alert] = t('password_resets.create.not_found')
       render :new, status: :unprocessable_entity
     end
   end
@@ -29,9 +28,9 @@ class PasswordResetsController < ApplicationController
 
     @user.password_confirmation = params[:user][:password_confirmation]
     if @user.change_password(params[:user][:password])
-      redirect_to login_path
-      flash[:notice] = 'パスワードがリセットされました'
+      redirect_to login_path, notice: t('password_resets.update.success')
     else
+      flash.now[:alert] = t('password_resets.update.failure')
       render :edit, status: :unprocessable_entity
     end
   end

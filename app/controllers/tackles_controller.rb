@@ -1,8 +1,9 @@
 class TacklesController < ApplicationController
   before_action :require_login
+  before_action :set_tackle, only: %i[edit update destroy]
 
   def index
-    @tackles = current_user.tackles
+    @tackles = current_user.tackles.page(params[:page]).per(6)
   end
 
   def show
@@ -16,34 +17,34 @@ class TacklesController < ApplicationController
   def create
     @tackle = current_user.tackles.build(tackle_params)
     if @tackle.save
-      # 保存成功時 一覧ページへリダイレクト
-      redirect_to tackles_path
+      redirect_to tackles_path, notice: t('tackles.create.success')
     else
-      # 保存失敗時 新規登録フォームを再表示
+      flash.now[:alert] = t('tackles.create.failure')
       render :new, status: :unprocessable_entity
     end
   end
 
-  def edit
-    @tackle = current_user.tackles.find(params[:id])
-  end
+  def edit; end
 
   def update
-    @tackle = current_user.tackles.find(params[:id])
     if @tackle.update(tackle_params)
-      redirect_to tackles_path, notice: 'タックルを更新しました'
+      redirect_to tackles_path, notice: t('tackles.update.success')
     else
+      flash.now[:alert] = t('tackles.update.failure')
       render :edit, status: :unprocessable_entity
     end
   end
 
   def destroy
-    @tackle = current_user.tackles.find(params[:id])
     @tackle.destroy
-    redirect_to tackles_path, notice: 'タックルを削除しました', status: :see_other
+    redirect_to tackles_path, notice: t('tackles.destroy.success'), status: :see_other
   end
 
   private
+
+  def set_tackle
+    @tackle = current_user.tackles.find(params[:id])
+  end
 
   def tackle_params
     params.require(:tackle).permit(:name, :image)

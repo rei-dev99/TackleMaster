@@ -15,9 +15,10 @@ class FishingPlansController < ApplicationController
   def create
     @plan = current_user.fishing_plans.build(fishing_plan_params)
     if @plan.save
-      redirect_to fishing_plans_path
+      redirect_to fishing_plans_path, notice: t('fishing_plans.create.success')
     else
       @tackles = current_user.tackles
+      flash.now[:alert] = t('fishing_plans.create.failure')
       render :new, status: :unprocessable_entity
     end
   end
@@ -28,16 +29,17 @@ class FishingPlansController < ApplicationController
 
   def update
     if @plan.update(fishing_plan_params)
-      redirect_to fishing_plans_path
+      redirect_to fishing_plans_path, notice: t('fishing_plans.update.success')
     else
       @tackles = current_user.tackles
+      flash.now[:alert] = t('fishing_plans.update.failure')
       render :edit, status: :unprocessable_entity
     end
   end
 
   def destroy
     @plan.destroy
-    redirect_to fishing_plans_path, notice: "釣行予定を削除しました", status: :see_other
+    redirect_to fishing_plans_path, notice: t('fishing_plans.destroy.success'), status: :see_other
   end
 
   private

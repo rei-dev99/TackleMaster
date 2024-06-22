@@ -35,20 +35,19 @@ class OauthsController < ApplicationController
   end
 
   def handle_auth_cancellation
-    flash[:alert] = "Google認証がキャンセルされました"
-    redirect_to root_path
+    redirect_to root_path, alert: t('oauths.cancel')
   end
 
   def handle_existing_user(provider)
-    redirect_to tackles_path, success: "#{provider.titleize}アカウントでログインしました"
+    redirect_to tackles_path, notice: t('oauths.success', provider: provider.titleize)
   end
 
   # ユーザーが存在しない場合はプロバイダ情報を元に新規ユーザーを作成し、ログイン
   def handle_new_user(provider)
     signup_and_login(provider)
-    redirect_to tackles_path, success: "#{provider.titleize}アカウントでログインしました"
+    redirect_to tackles_path, notice: t('oauths.success', provider: provider.titleize)
   rescue StandardError => e
-    flash.now[:alert] = "#{provider.titleize}アカウントでのログインに失敗しました: #{e.message}"
+    redirect_to root_path, alert: t('oauths.failure', provider: provider.titleize, error: e.message)
     redirect_to root_path
   end
 end

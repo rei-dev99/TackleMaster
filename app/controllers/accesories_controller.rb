@@ -11,9 +11,10 @@ class AccesoriesController < ApplicationController
     @accesory = @tackle.accesories.build(accesory_params)
     if @accesory.save
       @tackle.accesories << @accesory
-      redirect_to @tackle
+      redirect_to @tackle, notice: t('accesories.create.success')
     else
-      render :new
+      flash.now[:alert] = t('accesories.create.failure')
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -21,16 +22,17 @@ class AccesoriesController < ApplicationController
 
   def update
     if @accesory.update(accesory_params)
-      redirect_to @tackle
+      redirect_to @tackle, notice: t('accesories.update.success')
     else
-      render :edit
+      flash.now[:alert] = t('accesories.update.failure')
+      render :edit, status: :unprocessable_entity
     end
   end
 
   def destroy
     @accesory.tackle_accesories.destroy_all
     @accesory.destroy
-    redirect_to @tackle
+    redirect_to @tackle, notice: t('accesories.destroy.success'), status: :see_other
   end
 
   private
