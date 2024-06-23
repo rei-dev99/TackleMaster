@@ -4,7 +4,7 @@
     <div class="space-x-6 font-bold hidden md:block">
       <%= link_to t('header.tackles_page'), tackles_path, class: 'text-lg hover:opacity-70 transition-all duration-300' %>
       <%= link_to t('header.search_tackle'), fishing_gears_path, class: 'text-lg hover:opacity-70 transition-all duration-300' %>
-      <%= link_to t('header.fishing_plan_page'), fishing_plans_path, class: 'text-lg hover:opacity-70 transition-all duration-300' %>
+      <%= link_to t('header.explanation'), explanation_path, class: 'text-lg hover:opacity-70 transition-all duration-300' %>
       <%= link_to t('header.logout'), logout_path, class: 'text-lg hover:opacity-70 transition-all duration-300', data: { turbo_method: :delete } %>
     </div>
     <button class="block md:hidden" onclick="my_modal_2.showModal()"><i class="fa-solid fa-gear md:hidden text-white text-xl"></i></button>
@@ -13,7 +13,8 @@
   <dialog id="my_modal_2" class="modal"><!-- モーダルウィンドウ -->
     <div class="modal-box bg-silver flex flex-col justify-center text-center">
       <div class="flex justify-center flex-col text-bold">
-        <%= link_to t('header.logout'), logout_path, class: 'text-lg hover:opacity-70 transition-all duration-300', data: { turbo_method: :delete } %>
+        <%= link_to t('header.logout'), logout_path, class: 'md:text-lg text-sm hover:opacity-70 transition-all duration-300', data: { turbo_method: :delete } %>
+        <%= link_to t('header.fishing_plan_page'), fishing_plans_path, class: 'md:text-lg text-sm hover:opacity-70 transition-all duration-300' %>
         <%= render 'shared/common_footer_links' %>
       </div>
       <ul class='flex space-x-6 justify-center mt-4'>
