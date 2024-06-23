@@ -1,0 +1,14 @@
+<%= form_with model: @tackle, class: 'mt-6' do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+    <div class='mt-10'>
+        <%= f.label :name, class: 'text-black font-bold text-xl required' %>
+        <%= f.text_field :name, class: 'shadow appearance-none border-2 border-blue rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' %>
+    </div>
+    <div class='mt-10'>
+        <%= f.label :image, class: 'text-black font-bold text-xl required' %>
+        <%= f.file_field :image, class: 'shadow appearance-none border-2 border-blue rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' %>
+    </div>
+    <div class='mt-8 text-center'>
+        <button type="submit" class="btn font-bold bg-blue text-white hover:bg-blue-700 py-2 px-10 rounded focus:outline-none focus:shadow-outline"><%= t('.submit') %></button>
+    </div>
+<% end %>
