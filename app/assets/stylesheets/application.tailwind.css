@@ -39,3 +39,9 @@
   -webkit-transform: rotate(45deg);
   -webkit-animation: shine 3s ease-in-out infinite;
 }
+
+.required::after {
+  content: '*';
+  color: #FF7F50;
+  margin-left: 0.25rem;
+}
