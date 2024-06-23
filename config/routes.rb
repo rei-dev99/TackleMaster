@@ -25,6 +25,9 @@ Rails.application.routes.draw do
   get 'oauth/callback', to: 'oauths#callback'
   get 'oauth/:provider', to: 'oauths#oauth', as: :auth_at_provider
 
+  # 釣り具解説ページ
+  get '/explanation/', to: "tops#explanation"
+
   # ポリシー
   get "/privacy_policy", to: "tops#privacy_policy"
   # 利用規約
