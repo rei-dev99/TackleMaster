@@ -41,6 +41,7 @@
         </div>
 
         <%= form_with model: @fishing_gear,class: "mt-8", local: true do |f| %>
+        <%= render 'shared/error_messages', object: f.object %>
             <div class="flex flex-col">
                 <%= f.label :memo, class: 'text-black font-bold text-xl' %>
                 <%= f.text_area :memo, class: "p-4 border-[#1E90FF] border-2 mt-2 rounded-lg text-black" %>

@@ -3,27 +3,34 @@
   <div class='py-14 max-w-lg mx-auto px-4'>
     <h1 class='text-center text-3xl text-black font-bold'><%= t('.title') %></h1>
     <p class='text-center text-black mt-2'><%= t('.description') %></p>
-    <%= form_with(model: @user, class: 'mt-6') do |f| %>
-      <div class=''>
-        <%= f.label :name, class: 'text-black font-bold' %>
-        <%= f.text_field :name, class: 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' %>
-      </div>
+    <%= form_with(model: @user, class: 'mt-4') do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+
       <div class='mt-4'>
-        <%= f.label :email, class: 'text-black font-bold' %>
-        <%= f.email_field :email, class: 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' %>
+        <%= f.label :name, class: 'text-black font-bold required' %>
+        <%= f.text_field :name, class: 'shadow appearance-none border-2 border-blue rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' %>
       </div>
+
       <div class='mt-4'>
-        <%= f.label :password, class: 'text-black font-bold' %>
-        <%= f.password_field :password, class: 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' %>
+        <%= f.label :email, class: 'text-black font-bold required' %>
+        <%= f.email_field :email, class: 'shadow appearance-none border-2 border-blue rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' %>
       </div>
+
       <div class='mt-4'>
-        <%= f.label :password_confirmation, class: 'text-black font-bold' %>
-        <%= f.password_field :password_confirmation, class: 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' %>
+        <%= f.label :password, class: 'text-black font-bold required' %>
+        <%= f.password_field :password, class: 'shadow appearance-none border-2 border-blue rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' %>
       </div>
+
+      <div class='mt-4'>
+        <%= f.label :password_confirmation, class: 'text-black font-bold required' %>
+        <%= f.password_field :password_confirmation, class: 'shadow appearance-none border-2 border-blue rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' %>
+      </div>
+
       <div class='mt-8 text-center'>
         <button type="submit" class="font-bold bg-orange text-white hover:bg-blue-700 py-2 px-10 rounded focus:outline-none focus:shadow-outline btn"><%= t('.submit') %></button>
       </div>
     <% end %>
+
     <div class='mt-4 text-center'>
       <%= link_to t('.to_login_page'), login_path, class: 'underline underline-offset-2 text-link hover:orange font-bold' %>
     </div>
