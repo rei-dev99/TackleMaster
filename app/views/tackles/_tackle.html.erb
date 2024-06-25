@@ -1,23 +1,55 @@
-<div class='md:w-1/2 p-3 w-full z-1'>
-  <div class='flex flex-col justify-between h-44 md:h-56 text-center shadow-xl bg-white rounded-lg overflow-hidden relative'>
-    <%= image_tag tackle.image, class: "w-full h-full object-cover" if tackle.image.attached? %>
-    <div class='absolute inset-0 flex items-center justify-center z-10'>
-      <div class='text-center'>
-        <h2 class='text-xl md:text-2xl font-bold text-white font-bold text-stroke'>
-          <%= tackle.name %>
-        </h2>
-        <div class='mt-8'>
-          <%= link_to t('.detail'), tackle_path(tackle), class: 'btn bg-blue text-white md:px-10 underline-offset-2 font-bold text-xs md:text-sm' %>
-        </div>
-      </div>
-    </div>
-    <div class='flex justify-end absolute right-2 bottom-2 z-10'>
+<div class="flex flex-col justify-between text-center shadow-xl bg-white rounded-lg overflow-hidden">
+  <div class="overflow-hidden">
+    <%= link_to tackle_path(tackle), class: "block hover:shadow-lg transition-transform duration-300 transition transform hover:scale-105" do %>
+      <%= image_tag tackle.image, class: "w-full md:h-60 h-52 object-cover" if tackle.image.attached? %>
+    <% end %>
+  </div>
+
+  <div class="md:px-6 px-3 md:pt-6 pt-3 md:pb-10 pb-8 relative">
+    <h2 class="text-center text-xl md:text-2xl font-bold font-bold text-blue"><%= tackle.name %></h2>
+    <ul class="mt-4 text-orange flex justify-center md:text-sm text-xs">
+
+      <% rod_count = tackle.rods.present? ? tackle.rods.count : 0 %>
+      <% reel_count = tackle.reels.present? ? tackle.reels.count : 0 %>
+      <% accesory_count = tackle.accesories.present? ? tackle.accesories.count : 0 %>
+      <% total_count = rod_count + reel_count + accesory_count %>
+
+      <% if tackle.rods.present? %>
+        <li class="border border-2 p-1 rounded-full font-bold">ロッド：<%= tackle.rods.count %></li>
+      <% else %>
+        <li></li>
+      <% end %>
+
+      <% if tackle.reels.present? %>
+        <li class="border border-2 p-1 rounded-full font-bold mx-2">リール：<%= tackle.reels.count %></li>
+      <% else %>
+        <li></li>
+      <% end %>
+
+      <% if tackle.accesories.present? %>
+        <li class="border border-2 p-1 rounded-full font-bold">小物：<%= tackle.accesories.count %></li>
+      <% else %>
+        <li></li>
+      <% end %>
+
+      <% if total_count > 0 %>
+        <li class="text-orange border border-2 p-1 rounded-full font-bold mx-2">合計：<%= total_count %></li>
+      <% else %>
+        <li></li>
+      <% end %>
+    </ul>
+
+    <div class='flex justify-end absolute right-2 bottom-2 z-10 md:text-base text-sm'>
       <%= link_to edit_tackle_path(tackle) do %>
         <i class="fa-solid fa-pen text-blue"></i>
       <% end %>
       <%= link_to tackle_path(tackle), method: :delete, data: { turbo_method: :delete, turbo_confirm: t('.delete') }, class: 'ml-2' do %>
         <i class="fa-solid fa-trash text-blue"></i>
       <% end %>
+    </div>
+
+    <div class='md:text-base text-sm text-silver absolute left-2 bottom-2 md:text-base text-sm'>
+      <p><%= tackle.updated_at.strftime('%Y/%m/%d %H:%M') %></p>
     </div>
   </div>
 </div>

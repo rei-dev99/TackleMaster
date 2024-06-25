@@ -1,14 +1,14 @@
-<%= form_with model: @tackle, class: 'mt-6' do |f| %>
+<%= form_with model: @tackle, class: 'md:mt-10 mt-5' do |f| %>
     <%= render 'shared/error_messages', object: f.object %>
-    <div class='mt-10'>
-        <%= f.label :name, class: 'text-black font-bold text-xl required' %>
-        <%= f.text_field :name, class: 'shadow appearance-none border-2 border-blue rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' %>
+    <div class='md:mt-10 mt-5'>
+        <%= f.label :name, class: 'text-black font-bold md:text-xl text-lg required' %>
+        <%= f.text_field :name, class: 'shadow appearance-none border-2 border-blue rounded w-full md:py-2 py-1 md:px-3 px-2 text-black leading-tight focus:outline-none focus:shadow-outline', placeholder: t('.placeholder.name') %>
     </div>
-    <div class='mt-10'>
-        <%= f.label :image, class: 'text-black font-bold text-xl required' %>
-        <%= f.file_field :image, class: 'shadow appearance-none border-2 border-blue rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' %>
+    <div class='md:mt-10 mt-5'>
+        <%= f.label :image, class: 'text-black font-bold md:text-xl text-lg required' %>
+        <%= f.file_field :image, class: 'shadow appearance-none border-2 border-blue rounded w-full md:py-2 py-1 md:px-3 px-2 text-black leading-tight focus:outline-none focus:shadow-outline' %>
     </div>
-    <div class='mt-8 text-center'>
-        <button type="submit" class="btn font-bold bg-blue text-white hover:bg-blue-700 py-2 px-10 rounded focus:outline-none focus:shadow-outline"><%= t('.submit') %></button>
+    <div class='md:mt-8 mt-4 text-center'>
+        <button type="submit" class="md:text-base text-sm btn font-bold bg-blue text-white hover:bg-blue-700 md:py-2 py-1 md:px-10 px-5 rounded focus:outline-none focus:shadow-outline"><%= t('.submit') %></button>
     </div>
 <% end %>
