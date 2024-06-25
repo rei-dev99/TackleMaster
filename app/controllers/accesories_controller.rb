@@ -46,6 +46,6 @@ class AccesoriesController < ApplicationController
   end
 
   def accesory_params
-    params.require(:accesory).permit(:name, :memo, :image)
+    params.require(:accesory).permit(:name, :maker, :memo, :image)
   end
 end

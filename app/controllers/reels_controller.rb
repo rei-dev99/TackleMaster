@@ -46,6 +46,6 @@ class ReelsController < ApplicationController
   end
 
   def reel_params
-    params.require(:reel).permit(:name, :memo, :image)
+    params.require(:reel).permit(:name, :maker, :memo, :image)
   end
 end

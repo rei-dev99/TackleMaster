@@ -47,6 +47,6 @@ class RodsController < ApplicationController
   end
 
   def rod_params
-    params.require(:rod).permit(:name, :memo, :image)
+    params.require(:rod).permit(:name, :maker, :memo, :image)
   end
 end
