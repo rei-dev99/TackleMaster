@@ -1,7 +1,9 @@
 class AccesoriesController < ApplicationController
   before_action :require_login
-  before_action :set_tackle, only: %i[new create edit update destroy]
-  before_action :set_accesory, only: %i[edit update destroy]
+  before_action :set_tackle, only: %i[show new create edit update destroy]
+  before_action :set_accesory, only: %i[show edit update destroy]
+
+  def show; end
 
   def new
     @accesory = @tackle.accesories.build
