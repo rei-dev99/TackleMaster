@@ -3,7 +3,7 @@ class TacklesController < ApplicationController
   before_action :set_tackle, only: %i[edit update destroy]
 
   def index
-    @tackles = current_user.tackles.page(params[:page]).per(6)
+    @tackles = current_user.tackles.order(created_at: :desc).page(params[:page]).per(6)
   end
 
   def show
