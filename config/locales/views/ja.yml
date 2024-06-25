@@ -21,6 +21,8 @@ ja:
       title: プライバシーポリシー
     terms_of_service:
       title: 利用規約
+    explanation:
+      title: タックル解説
   user_sessions:
     new:
       title: ログイン
@@ -40,7 +42,7 @@ ja:
   users:
     new:
       title: ユーザー登録
-      description: 〜自分だけのタックルが登録できるようになります〜
+      description: 〜釣り具の提案に加えタックル登録ができるようになります〜
       submit: 登録
       to_login_page: ログインページへ
     create:
@@ -65,11 +67,13 @@ ja:
     search_tackle: タックル提案
     tackles_page: タックル一覧
     fishing_plan_page: 釣行プラン
+    explanation: タックルについて
     login: ログイン
     logout: ログアウト
   footer:
     title: Tackle Master
     contact: お問い合わせ
+    explanation: タックルについて
     terms_of_service: 利用規約
     privacy_policy: プライバシーポリシー
     tackles_page: タックル一覧
@@ -77,8 +81,11 @@ ja:
     fishing_plan_page: 釣行プラン
   tackles:
     tackle:
-      detail: タックル詳細
       delete: 削除しますか？
+    tackles_form:
+      submit: タックル登録
+      placeholder:
+        name: 例：ダイソータックル
     index:
       title: マイページタックル一覧
       create_new_tackle: 新しいタックルを作成する
@@ -107,12 +114,20 @@ ja:
     destroy:
       success: タックルを削除しました
   rods:
+    show:
+      edit: 編集
+      destroy: 削除
+      maker: メーカー
+      memo: メモ
+      return: 戻る
     new:
       title: ロッド追加
       submit: ロッド登録
       return: 戻る
     rod:
       delete: 削除しますか？
+    rods_form:
+      submit: ロッド登録
     create:
       success: ロッドを作成しました
       failure: ロッドの作成に失敗しました
@@ -126,6 +141,12 @@ ja:
     destroy:
       success: ロッドを削除しました
   reels:
+    show:
+      edit: 編集
+      destroy: 削除
+      maker: メーカー
+      memo: メモ
+      return: 戻る
     new:
       title: リール追加
       submit: リール登録
@@ -135,6 +156,8 @@ ja:
       failure: リールの作成に失敗しました
     reel:
       delete: 削除しますか？
+    reels_form:
+      submit: リール登録
     edit:
       title: リール編集
       submit: リール変更
@@ -145,6 +168,12 @@ ja:
     destroy:
       success: リールを削除しました
   accesories:
+    show:
+      edit: 編集
+      destroy: 削除
+      maker: メーカー
+      memo: メモ
+      return: 戻る
     new:
       title: 小物追加
       submit: 小物登録
@@ -154,6 +183,8 @@ ja:
       failure: 小物の作成に失敗しました
     accesory:
       delete: 削除しますか？
+    accesories_form:
+      submit: 小物登録
     edit:
       title: 小物編集
       submit: 小物変更
