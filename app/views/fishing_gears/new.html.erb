@@ -1,46 +1,46 @@
 <% content_for(:title, t('.title')) %>
-<div class="py-14 md:max-w-screen-lg mx-auto px-4">
-    <h1 class="text-center text-3xl text-black font-bold"><%= t('.title') %></h1>
+<div class="md:py-14 py-7 md:max-w-1200 max-w-full mx-auto md:px-4 px-2">
+    <h1 class="text-center md:text-3xl text-2xl text-black font-bold"><%= t('.title') %></h1>
 
-    <div class="mt-8">
-        <%= form_with model: @fishing_gear, local: true do |f| %>
+    <div class="md:mt-8 mt-4">
+        <%= form_with model: @fishing_gear, local: true, id: 'fishing-gear-form' do |f| %>
         <%= render 'shared/error_messages', object: f.object %>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-black">
                 <div class="flex flex-col">
-                    <%= f.label :fish_type, class: 'text-black font-bold text-xl mb-2 required' %>
-                    <%= f.text_field :fish_type, class: 'shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-blue border-2', value: params[:fish_type], placeholder: t('.placeholder.fish_type') %>
+                    <%= f.label :fish_type, class: 'text-black font-bold md:text-xl text-lg required' %>
+                    <%= f.text_field :fish_type, class: 'shadow appearance-none border rounded md:mt-2 mt-1 md:py-2 py-1 md:px-3 px-2 leading-tight focus:outline-none focus:shadow-outline border-blue border-2', value: params[:fish_type], placeholder: t('.placeholder.fish_type') %>
                 </div>
                 <div class="flex flex-col">
-                    <%= f.label :budget, class: 'text-black font-bold text-xl mb-2 required' %>
-                    <%= f.text_field :budget, class: 'shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-blue border-2', value: params[:budget], placeholder: t('.placeholder.budget') %>
+                    <%= f.label :budget, class: 'text-black font-bold md:text-xl text-lg required' %>
+                    <%= f.text_field :budget, class: 'shadow appearance-none border rounded md:mt-2 mt-1 md:py-2 py-1 md:px-3 px-2 leading-tight focus:outline-none focus:shadow-outline border-blue border-2', value: params[:budget], placeholder: t('.placeholder.budget') %>
                 </div>
                 <div class="flex flex-col">
-                    <%= f.label :location, class: 'text-black font-bold text-xl mb-2 required' %>
-                    <%= f.text_field :location, class: 'shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-blue border-2', value: params[:location], placeholder: t('.placeholder.location') %>
+                    <%= f.label :location, class: 'text-black font-bold md:text-xl text-lg required' %>
+                    <%= f.text_field :location, class: 'shadow appearance-none border rounded md:mt-2 mt-1 md:py-2 py-1 md:px-3 px-2 leading-tight focus:outline-none focus:shadow-outline border-blue border-2', value: params[:location], placeholder: t('.placeholder.location') %>
                 </div>
                 <div class="flex flex-col">
-                    <%= f.label :fishing_type, class: 'text-black font-bold text-xl mb-2 required' %>
-                    <%= f.text_field :fishing_type, class: 'shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-blue border-2', value: params[:fishing_type], placeholder: t('.placeholder.fishing_type') %>
+                    <%= f.label :fishing_type, class: 'text-black font-bold md:text-xl text-lg required' %>
+                    <%= f.text_field :fishing_type, class: 'shadow appearance-none border rounded md:mt-2 mt-1 md:py-2 py-1 md:px-3 px-2 leading-tight focus:outline-none focus:shadow-outline border-blue border-2', value: params[:fishing_type], placeholder: t('.placeholder.fishing_type') %>
                 </div>
                 <div class="flex flex-col">
-                    <%= f.label :skill_level, class: 'text-black font-bold text-xl mb-2 required' %>
-                    <%= f.select :skill_level, options_for_select([t('.skill_level.beginner'), t('.skill_level.intermediate'), t('.skill_level.advanced')], params[:skill_level]), {}, class: 'shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-blue border-2' %>
+                    <%= f.label :skill_level, class: 'text-black font-bold md:text-xl text-lg required' %>
+                    <%= f.select :skill_level, options_for_select([t('.skill_level.beginner'), t('.skill_level.intermediate'), t('.skill_level.advanced')], params[:skill_level]), {}, class: 'shadow appearance-none border rounded md:mt-2 mt-1 md:py-2 py-1 md:px-3 px-2 leading-tight focus:outline-none focus:shadow-outline border-blue border-2' %>
                 </div>
                 <div class="flex flex-col">
-                    <%= f.label :tackle_type, class: 'text-black font-bold text-xl mb-2 required' %>
-                    <%= f.select :tackle_type, options_for_select([t('.tackle_type.rod'), t('.tackle_type.reel'), t('.tackle_type.line'), t('.tackle_type.lure'), t('.tackle_type.all')], params[:tackle_type]), {}, class: 'shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-blue border-2' %>
+                    <%= f.label :tackle_type, class: 'text-black font-bold md:text-xl text-lg required' %>
+                    <%= f.select :tackle_type, options_for_select([t('.tackle_type.rod'), t('.tackle_type.reel'), t('.tackle_type.line'), t('.tackle_type.lure'), t('.tackle_type.all')], params[:tackle_type]), {}, class: 'shadow appearance-none border rounded md:mt-2 mt-1 md:py-2 py-1 md:px-3 px-2 leading-tight focus:outline-none focus:shadow-outline border-blue border-2' %>
                 </div>
                 <div class="flex flex-col">
-                    <%= f.label :tackle_maker, class: 'text-black font-bold text-xl mb-2 required' %>
-                    <%= f.select :tackle_maker, options_for_select([t('.tackle_maker.all'), t('.tackle_maker.shimano'), t('.tackle_maker.daiwa'), t('.tackle_maker.abugarcia'), t('.tackle_maker.gamakatsu'), t('.tackle_maker.tailwalk'), t('.tackle_maker.olympic'), t('.tackle_maker.major_craft')], params[:tackle_maker]), {}, class: 'shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-blue border-2' %>
+                    <%= f.label :tackle_maker, class: 'text-black font-bold md:text-xl text-lg required' %>
+                    <%= f.select :tackle_maker, options_for_select([t('.tackle_maker.all'), t('.tackle_maker.shimano'), t('.tackle_maker.daiwa'), t('.tackle_maker.abugarcia'), t('.tackle_maker.gamakatsu'), t('.tackle_maker.tailwalk'), t('.tackle_maker.olympic'), t('.tackle_maker.major_craft')], params[:tackle_maker]), {}, class: 'shadow appearance-none border rounded md:mt-2 mt-1 md:py-2 py-1 md:px-3 px-2 leading-tight focus:outline-none focus:shadow-outline border-blue border-2' %>
                 </div>
                 <div class="col-span-1 md:col-span-2 flex flex-col">
-                    <%= f.label :memo, class: 'text-black font-bold text-xl mb-2' %>
-                    <%= f.text_area :memo, class: 'shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-blue border-2', placeholder: t('.placeholder.memo') %>
+                    <%= f.label :memo, class: 'text-black font-bold md:text-xl text-lg' %>
+                    <%= f.text_area :memo, class: 'shadow appearance-none border rounded md:mt-2 mt-1 md:py-2 py-1 md:px-3 px-2 leading-tight focus:outline-none focus:shadow-outline border-blue border-2', placeholder: t('.placeholder.memo') %>
                 </div>
             </div>
             <div class="flex items-center justify-center mt-6">
-                <%= f.submit t('fishing_gears.new.submit'), id: 'suggestion', class: 'underline underline-offset-2 text-link font-bold px-4 py-2 bg-orange text-white rounded no-underline cursor-pointer hover:opacity-70' %>
+                <%= f.submit t('fishing_gears.new.submit'), id: 'suggestion', class: 'underline underline-offset-2 text-link font-bold md:px-4 px-2 md:py-2 py-1 bg-orange text-white rounded no-underline cursor-pointer hover:opacity-70' %>
                 <!-- 待機メッセージ要素 -->
                 <p class="text-orange font-bold hidden" id="wait">提案を考えています…しばらくお待ちください…</p>
             </div>
@@ -48,24 +48,24 @@
     </div>
 
     <% if @items.present? %>
-    <h2 class="text-black font-bold text-xl mt-8"><%= t('.example_products') %></h2>
-    <div class="items flex flex-wrap -mx-2 mt-6">
+    <h2 class="text-black font-bold md:text-xl text-lg md:mt-8 mt-4"><%= t('.example_products') %></h2>
+    <div class="grid md:grid-cols-4 grid-cols-1 md:gap-4 gap-2 md:mt-6 mt-3">
         <% @items.each do |item| %>
-            <div class="item w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-2">
+            <div class="w-full">
                 <%= link_to item[:url], target: "_blank", class: 'block h-full card-shine hover:shadow-lg transition transform hover:scale-105' do %>
                     <div class="border-[#1E90FF] border-2 rounded-lg p-4 h-full flex flex-col">
                         <img src="<%= item[:image] %>" alt="<%= item[:name] %>" class="w-full h-auto mb-2">
-                        <p class="text-gray-700 text-sm mb-1"><%= item[:name] %></p>
-                        <p class="text-gray-700 text-sm"><%= t('.price') %><%= item[:price] %></p>
+                        <p class="text-sm mb-1"><%= item[:name] %></p>
+                        <p class="text-sm"><%= t('.price') %><%= item[:price] %></p>
                     </div>
                 <% end %>
             </div>
         <% end %>
     </div>
     <% else %>
-        <p class="text-center text-gray-700"><%= t('.not_found_products') %></p>
+        <p class="text-center"><%= t('.not_found_products') %></p>
     <% end %>
-    <div class='mt-4 text-center'>
+    <div class='md:mt-4 mt-2 text-center'>
       <%= link_to t('.return'), fishing_gears_path, class: 'underline underline-offset-2 text-link hover:orange font-bold' %>
     </div>
 </div>

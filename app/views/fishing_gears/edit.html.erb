@@ -1,59 +1,59 @@
 <% content_for(:title, t('.title')) %>
-<div class="py-14 max-w-3xl mx-auto px-4">
-    <h1 class="text-center text-3xl text-black font-bold"><%= t('.title') %></h1>
+<div class="md:py-14 py-7 md:max-w-700 max-q-full mx-auto px-4 text-black">
+    <h1 class="text-center md:text-3xl text-2xl font-bold"><%= t('.title') %></h1>
 
-    <div class="mt-8">
-        <h2 class="text-black font-bold text-xl mb-4"><%= t('.content') %></h2>
-        <div class="p-4 border-[#1E90FF] border-2 rounded-lg text-black space-y-4">
+    <div class="md:mt-8 mt-4">
+        <h2 class=" font-bold md:text-xl text-lg"><%= t('.content') %></h2>
+        <div class="p-4 md:mt-4 mt-2 border-blue border-2 rounded-lg">
             <div>
-                <h3 class="text-black font-bold text-lg"><%= t('.target_fish') %></h3>
-                <p class="mt-1 text-black"><%= @fishing_gear.fish_type %></p>
+                <h3 class="font-bold md:text-lg text-base"><%= t('.target_fish') %></h3>
+                <p class="mt-1"><%= @fishing_gear.fish_type %></p>
             </div>
-            <div>
-                <h3 class="text-black font-bold text-lg"><%= t('.budget') %></h3>
-                <p class="mt-1 text-black"><%= @fishing_gear.budget %></p>
+            <div class="md:mt-4 mt-2">
+                <h3 class=" font-bold md:text-lg text-base"><%= t('.budget') %></h3>
+                <p class="mt-1"><%= @fishing_gear.budget %></p>
             </div>
-            <div>
-                <h3 class="text-black font-bold text-lg"><%= t('.location') %></h3>
-                <p class="mt-1 text-black"><%= @fishing_gear.location %></p>
+            <div class="md:mt-4 mt-2">
+                <h3 class=" font-bold md:text-lg text-base"><%= t('.location') %></h3>
+                <p class="mt-1 "><%= @fishing_gear.location %></p>
             </div>
-            <div>
-                <h3 class="text-black font-bold text-lg"><%= t('.fishing_type') %></h3>
-                <p class="mt-1 text-black"><%= @fishing_gear.fishing_type %></p>
+            <div class="md:mt-4 mt-2">
+                <h3 class=" font-bold md:text-lg text-base"><%= t('.fishing_type') %></h3>
+                <p class="mt-1 "><%= @fishing_gear.fishing_type %></p>
             </div>
-            <div>
-                <h3 class="text-black font-bold text-lg"><%= t('.skill_level') %></h3>
-                <p class="mt-1 text-black"><%= @fishing_gear.skill_level %></p>
+            <div class="md:mt-4 mt-2">
+                <h3 class=" font-bold md:text-lg text-base"><%= t('.skill_level') %></h3>
+                <p class="mt-1 "><%= @fishing_gear.skill_level %></p>
             </div>
-            <div>
-                <h3 class="text-black font-bold text-lg"><%= t('.tackle_type') %></h3>
-                <p class="mt-1 text-black"><%= @fishing_gear.tackle_type %></p>
+            <div class="md:mt-4 mt-2">
+                <h3 class=" font-bold md:text-lg text-base"><%= t('.tackle_type') %></h3>
+                <p class="mt-1 "><%= @fishing_gear.tackle_type %></p>
             </div>
-            <div>
-                <h3 class="text-black font-bold text-lg"><%= t('.tackle_maker') %></h3>
-                <p class="mt-1 text-black"><%= @fishing_gear.tackle_maker %></p>
+            <div class="md:mt-4 mt-2">
+                <h3 class=" font-bold md:text-lg text-base"><%= t('.tackle_maker') %></h3>
+                <p class="mt-1 "><%= @fishing_gear.tackle_maker %></p>
             </div>
         </div>
 
-        <h2 class="text-black font-bold text-xl mt-8"><%= t('.suggestion') %></h2>
-        <div class="p-4 border-[#1E90FF] border-2 mt-2 rounded-lg text-black">
+        <h2 class="font-bold md:text-xl text-lg md:mt-8 mt-4"><%= t('.suggestion') %></h2>
+        <div class="p-4 border-[#1E90FF] border-2 mt-2 rounded-lg ">
             <%= @fishing_gear.suggestion %>
         </div>
 
-        <%= form_with model: @fishing_gear,class: "mt-8", local: true do |f| %>
+        <%= form_with model: @fishing_gear,class: "md:mt-8 mt-4", local: true do |f| %>
         <%= render 'shared/error_messages', object: f.object %>
             <div class="flex flex-col">
-                <%= f.label :memo, class: 'text-black font-bold text-xl' %>
-                <%= f.text_area :memo, class: "p-4 border-[#1E90FF] border-2 mt-2 rounded-lg text-black" %>
+                <%= f.label :memo, class: ' font-bold md:text-xl text-lg' %>
+                <%= f.text_area :memo, class: "p-4 border-[#1E90FF] border-2 mt-2 rounded-lg " %>
             </div>
             <div class="flex items-center justify-center mt-8">
-                <%= f.submit t('fishing_gears.edit.submit'), class: 'btn font-bold bg-orange text-white hover:bg-blue-700 py-2 px-10 rounded focus:outline-none focus:shadow-outline' %>
+                <%= f.submit t('fishing_gears.edit.submit'), class: 'btn font-bold bg-orange text-white hover:bg-blue-700 md:py-2 py-0 md:px-10 px-5 rounded focus:outline-none focus:shadow-outline' %>
             </div>
         <% end %>
 
     </div>
 
-    <div class='mt-8 text-center'>
+    <div class='md:mt-8 mt-4 text-center'>
         <%= link_to t('.return'), fishing_gear_path(@fishing_gear), class: 'underline underline-offset-2 text-link hover:orange font-bold' %>
     </div>
 </div>
