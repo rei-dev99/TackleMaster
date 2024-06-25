@@ -1,17 +1,31 @@
-<div class='w-1/2 md:w-1/4 p-2'>
-  <div class='flex flex-col justify-between text-center shadow-xl bg-white rounded-lg overflow-hidden h-full'>
-    <%= image_tag accesory.image, class: "w-full md:h-36 sm:h-32 h-28 object-cover" if accesory.image.attached? %>
-    <div class='text-center flex flex-col flex-1 p-4'>
-      <h2 class='md:text-lg text-base font-bold text-blue'><%= accesory.name %></h2>
-      <p class='grow md:text-sm text-xs text-black'><%= accesory.memo %></p>
-      <div class='flex justify-end mt-auto'>
-        <%= link_to edit_tackle_accesory_path(@tackle, accesory) do %>
-          <i class="fa-solid fa-pen text-blue"></i>
-        <% end %>
-        <%= link_to tackle_accesory_path(@tackle, accesory), method: :delete, data: { turbo_method: :delete, turbo_confirm: t('.delete') }, class: 'ml-2' do %>
-          <i class="fa-solid fa-trash text-blue"></i>
-        <% end %>
-      </div>
+<div class='flex flex-col justify-between text-center shadow-xl bg-white rounded-lg overflow-hidden h-full'>
+  <div class="overflow-hidden">
+    <%= link_to tackle_accesory_path(@tackle, accesory) do %>
+      <%= image_tag accesory.image, class: "w-full md:h-36 sm:h-32 h-28 object-cover block hover:shadow-lg transition-transform duration-300 transition transform hover:scale-105" if accesory.image.attached? %>
+    <% end %>
+  </div>
+  <div class='text-center flex flex-col flex-1 md:p-4 p-2'>
+    <h2 class='md:text-base text-sm font-bold text-blue'><%= accesory.name %></h2>
+    <div class="flex justify-center md:mt-3 mt-2">
+      <% if accesory.maker.present? %>
+        <p class='md:text-sm text-xs font-bold text-orange block border border-2 p-1 rounded'><%= accesory.maker %></p>
+      <% else %>
+        <p></p>
+      <% end %>
+    </div>
+    <div class="md:mt-3 mt-2">
+      <p class='grow md:text-sm text-xs text-black'><%= accesory.memo.truncate(35) %></p>
+    </div>
+    <div class="md:mt-4 mt-2">
+      <p class="md:text-sm text-xs text-silver"><%= accesory.updated_at.strftime('%Y/%m/%d %H:%M') %></p>
+    </div>
+    <div class='flex justify-end mt-auto md:text-base text-sm'>
+      <%= link_to edit_tackle_accesory_path(@tackle, accesory) do %>
+        <i class="fa-solid fa-pen text-blue"></i>
+      <% end %>
+      <%= link_to tackle_accesory_path(@tackle, accesory), method: :delete, data: { turbo_method: :delete, turbo_confirm: t('.delete') }, class: 'ml-2' do %>
+        <i class="fa-solid fa-trash text-blue"></i>
+      <% end %>
     </div>
   </div>
 </div>
