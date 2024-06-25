@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_06_19_050201) do
+ActiveRecord::Schema[7.1].define(version: 2024_06_24_230033) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -19,6 +19,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_19_050201) do
     t.text "memo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "maker"
   end
 
   create_table "active_storage_attachments", force: :cascade do |t|
@@ -93,6 +94,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_19_050201) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "memo"
+    t.string "maker"
   end
 
   create_table "rods", force: :cascade do |t|
@@ -100,6 +102,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_19_050201) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "memo"
+    t.string "maker"
   end
 
   create_table "tackle_accesories", force: :cascade do |t|
