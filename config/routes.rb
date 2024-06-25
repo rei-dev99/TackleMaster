@@ -10,9 +10,9 @@ Rails.application.routes.draw do
   root "tops#index"
   resources :users
   resources :tackles do
-    resources :rods, only: %i[new create edit update destroy]
-    resources :reels, only: %i[new create edit update destroy]
-    resources :accesories, only: %i[new create edit update destroy]
+    resources :rods, only: %i[show new create edit update destroy]
+    resources :reels, only: %i[show new create edit update destroy]
+    resources :accesories, only: %i[show new create edit update destroy]
   end
   resources :password_resets, only: %i[new create edit update]
 
