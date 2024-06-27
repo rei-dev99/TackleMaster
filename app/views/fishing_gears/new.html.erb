@@ -1,6 +1,7 @@
 <% content_for(:title, t('.title')) %>
 <div class="md:py-14 py-7 md:max-w-1200 max-w-full mx-auto md:px-4 px-2">
     <h1 class="text-center md:text-3xl text-2xl text-black font-bold"><%= t('.title') %></h1>
+    <p class='text-center text-black mt-2'><%= t('.suggestion_limit_desc') %></p>
 
     <div class="md:mt-8 mt-4">
         <%= form_with model: @fishing_gear, local: true, id: 'fishing-gear-form' do |f| %>
