@@ -29,8 +29,8 @@
       <div class="md:mt-6 mt-3">
         <h4 class="md:text-lg text-base font-bold">ロッドの長さ</h4>
         <p class="md:mt-4 mt-2">以下はロッドの長さについてまとめた表です。長さによって釣り場所と釣法が変わってきますので参考にしてみてください。<br>※ft(フィート)は<span class="text-orange font-bold">1ftあたり30.48cm</span>です。ftの読み方についてですが、例えば<span class="text-orange font-bold">7.6ftは7フィート6インチ</span>の意味です。</p>
-        <div class="overflow-x-scroll">
-          <table class="min-w-full bg-white md:mt-4 mt-2">
+        <div class="js-scrollable bg-white md:mt-4 mt-2">
+          <table class="md:w-full w-[800px]">
             <thead>
                 <tr class="bg-[#D1D5DA]">
                   <th class="py-3 px-4 border-2 border-blue">長さ(ft)</th>
@@ -66,52 +66,54 @@
       <div class="md:mt-6 mt-3">
         <h4 class="md:text-lg text-base font-bold">ロッドの硬さ</h4>
         <p class="md:mt-4 mt-2">以下はロッドの硬さについてまとめた表です。硬さによって対応できるルアーの重さが変わってきますので参考にしてみてください。</p>
-        <table class="min-w-full bg-white mt-4">
-          <thead>
-              <tr class="bg-[#D1D5DA]">
-                  <th class="py-3 px-4 border-2 border-blue">硬さ表記</th>
-                  <th class="py-3 px-4 border-2 border-blue">対応する重量</th>
-                  <th class="py-3 px-4 border-2 border-blue">釣法</th>
-              </tr>
-          </thead>
-          <tbody>
-              <tr>
-                  <td class="py-2 px-4 border-2 border-blue">UL(ウルトラライト)</td>
-                  <td class="py-2 px-4 border-2 border-blue">3g程度</td>
-                  <td class="py-2 px-4 border-2 border-blue">トラウト、アジング、メバリング</td>
-              </tr>
-              <tr>
-                  <td class="py-2 px-4 border-2 border-blue">L(ライト)</td>
-                  <td class="py-2 px-4 border-2 border-blue">5g～20g程度</td>
-                  <td class="py-2 px-4 border-2 border-blue">バス、トラウト、アジング、メバリング</td>
-              </tr>
-              <tr>
-                  <td class="py-2 px-4 border-2 border-blue">ML(ミディアムライト)</td>
-                  <td class="py-2 px-4 border-2 border-blue">4g～30g程度</td>
-                  <td class="py-2 px-4 border-2 border-blue">投げ釣り、エギング、シーバス、ライトショアジギング</td>
-              </tr>
-              <tr>
-                  <td class="py-2 px-4 border-2 border-blue">M(ミディアム)</td>
-                  <td class="py-2 px-4 border-2 border-blue">10g～40g程度</td>
-                  <td class="py-2 px-4 border-2 border-blue">バス、シーバス、ライトショアジギング</td>
-              </tr>
-              <tr>
-                  <td class="py-2 px-4 border-2 border-blue">MH(ミディアムヘビー)</td>
-                  <td class="py-2 px-4 border-2 border-blue">20g～50g程度</td>
-                  <td class="py-2 px-4 border-2 border-blue">シーバス、ショアジギング</td>
-              </tr>
-              <tr>
-                  <td class="py-2 px-4 border-2 border-blue">H(ヘビー)</td>
-                  <td class="py-2 px-4 border-2 border-blue">30g～80g程度</td>
-                  <td class="py-2 px-4 border-2 border-blue">青物、ショアジギング</td>
-              </tr>
-              <tr>
-                  <td class="py-2 px-4 border-2 border-blue">XH(エクストラヘビー)</td>
-                  <td class="py-2 px-4 border-2 border-blue">50g以上</td>
-                  <td class="py-2 px-4 border-2 border-blue">大型青物、オフショアジギング</td>
-              </tr>
-          </tbody>
-        </table>
+        <div class="js-scrollable bg-white md:mt-4 mt-2">
+          <table class="md:w-full w-[800px]">
+            <thead>
+                <tr class="bg-[#D1D5DA]">
+                    <th class="py-3 px-4 border-2 border-blue">硬さ表記</th>
+                    <th class="py-3 px-4 border-2 border-blue">対応する重量</th>
+                    <th class="py-3 px-4 border-2 border-blue">釣法</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="py-2 px-4 border-2 border-blue">UL(ウルトラライト)</td>
+                    <td class="py-2 px-4 border-2 border-blue">3g程度</td>
+                    <td class="py-2 px-4 border-2 border-blue">トラウト、アジング、メバリング</td>
+                </tr>
+                <tr>
+                    <td class="py-2 px-4 border-2 border-blue">L(ライト)</td>
+                    <td class="py-2 px-4 border-2 border-blue">5g～20g程度</td>
+                    <td class="py-2 px-4 border-2 border-blue">バス、トラウト、アジング、メバリング</td>
+                </tr>
+                <tr>
+                    <td class="py-2 px-4 border-2 border-blue">ML(ミディアムライト)</td>
+                    <td class="py-2 px-4 border-2 border-blue">4g～30g程度</td>
+                    <td class="py-2 px-4 border-2 border-blue">投げ釣り、エギング、シーバス、ライトショアジギング</td>
+                </tr>
+                <tr>
+                    <td class="py-2 px-4 border-2 border-blue">M(ミディアム)</td>
+                    <td class="py-2 px-4 border-2 border-blue">10g～40g程度</td>
+                    <td class="py-2 px-4 border-2 border-blue">バス、シーバス、ライトショアジギング</td>
+                </tr>
+                <tr>
+                    <td class="py-2 px-4 border-2 border-blue">MH(ミディアムヘビー)</td>
+                    <td class="py-2 px-4 border-2 border-blue">20g～50g程度</td>
+                    <td class="py-2 px-4 border-2 border-blue">シーバス、ショアジギング</td>
+                </tr>
+                <tr>
+                    <td class="py-2 px-4 border-2 border-blue">H(ヘビー)</td>
+                    <td class="py-2 px-4 border-2 border-blue">30g～80g程度</td>
+                    <td class="py-2 px-4 border-2 border-blue">青物、ショアジギング</td>
+                </tr>
+                <tr>
+                    <td class="py-2 px-4 border-2 border-blue">XH(エクストラヘビー)</td>
+                    <td class="py-2 px-4 border-2 border-blue">50g以上</td>
+                    <td class="py-2 px-4 border-2 border-blue">大型青物、オフショアジギング</td>
+                </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
 
       <div class="md:mt-6 mt-3">
@@ -154,76 +156,80 @@
       <div class="md:mt-6 mt-3">
         <h4 class="md:text-lg text-base font-bold">リールの大きさ(番手)</h4>
         <p class="md:mt-4 mt-2">以下はスピニングリールの大きさ(番手)についてまとめた表になります。</p>
-        <table class="min-w-full bg-white md:mt-4 mt-2">
-          <thead>
-            <tr class="bg-[#D1D5DA]">
-              <th class="py-3 px-4 border-2 border-blue">番手</th>
-              <th class="py-3 px-4 border-2 border-blue">対応ライン目安</th>
-              <th class="py-3 px-4 border-2 border-blue">用途</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="py-2 px-4 border-2 border-blue">1000~2000番</td>
-              <td class="py-2 px-4 border-2 border-blue">ナイロン(0.3号～1号程度)、peライン(0.4号ぐらい)</td>
-              <td class="py-2 px-4 border-2 border-blue">アジング、メバリング、トラウト</td>
-            </tr>
-            <tr>
-              <td class="py-2 px-4 border-2 border-blue">2500~3000番<br>(汎用性が高くおすすめ)</td>
-              <td class="py-2 px-4 border-2 border-blue">ナイロン(1号～2.5号程度)、peライン(0.6号～1.2号ぐらい)</td>
-              <td class="py-2 px-4 border-2 border-blue">サビキ釣り、フカセ釣り、ちょい投げ釣り、エギング、シーバス</td>
-            </tr>
-            <tr>
-              <td class="py-2 px-4 border-2 border-blue">4000~5000番</td>
-              <td class="py-2 px-4 border-2 border-blue">ナイロン(2.5号～4号程度)、peライン(1.5号～3号ぐらい)</td>
-              <td class="py-2 px-4 border-2 border-blue">ショアジギング、タチウオ、ヒラメ</td>
-            </tr>
-            <tr>
-              <td class="py-2 px-4 border-2 border-blue">6000~8000番</td>
-              <td class="py-2 px-4 border-2 border-blue">ナイロン(4号～6号程度)、peライン(3号～5号ぐらい)</td>
-              <td class="py-2 px-4 border-2 border-blue">オフショアジギング、大型青物</td>
-            </tr>
-            <tr>
-              <td class="py-2 px-4 border-2 border-blue">10000番以上</td>
-              <td class="py-2 px-4 border-2 border-blue">ナイロン(6号以上)、peライン(5号以上)</td>
-              <td class="py-2 px-4 border-2 border-blue">ビッグゲーム、カジキ、GT</td>
-            </tr>
-          </tbody>
-        </table>
-        <div class="md:mt-6 mt-3">
-          <h4 class="md:text-lg text-base font-bold">リールのギア比</h4>
-          <p class="md:mt-4 mt-2">以下はスピニングリールのギア比についてまとめた表になります。</p>
-          <table class="min-w-full bg-white md:mt-4 mt-2">
+        <div class="js-scrollable bg-white md:mt-4 mt-2">
+          <table class="md:w-full w-[800px]">
             <thead>
               <tr class="bg-[#D1D5DA]">
-                <th class="py-3 px-4 border-2 border-blue">ギア</th>
-                <th class="py-3 px-4 border-2 border-blue">ギア比</th>
+                <th class="py-3 px-4 border-2 border-blue">番手</th>
+                <th class="py-3 px-4 border-2 border-blue">対応ライン目安</th>
                 <th class="py-3 px-4 border-2 border-blue">用途</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td class="py-2 px-4 border-2 border-blue">ノーマルギア(表記なし)</td>
-                <td class="py-2 px-4 border-2 border-blue">4.9〜5.3程度</td>
-                <td class="py-2 px-4 border-2 border-blue">様々な釣りで使用可能。</td>
+                <td class="py-2 px-4 border-2 border-blue">1000~2000番</td>
+                <td class="py-2 px-4 border-2 border-blue">ナイロン(0.3号～1号程度)、peライン(0.4号ぐらい)</td>
+                <td class="py-2 px-4 border-2 border-blue">アジング、メバリング、トラウト</td>
               </tr>
               <tr>
-                <td class="py-2 px-4 border-2 border-blue">ローギア(PG・P)</td>
-                <td class="py-2 px-4 border-2 border-blue">4.3～4.9程度</td>
-                <td class="py-2 px-4 border-2 border-blue">ゆっくり動かしたい釣りで使用。アジング、メバリング、トラウト等</td>
+                <td class="py-2 px-4 border-2 border-blue">2500~3000番<br>(汎用性が高くおすすめ)</td>
+                <td class="py-2 px-4 border-2 border-blue">ナイロン(1号～2.5号程度)、peライン(0.6号～1.2号ぐらい)</td>
+                <td class="py-2 px-4 border-2 border-blue">サビキ釣り、フカセ釣り、ちょい投げ釣り、エギング、シーバス</td>
               </tr>
               <tr>
-                <td class="py-2 px-4 border-2 border-blue">ハイギア(HG、H)</td>
-                <td class="py-2 px-4 border-2 border-blue">5.6～6.1程度</td>
-                <td class="py-2 px-4 border-2 border-blue">ライトゲームからエギング、シーバス、フラットフィッシュ、ロックフィッシュ、青物まで幅広く使用</td>
+                <td class="py-2 px-4 border-2 border-blue">4000~5000番</td>
+                <td class="py-2 px-4 border-2 border-blue">ナイロン(2.5号～4号程度)、peライン(1.5号～3号ぐらい)</td>
+                <td class="py-2 px-4 border-2 border-blue">ショアジギング、タチウオ、ヒラメ</td>
               </tr>
               <tr>
-                <td class="py-2 px-4 border-2 border-blue">エクストラハイギア(XG、XH)</td>
-                <td class="py-2 px-4 border-2 border-blue">6.2～6.6程度</td>
-                <td class="py-2 px-4 border-2 border-blue">ヒラスズキゲームやロングキャストを多用するサーフでのルアーゲームやショアジギング等</td>
+                <td class="py-2 px-4 border-2 border-blue">6000~8000番</td>
+                <td class="py-2 px-4 border-2 border-blue">ナイロン(4号～6号程度)、peライン(3号～5号ぐらい)</td>
+                <td class="py-2 px-4 border-2 border-blue">オフショアジギング、大型青物</td>
+              </tr>
+              <tr>
+                <td class="py-2 px-4 border-2 border-blue">10000番以上</td>
+                <td class="py-2 px-4 border-2 border-blue">ナイロン(6号以上)、peライン(5号以上)</td>
+                <td class="py-2 px-4 border-2 border-blue">ビッグゲーム、カジキ、GT</td>
               </tr>
             </tbody>
           </table>
+        </div>
+        <div class="md:mt-6 mt-3">
+          <h4 class="md:text-lg text-base font-bold">リールのギア比</h4>
+          <p class="md:mt-4 mt-2">以下はスピニングリールのギア比についてまとめた表になります。</p>
+          <div class="js-scrollable bg-white md:mt-4 mt-2">
+            <table class="md:w-full w-[800px]">
+              <thead>
+                <tr class="bg-[#D1D5DA]">
+                  <th class="py-3 px-4 border-2 border-blue">ギア</th>
+                  <th class="py-3 px-4 border-2 border-blue">ギア比</th>
+                  <th class="py-3 px-4 border-2 border-blue">用途</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="py-2 px-4 border-2 border-blue">ノーマルギア(表記なし)</td>
+                  <td class="py-2 px-4 border-2 border-blue">4.9〜5.3程度</td>
+                  <td class="py-2 px-4 border-2 border-blue">様々な釣りで使用可能。</td>
+                </tr>
+                <tr>
+                  <td class="py-2 px-4 border-2 border-blue">ローギア(PG・P)</td>
+                  <td class="py-2 px-4 border-2 border-blue">4.3～4.9程度</td>
+                  <td class="py-2 px-4 border-2 border-blue">ゆっくり動かしたい釣りで使用。アジング、メバリング、トラウト等</td>
+                </tr>
+                <tr>
+                  <td class="py-2 px-4 border-2 border-blue">ハイギア(HG、H)</td>
+                  <td class="py-2 px-4 border-2 border-blue">5.6～6.1程度</td>
+                  <td class="py-2 px-4 border-2 border-blue">ライトゲームからエギング、シーバス、フラットフィッシュ、ロックフィッシュ、青物まで幅広く使用</td>
+                </tr>
+                <tr>
+                  <td class="py-2 px-4 border-2 border-blue">エクストラハイギア(XG、XH)</td>
+                  <td class="py-2 px-4 border-2 border-blue">6.2～6.6程度</td>
+                  <td class="py-2 px-4 border-2 border-blue">ヒラスズキゲームやロングキャストを多用するサーフでのルアーゲームやショアジギング等</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
         <div class="md:mt-6 mt-3">
           <h4 class="md:text-lg text-base font-bold">リールの選び方</h4>
@@ -243,114 +249,120 @@
       <div class="md:mt-6 mt-3">
         <h4 class="md:text-lg text-base font-bold">ナイロンライン</h4>
         <p class="md:mt-4 mt-2">柔軟で伸びやすいので扱いやすく、魚の引きに対してショックを吸収してくれます。</p>
-        <table class="min-w-full bg-white md:mt-4 mt-2">
-          <thead>
-            <tr class="bg-[#D1D5DA]">
-              <th class="py-3 px-4 border-2 border-blue">号数</th>
-              <th class="py-3 px-4 border-2 border-blue">ポンド(lb)</th>
-              <th class="py-3 px-4 border-2 border-blue">魚種</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="py-2 px-4 border-2 border-blue">0.5〜1.0号</td>
-              <td class="py-2 px-4 border-2 border-blue">2lb〜4lb</td>
-              <td class="py-2 px-4 border-2 border-blue">アジ、サバ、イワシ、ヤマメ、トラウト、イワナ等</td>
-            </tr>
-            <tr>
-              <td class="py-2 px-4 border-2 border-blue">1.0〜2.0号</td>
-              <td class="py-2 px-4 border-2 border-blue">4lb〜8lb</td>
-              <td class="py-2 px-4 border-2 border-blue">ニジマス、メバル、小型のカサゴ等</td>
-            </tr>
-            <tr>
-              <td class="py-2 px-4 border-2 border-blue">2.0〜3.0号</td>
-              <td class="py-2 px-4 border-2 border-blue">8lb〜12lb</td>
-              <td class="py-2 px-4 border-2 border-blue">シーバス、イカ、クロダイ、タチウオ、ハタ等</td>
-            </tr>
-            <tr>
-              <td class="py-2 px-4 border-2 border-blue">3.0〜4.0号</td>
-              <td class="py-2 px-4 border-2 border-blue">12lb〜16lb</td>
-              <td class="py-2 px-4 border-2 border-blue">シーバス、ヒラメ、青物等</td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="js-scrollable bg-white md:mt-4 mt-2">
+          <table class="md:w-full w-[800px]">
+            <thead>
+              <tr class="bg-[#D1D5DA]">
+                <th class="py-3 px-4 border-2 border-blue">号数</th>
+                <th class="py-3 px-4 border-2 border-blue">ポンド(lb)</th>
+                <th class="py-3 px-4 border-2 border-blue">魚種</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="py-2 px-4 border-2 border-blue">0.5〜1.0号</td>
+                <td class="py-2 px-4 border-2 border-blue">2lb〜4lb</td>
+                <td class="py-2 px-4 border-2 border-blue">アジ、サバ、イワシ、ヤマメ、トラウト、イワナ等</td>
+              </tr>
+              <tr>
+                <td class="py-2 px-4 border-2 border-blue">1.0〜2.0号</td>
+                <td class="py-2 px-4 border-2 border-blue">4lb〜8lb</td>
+                <td class="py-2 px-4 border-2 border-blue">ニジマス、メバル、小型のカサゴ等</td>
+              </tr>
+              <tr>
+                <td class="py-2 px-4 border-2 border-blue">2.0〜3.0号</td>
+                <td class="py-2 px-4 border-2 border-blue">8lb〜12lb</td>
+                <td class="py-2 px-4 border-2 border-blue">シーバス、イカ、クロダイ、タチウオ、ハタ等</td>
+              </tr>
+              <tr>
+                <td class="py-2 px-4 border-2 border-blue">3.0〜4.0号</td>
+                <td class="py-2 px-4 border-2 border-blue">12lb〜16lb</td>
+                <td class="py-2 px-4 border-2 border-blue">シーバス、ヒラメ、青物等</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
 
       <div class="md:mt-6 mt-3">
         <h4 class="md:text-lg text-base font-bold">フロロカーボンライン</h4>
         <p class="md:mt-4 mt-2">透明で魚に見えにくい耐摩耗性が高く、岩場や障害物に強いです。ルアーフィシングにおいて、PEラインの先端にリーダーとして結びつけて使用します。</p>
-        <table class="min-w-full bg-white md:mt-4 mt-2">
-          <thead>
-            <tr class="bg-[#D1D5DA]">
-              <th class="py-3 px-4 border-2 border-blue">号数</th>
-              <th class="py-3 px-4 border-2 border-blue">ポンド(lb)</th>
-              <th class="py-3 px-4 border-2 border-blue">魚種</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="py-2 px-4 border-2 border-blue">0.8〜1.0号</td>
-              <td class="py-2 px-4 border-2 border-blue">3lb〜4lb</td>
-              <td class="py-2 px-4 border-2 border-blue">アジ、サバ、イワシ、ヤマメ、トラウト、イワナ等</td>
-            </tr>
-            <tr>
-              <td class="py-2 px-4 border-2 border-blue">1.0〜2.0号</td>
-              <td class="py-2 px-4 border-2 border-blue">4lb〜8lb</td>
-              <td class="py-2 px-4 border-2 border-blue">ニジマス、メバル、小型のカサゴ等</td>
-            </tr>
-            <tr>
-              <td class="py-2 px-4 border-2 border-blue">2.0〜3.0号</td>
-              <td class="py-2 px-4 border-2 border-blue">8lb〜12lb</td>
-              <td class="py-2 px-4 border-2 border-blue">中型のシーバス、チヌ、ハタ等</td>
-            </tr>
-            <tr>
-              <td class="py-2 px-4 border-2 border-blue">3.0〜6.0号</td>
-              <td class="py-2 px-4 border-2 border-blue">12lb〜22lb</td>
-              <td class="py-2 px-4 border-2 border-blue">ブラックバス、コイ、シーバス、タチウオ、青物等</td>
-            </tr>
-            <tr>
-              <td class="py-2 px-4 border-2 border-blue">6.0〜10.0号</td>
-              <td class="py-2 px-4 border-2 border-blue">22lb〜35lb</td>
-              <td class="py-2 px-4 border-2 border-blue">大型シーバス、大型青物等</td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="js-scrollable bg-white md:mt-4 mt-2">
+          <table class="md:w-full w-[800px]">
+            <thead>
+              <tr class="bg-[#D1D5DA]">
+                <th class="py-3 px-4 border-2 border-blue">号数</th>
+                <th class="py-3 px-4 border-2 border-blue">ポンド(lb)</th>
+                <th class="py-3 px-4 border-2 border-blue">魚種</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="py-2 px-4 border-2 border-blue">0.8〜1.0号</td>
+                <td class="py-2 px-4 border-2 border-blue">3lb〜4lb</td>
+                <td class="py-2 px-4 border-2 border-blue">アジ、サバ、イワシ、ヤマメ、トラウト、イワナ等</td>
+              </tr>
+              <tr>
+                <td class="py-2 px-4 border-2 border-blue">1.0〜2.0号</td>
+                <td class="py-2 px-4 border-2 border-blue">4lb〜8lb</td>
+                <td class="py-2 px-4 border-2 border-blue">ニジマス、メバル、小型のカサゴ等</td>
+              </tr>
+              <tr>
+                <td class="py-2 px-4 border-2 border-blue">2.0〜3.0号</td>
+                <td class="py-2 px-4 border-2 border-blue">8lb〜12lb</td>
+                <td class="py-2 px-4 border-2 border-blue">中型のシーバス、チヌ、ハタ等</td>
+              </tr>
+              <tr>
+                <td class="py-2 px-4 border-2 border-blue">3.0〜6.0号</td>
+                <td class="py-2 px-4 border-2 border-blue">12lb〜22lb</td>
+                <td class="py-2 px-4 border-2 border-blue">ブラックバス、コイ、シーバス、タチウオ、青物等</td>
+              </tr>
+              <tr>
+                <td class="py-2 px-4 border-2 border-blue">6.0〜10.0号</td>
+                <td class="py-2 px-4 border-2 border-blue">22lb〜35lb</td>
+                <td class="py-2 px-4 border-2 border-blue">大型シーバス、大型青物等</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
 
       <div class="md:mt-6 mt-3">
         <h4 class="md:text-lg text-base font-bold">PEライン</h4>
         <p class="md:mt-4 mt-2">感度と強度が非常に高く、細いラインでも大物を狙えて遠投しやすいです。</p>
-        <table class="min-w-full bg-white md:mt-4 mt-2">
-          <thead>
-            <tr class="bg-[#D1D5DA]">
-              <th class="py-3 px-4 border-2 border-blue">号数</th>
-              <th class="py-3 px-4 border-2 border-blue">ポンド(lb)</th>
-              <th class="py-3 px-4 border-2 border-blue">魚種</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="py-2 px-4 border-2 border-blue">0.1〜0.6号</td>
-              <td class="py-2 px-4 border-2 border-blue">4lb〜12lb</td>
-              <td class="py-2 px-4 border-2 border-blue">アジ、メバル、トラウト等</td>
-            </tr>
-            <tr>
-              <td class="py-2 px-4 border-2 border-blue">0.6〜0.8号</td>
-              <td class="py-2 px-4 border-2 border-blue">12lb〜16lb</td>
-              <td class="py-2 px-4 border-2 border-blue">イカ、ブラックバス、シーバス等</td>
-            </tr>
-            <tr>
-              <td class="py-2 px-4 border-2 border-blue">0.8〜1.0号</td>
-              <td class="py-2 px-4 border-2 border-blue">16lb〜20lb</td>
-              <td class="py-2 px-4 border-2 border-blue">シーバス等</td>
-            </tr>
-            <tr>
-              <td class="py-2 px-4 border-2 border-blue">1.0号以上</td>
-              <td class="py-2 px-4 border-2 border-blue">20lb以上</td>
-              <td class="py-2 px-4 border-2 border-blue">大型青物、大型バス等</td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="js-scrollable bg-white md:mt-4 mt-2">
+          <table class="md:w-full w-[800px]">
+            <thead>
+              <tr class="bg-[#D1D5DA]">
+                <th class="py-3 px-4 border-2 border-blue">号数</th>
+                <th class="py-3 px-4 border-2 border-blue">ポンド(lb)</th>
+                <th class="py-3 px-4 border-2 border-blue">魚種</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="py-2 px-4 border-2 border-blue">0.1〜0.6号</td>
+                <td class="py-2 px-4 border-2 border-blue">4lb〜12lb</td>
+                <td class="py-2 px-4 border-2 border-blue">アジ、メバル、トラウト等</td>
+              </tr>
+              <tr>
+                <td class="py-2 px-4 border-2 border-blue">0.6〜0.8号</td>
+                <td class="py-2 px-4 border-2 border-blue">12lb〜16lb</td>
+                <td class="py-2 px-4 border-2 border-blue">イカ、ブラックバス、シーバス等</td>
+              </tr>
+              <tr>
+                <td class="py-2 px-4 border-2 border-blue">0.8〜1.0号</td>
+                <td class="py-2 px-4 border-2 border-blue">16lb〜20lb</td>
+                <td class="py-2 px-4 border-2 border-blue">シーバス等</td>
+              </tr>
+              <tr>
+                <td class="py-2 px-4 border-2 border-blue">1.0号以上</td>
+                <td class="py-2 px-4 border-2 border-blue">20lb以上</td>
+                <td class="py-2 px-4 border-2 border-blue">大型青物、大型バス等</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
 
@@ -359,47 +371,49 @@
       <p class="text-leading-relaxed md:mt-4 mt-2">ルアーは魚を引き寄せるための疑似餌です。</p>
       <%= image_tag "top-lures", class: "md:mt-2 mt-1 w-auto" %>
       <p class="text-leading-relaxed md:mt-4 mt-2">ルアーの基本的な種類と、それぞれの使い方について説明します。</p>
-      <table class="min-w-full bg-white md:mt-4 mt-2">
-        <thead>
-          <tr class="bg-[#D1D5DA]">
-            <th class="py-3 px-4 border-2 border-blue">ルアーの種類</th>
-            <th class="py-3 px-4 border-2 border-blue">特徴</th>
-            <th class="py-3 px-4 border-2 border-blue">用途</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="py-2 px-4 border-2 border-blue">ミノー</td>
-            <td class="py-2 px-4 border-2 border-blue">細長い形状で、小魚に似せたデザイン</td>
-            <td class="py-2 px-4 border-2 border-blue">トラウト、バス、青物、シーバス</td>
-          </tr>
-          <tr>
-            <td class="py-2 px-4 border-2 border-blue">メタルジグ</td>
-            <td class="py-2 px-4 border-2 border-blue">重く、遠投がしやすい。水中でキラキラ光る</td>
-            <td class="py-2 px-4 border-2 border-blue">青物や底物、オフショアでも使用される</td>
-          </tr>
-          <tr>
-            <td class="py-2 px-4 border-2 border-blue">バイブレーション</td>
-            <td class="py-2 px-4 border-2 border-blue">速い巻きで振動が発生し、広範囲にアピール</td>
-            <td class="py-2 px-4 border-2 border-blue">バスやシーバスなどを狙う際に効果的</td>
-          </tr>
-          <tr>
-            <td class="py-2 px-4 border-2 border-blue">ワーム</td>
-            <td class="py-2 px-4 border-2 border-blue">柔らかい素材でできていて、虫や小動物に似せたデザイン</td>
-            <td class="py-2 px-4 border-2 border-blue">ライトゲーム(アジング)、バス釣り、シーバス</td>
-          </tr>
-          <tr>
-            <td class="py-2 px-4 border-2 border-blue">クランクベイト</td>
-            <td class="py-2 px-4 border-2 border-blue">リップがついていて、水中を泳ぐように動く</td>
-            <td class="py-2 px-4 border-2 border-blue">トラウト、バス</td>
-          </tr>
-          <tr>
-            <td class="py-2 px-4 border-2 border-blue">エギ</td>
-            <td class="py-2 px-4 border-2 border-blue">イカを釣るためにエビの外見・動きなどに似せてつくられた疑似餌</td>
-            <td class="py-2 px-4 border-2 border-blue">エギング</td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="js-scrollable bg-white md:mt-4 mt-2">
+        <table class="md:w-full w-[800px]">
+          <thead>
+            <tr class="bg-[#D1D5DA]">
+              <th class="py-3 px-4 border-2 border-blue">ルアーの種類</th>
+              <th class="py-3 px-4 border-2 border-blue">特徴</th>
+              <th class="py-3 px-4 border-2 border-blue">用途</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="py-2 px-4 border-2 border-blue">ミノー</td>
+              <td class="py-2 px-4 border-2 border-blue">細長い形状で、小魚に似せたデザイン</td>
+              <td class="py-2 px-4 border-2 border-blue">トラウト、バス、青物、シーバス</td>
+            </tr>
+            <tr>
+              <td class="py-2 px-4 border-2 border-blue">メタルジグ</td>
+              <td class="py-2 px-4 border-2 border-blue">重く、遠投がしやすい。水中でキラキラ光る</td>
+              <td class="py-2 px-4 border-2 border-blue">青物や底物、オフショアでも使用される</td>
+            </tr>
+            <tr>
+              <td class="py-2 px-4 border-2 border-blue">バイブレーション</td>
+              <td class="py-2 px-4 border-2 border-blue">速い巻きで振動が発生し、広範囲にアピール</td>
+              <td class="py-2 px-4 border-2 border-blue">バスやシーバスなどを狙う際に効果的</td>
+            </tr>
+            <tr>
+              <td class="py-2 px-4 border-2 border-blue">ワーム</td>
+              <td class="py-2 px-4 border-2 border-blue">柔らかい素材でできていて、虫や小動物に似せたデザイン</td>
+              <td class="py-2 px-4 border-2 border-blue">ライトゲーム(アジング)、バス釣り、シーバス</td>
+            </tr>
+            <tr>
+              <td class="py-2 px-4 border-2 border-blue">クランクベイト</td>
+              <td class="py-2 px-4 border-2 border-blue">リップがついていて、水中を泳ぐように動く</td>
+              <td class="py-2 px-4 border-2 border-blue">トラウト、バス</td>
+            </tr>
+            <tr>
+              <td class="py-2 px-4 border-2 border-blue">エギ</td>
+              <td class="py-2 px-4 border-2 border-blue">イカを釣るためにエビの外見・動きなどに似せてつくられた疑似餌</td>
+              <td class="py-2 px-4 border-2 border-blue">エギング</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
 
     <div class="md:mt-8 mt-4">
@@ -410,7 +424,7 @@
         <h4 class="md:text-lg text-md font-bold text-black mb-2">組み合わせのポイント</h4>
         <p class="md:mt-4 mt-2">タックルを組み合わせる際の参考にしてみてください。</p>
         <div class="md:mt-4 mt-2">
-          <ul class="list-decimal list-inside md:mt-2 mt-1 md:pl-5 pl-2 md:space-y-2 space-y-1">
+          <ul class="list-decimal list-inside md:mt-2 mt-1 md:pl-5 pl-0 md:space-y-2 space-y-1">
             <li>ロッドとリールのバランスをそろえることが大事です。例えば、UL〜Lのロッドには1000〜2000番のリール、L〜Mのロッドには2500〜3000番のリール、M〜Hのロッドには4000〜5000番のリールを目安にすると良いです。</li>
             <li>用途に合わせた選択が重要です。釣りたい魚や釣る場所に応じてタックルを選びます。バスフィッシングならクランクベイトやワーム、海のライトゲームなら小型(3g〜20g)のミノーやジグを使うと良いです。大型の魚を狙うショアジギングやシーバスなら、大きめのジグやミノー、バイブレーションを使うと効果的です。</li>
             <li>ラインの使い分けも大切です。初めての人にはナイロンラインかPEラインがおすすめです。いずれも8lbから20lbがおすすめです。</li>
@@ -437,7 +451,7 @@
     </div>
   </section>
   <div class="md:mt-10 mt-5">
-    <h2 class="md:text-2xl text-xl font-bold text-orange text-center">さあ、次は実際に釣りに行って楽しみながらタックルを揃えていってみよう！</h2>
+    <h2 class="md:text-2xl text-xl font-bold text-orange text-center">さあ、次は実際に釣りに行って楽しもう！</h2>
     <div class="md:mt-6 mt-3 flex justify-center">
       <%= image_tag "buri.jpg" %>
     </div>
