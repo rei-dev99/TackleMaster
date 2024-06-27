@@ -96,7 +96,7 @@ ja:
       return: 戻る
     create:
       success: タックルの作成が完了しました
-      failure: タックスの作成に失敗しました
+      failure: タックルの作成に失敗しました
     show:
       add_fishing_gear: 釣り具を追加する
       please_add_fishing_gear: 釣り具を追加しましょう！
