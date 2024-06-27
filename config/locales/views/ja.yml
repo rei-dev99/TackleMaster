@@ -201,6 +201,7 @@ ja:
       please_create_suggestion: 釣り具の提案を受けましょう！
     new:
       title: タックル提案
+      suggestion_limit_desc: 提案は1日3回まで受けることができます。次の日にリセットされます。
       submit: 提案を受ける
       fish_type: 狙う魚
       budget: 予算
