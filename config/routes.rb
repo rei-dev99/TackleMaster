@@ -1,12 +1,8 @@
 Rails.application.routes.draw do
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
-  # Can be used by load balancers and uptime monitors to verify that the app is live.
   get "up" => "rails/health#show", as: :rails_health_check
 
-  # Defines the root path route ("/")
   root "tops#index"
   resources :users
   resources :tackles do
@@ -20,21 +16,15 @@ Rails.application.routes.draw do
   post 'login', to: 'user_sessions#create'
   delete 'logout', to: 'user_sessions#destroy'
 
-  # Google Oauthルーディング
   post 'oauth/callback', to: 'oauths#callback'
   get 'oauth/callback', to: 'oauths#callback'
   get 'oauth/:provider', to: 'oauths#oauth', as: :auth_at_provider
 
-  # 釣り具解説ページ
   get '/explanation/', to: "tops#explanation"
-
-  # ポリシー
   get "/privacy_policy", to: "tops#privacy_policy"
-  # 利用規約
   get "/terms_of_service", to: "tops#terms_of_service"
 
   resources :fishing_gears
-
   resources :fishing_plans
 
 end
