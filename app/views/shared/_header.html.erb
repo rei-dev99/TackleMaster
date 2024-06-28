@@ -14,7 +14,6 @@
     <div class="modal-box bg-silver flex flex-col justify-center text-center">
       <div class="flex justify-center flex-col text-bold">
         <%= link_to t('header.logout'), logout_path, class: 'md:text-lg text-sm hover:opacity-70 transition-all duration-300', data: { turbo_method: :delete } %>
-        <%= link_to t('header.fishing_plan_page'), fishing_plans_path, class: 'md:text-lg text-sm hover:opacity-70 transition-all duration-300' %>
         <%= render 'shared/common_footer_links' %>
       </div>
       <ul class='flex space-x-6 justify-center mt-4'>
