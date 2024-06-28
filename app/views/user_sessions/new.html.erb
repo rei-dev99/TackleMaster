@@ -2,14 +2,15 @@
 <div class=''>
   <div class='py-14 max-w-lg mx-auto px-4'>
     <h1 class='text-center text-3xl text-black font-bold'><%= t('.title') %></h1>
-    <%= form_with(url: login_path, class: 'mt-6') do |f| %>
+    <%= form_with(model: @user, url: login_path, class: 'mt-6') do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
       <div class='mt-4'>
-        <%= f.label :email, class: 'text-black font-bold' %>
-        <%= f.email_field :email, class: 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' %>
+        <%= f.label :email, class: 'text-black font-bold required' %>
+        <%= f.email_field :email, class: 'shadow appearance-none border-2 border-blue rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' %>
       </div>
       <div class='mt-4'>
-        <%= f.label :password, class: 'text-black font-bold' %>
-        <%= f.password_field :password, class: 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' %>
+        <%= f.label :password, class: 'text-black font-bold required' %>
+        <%= f.password_field :password, class: 'shadow appearance-none border-2 border-blue rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' %>
       </div>
       <div class='mt-4 text-center'>
         <button type="submit" class="btn font-bold bg-blue text-white hover:bg-blue-700 py-2 px-10 rounded focus:outline-none focus:shadow-outline"><%= t('.login') %></button>

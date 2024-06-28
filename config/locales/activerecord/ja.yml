@@ -13,14 +13,17 @@ ja:
         image: 画像
       rod:
         name: ロッド名
+        maker: メーカー
         image: 画像
         memo: メモ
       reel:
         name: リール名
+        maker: メーカー
         image: 画像
         memo: メモ
       accesory:
         name: 小物名
+        maker: メーカー
         image: 画像
         memo: メモ
       fishing_gear:

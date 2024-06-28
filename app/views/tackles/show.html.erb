@@ -1,11 +1,17 @@
 <% content_for(:title, @tackle.name) %>
-<div class='py-14 max-w-[1000px] mx-auto px-4'>
-  <div>
-  <h1 class='text-center text-3xl text-black font-bold'><%= @tackle.name %></h1>
-  </div>
-  <div class='mt-10 text-center'>
-    <!-- You can open the modal using ID.showModal() method -->
+<div class='md:py-14 py-4 md:max-w-1200 max-w-full mx-auto px-4'>
+
+    <div class="rounded overflow-hidden">
+        <%= image_tag @tackle.image, class: "w-full md:h-96 h-48 object-cover" %>
+    </div>
+
+    <div class='md:mt-8 mt-4'>
+        <h1 class='text-center md:text-3xl text-2xl text-black font-bold'><%= @tackle.name %></h1>
+    </div>
+
+    <div class='md:mt-10 mt-5 text-center'>
     <button class="btn bg-blue text-white" onclick="my_modal_3.showModal()"><%= t('.add_fishing_gear') %></button>
+    <!-- モーダルウィンドウ -->
     <dialog id="my_modal_3" class="modal">
     <div class="modal-box">
         <form method="dialog">
@@ -19,7 +25,8 @@
         </div>
     </div>
     </dialog>
-    <div class='flex flex-wrap mt-6'>
+    <!-- モーダルウィンドウここまで -->
+    <div class='md:mt-10 mt-5 grid grid-cols-2 md:grid-cols-4 md:gap-6 gap-3'>
         <% if @tackle.rods.present? %>
             <%= render @tackle.rods %>
         <% else %>
@@ -36,10 +43,10 @@
             <p></p>
         <% end %>
     </div>
-  </div>
+</div>
 
-  <div class='mt-4 text-center'>
-      <%= link_to t('.return'), tackles_path, class: 'underline underline-offset-2 text-link hover:orange font-bold' %>
-  </div>
+<div class='md:mt-4 mt-2 text-center'>
+    <%= link_to t('.return'), tackles_path, class: 'underline underline-offset-2 text-link hover:opacity-70 font-bold' %>
+</div>
 
 </div>

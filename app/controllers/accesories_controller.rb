@@ -1,7 +1,9 @@
 class AccesoriesController < ApplicationController
   before_action :require_login
-  before_action :set_tackle, only: %i[new create edit update destroy]
-  before_action :set_accesory, only: %i[edit update destroy]
+  before_action :set_tackle, only: %i[show new create edit update destroy]
+  before_action :set_accesory, only: %i[show edit update destroy]
+
+  def show; end
 
   def new
     @accesory = @tackle.accesories.build
@@ -46,6 +48,6 @@ class AccesoriesController < ApplicationController
   end
 
   def accesory_params
-    params.require(:accesory).permit(:name, :memo, :image)
+    params.require(:accesory).permit(:name, :maker, :memo, :image)
   end
 end

@@ -3,7 +3,7 @@ class TacklesController < ApplicationController
   before_action :set_tackle, only: %i[edit update destroy]
 
   def index
-    @tackles = current_user.tackles.page(params[:page]).per(6)
+    @tackles = current_user.tackles.order(created_at: :desc).page(params[:page]).per(6)
   end
 
   def show
@@ -17,7 +17,7 @@ class TacklesController < ApplicationController
   def create
     @tackle = current_user.tackles.build(tackle_params)
     if @tackle.save
-      redirect_to tackles_path, notice: t('tackles.create.success')
+      redirect_to tackle_path(@tackle), notice: t('tackles.create.success')
     else
       flash.now[:alert] = t('tackles.create.failure')
       render :new, status: :unprocessable_entity

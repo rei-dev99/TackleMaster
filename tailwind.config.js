@@ -26,6 +26,10 @@ module.exports = {
       'silver': '#C0C0C0',
     },
     extend: {
+      maxWidth: {
+        '1200': '1200px',
+        '700': '700px',
+      },
       keyframes: {
         flashFade: {
           "0%": { transform: "translateX(180px)", opacity: 0 },

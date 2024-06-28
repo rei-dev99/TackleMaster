@@ -1,0 +1,22 @@
+<%= form_with model: [ @tackle, @reel ],class: 'md:mt-10 mt-5', local: true do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+    <div class='md:mt-10 mt-5'>
+        <%= f.label :name, class: 'text-black font-bold md:text-xl text-lg required' %>
+        <%= f.text_field :name, class: 'shadow appearance-none border rounded w-full md:py-2 py-1 md:px-3 px-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-blue border-2' %>
+    </div>
+    <div class='md:mt-10 mt-5'>
+        <%= f.label :maker, class: 'text-black font-bold md:text-xl text-lg required' %>
+        <%= f.text_field :maker, class: 'shadow appearance-none border rounded w-full md:py-2 py-1 md:px-3 px-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-blue border-2' %>
+    </div>
+    <div class='md:mt-10 mt-5'>
+        <%= f.label :image, class: 'text-black font-bold md:text-xl text-lg required' %>
+        <%= f.file_field :image, class: 'shadow appearance-none border rounded w-full md:py-2 py-1 md:px-3 px-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-blue border-2' %>
+    </div>
+    <div class='md:mt-10 mt-5'>
+        <%= f.label :memo, class: 'text-black font-bold md:text-xl text-lg' %>
+        <%= f.text_area :memo, class: 'shadow appearance-none border rounded w-full md:py-2 py-1 md:px-3 px-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-blue border-2' %>
+    </div>
+    <div class='md:mt-8 mt-4 text-center'>
+        <button type="submit" class="btn font-bold bg-blue text-white hover:bg-blue-700 md:py-2 py-1 md:px-10 px-5 rounded focus:outline-none focus:shadow-outline"><%= t('.submit') %></button>
+    </div>
+<% end %>

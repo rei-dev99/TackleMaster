@@ -1,7 +1,9 @@
 class ReelsController < ApplicationController
   before_action :require_login
-  before_action :set_tackle, only: %i[new create edit update destroy]
-  before_action :set_reel, only: %i[edit update destroy]
+  before_action :set_tackle, only: %i[show new create edit update destroy]
+  before_action :set_reel, only: %i[show edit update destroy]
+
+  def show; end
 
   def new
     @reel = @tackle.reels.build
@@ -46,6 +48,6 @@ class ReelsController < ApplicationController
   end
 
   def reel_params
-    params.require(:reel).permit(:name, :memo, :image)
+    params.require(:reel).permit(:name, :maker, :memo, :image)
   end
 end

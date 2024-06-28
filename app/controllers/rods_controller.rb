@@ -1,7 +1,9 @@
 class RodsController < ApplicationController
   before_action :require_login
-  before_action :set_tackle, only: %i[new create edit update destroy]
-  before_action :set_rod, only: %i[edit update destroy]
+  before_action :set_tackle, only: %i[show new create edit update destroy]
+  before_action :set_rod, only: %i[show edit update destroy]
+
+  def show; end
 
   def new
     @rod = @tackle.rods.build
@@ -47,6 +49,6 @@ class RodsController < ApplicationController
   end
 
   def rod_params
-    params.require(:rod).permit(:name, :memo, :image)
+    params.require(:rod).permit(:name, :maker, :memo, :image)
   end
 end

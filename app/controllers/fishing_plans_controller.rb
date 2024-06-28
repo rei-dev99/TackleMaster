@@ -3,8 +3,8 @@ class FishingPlansController < ApplicationController
   before_action :set_plan, only: %i[edit update destroy]
 
   def index
-    @plans = current_user.fishing_plans
-    @tackles = current_user.tackles
+    @plans = current_user.fishing_plans.order(created_at: :desc)
+    @tackles = current_user.tackles.order(created_at: :desc)
   end
 
   def new

@@ -4,7 +4,7 @@ class FishingGearsController < ApplicationController
   before_action :set_fishing_gear, only: %i[show edit update destroy]
 
   def index
-    @fishing_gears = @user.fishing_gears.page(params[:page]).per(4)
+    @fishing_gears = @user.fishing_gears.order(created_at: :desc).page(params[:page]).per(4)
   end
 
   def show
@@ -121,6 +121,8 @@ class FishingGearsController < ApplicationController
       @user.increment_suggestion_count # 提案回数を増加させる
       redirect_to @fishing_gear, notice: t('fishing_gears.create.success')
     else
+      keyword = params[:keyword] || t('fishing_gears.new.fishing_gear')
+      @items = search_rakuten_api(keyword)
       flash.now[:alert] = t('tackles.create.failure')
       render :new, status: :unprocessable_entity
     end

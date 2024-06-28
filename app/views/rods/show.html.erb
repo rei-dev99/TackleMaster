@@ -1,0 +1,36 @@
+<% content_for(:title, @rod.name) %>
+<div class="md:py-14 py-7 mx-auto px-4">
+    <h1 class="text-center md:text-3xl text-2xl text-black font-bold"><%= @rod.name %></h1>
+
+    <div class="md:mt-8 mt-4">
+        <div class="md:max-w-700 max-w-full mx-auto">
+            <!-- Edit and Delete Buttons -->
+            <div class="flex justify-end md:space-x-4 space-x-2">
+                <%= link_to edit_tackle_rod_path(@tackle, @rod), class: 'bg-blue text-white md:px-4 px-2 md:py-2 py-1 rounded flex items-center hover:opacity-70' do %>
+                    <i class="fa fa-edit mr-2"></i> <%= t('.edit') %>
+                <% end %>
+                <%= link_to tackle_rod_path(@tackle, @rod), method: :delete, data: { turbo_method: :delete, turbo_confirm: t('.delete') }, class: 'bg-orange text-white md:px-4 px-2 md:py-2 py-1 rounded flex items-center hover:opacity-70' do %>
+                    <i class="fa fa-trash mr-2"></i> <%= t('.destroy') %>
+                <% end %>
+            </div>
+
+            <div class="md:mt-4 mt-2 text-black">
+                <div class="overflow-hidden">
+                    <%= image_tag @rod.image, class: "w-full md:h-80 h-52 object-cover rounded" if @rod.image.attached? %>
+                </div>
+                <div class="md:mt-4 mt-2">
+                    <h3 class="text-black font-bold text-lg"><%= t('.maker') %></h3>
+                    <p class="mt-1 text-black"><%= @rod.maker %></p>
+                </div>
+                <div class="md:mt-4 mt-2">
+                    <h3 class="text-black font-bold text-lg"><%= t('.memo') %></h3>
+                    <p class="mt-1 text-black"><%= @rod.memo %></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class='md:mt-8 mt-4 text-center'>
+        <%= link_to t('.return'), tackle_path(@tackle), class: 'underline underline-offset-2 text-link hover:opacity-70 font-bold' %>
+    </div>
+</div>
