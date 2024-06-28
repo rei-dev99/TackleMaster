@@ -22,7 +22,7 @@ ja:
     terms_of_service:
       title: 利用規約
     explanation:
-      title: タックル解説
+      title: 釣り入門
   user_sessions:
     new:
       title: ログイン
@@ -52,6 +52,7 @@ ja:
     new:
       title: パスワードリセット申請
       submit: 申請
+      return: 戻る
     create:
       send_mail: パスワードリセットのメールを送信しました
       not_found: Emailが見つかりません
@@ -67,13 +68,13 @@ ja:
     search_tackle: タックル提案
     tackles_page: タックル一覧
     fishing_plan_page: 釣行プラン
-    explanation: タックルについて
+    explanation: 釣り入門
     login: ログイン
     logout: ログアウト
   footer:
     title: Tackle Master
     contact: お問い合わせ
-    explanation: タックルについて
+    explanation: 釣り入門
     terms_of_service: 利用規約
     privacy_policy: プライバシーポリシー
     tackles_page: タックル一覧
