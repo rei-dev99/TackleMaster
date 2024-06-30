@@ -70,6 +70,8 @@ group :development do
   gem 'factory_bot_rails'
   gem 'spring-commands-rspec'
   gem 'letter_opener_web'
+
+  gem 'pry-nav'
 end
 
 group :test do
@@ -78,6 +80,8 @@ group :test do
   gem "selenium-webdriver"
   gem 'rspec-rails'
   gem 'factory_bot_rails'
+
+  gem 'pry-nav'
 end
 
 gem 'sorcery'
