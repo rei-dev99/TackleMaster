@@ -161,7 +161,11 @@ Rails.application.config.sorcery.configure do |config|
   config.google.key = Rails.application.credentials.dig(:google, :google_client_id)
   config.google.secret = Rails.application.credentials.dig(:google, :google_client_secret)
   #API設定で承認済みのリダイレクトURIとして登録したurlを設定
-  config.google.callback_url = Settings.sorcery[:google_callback_url]
+  if Rails.env.test?
+    config.google.callback_url = 'http://localhost:3000/test_callback'
+  else
+    config.google.callback_url = Settings.sorcery[:google_callback_url]
+  end
   #外部サービスから取得したユーザー情報をUserモデルの指定した属性にマッピング
   config.google.user_info_mapping = { email: "email", name: "name" }
   # config.google.scope = "https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile"
