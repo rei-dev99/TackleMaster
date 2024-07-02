@@ -3,10 +3,10 @@
     <div class="slide">
       <div class="slide-image"><%= image_tag 'fv1.jpg', class: 'bg-cover bg-center object-cover h-full w-full' %></div>
       <div class="slide-image"><%= image_tag 'fv2.jpg', class: 'bg-cover bg-center object-cover h-full w-full' %></div>
-      <div class="slide-image"><%= image_tag 'fv2.jpg', class: 'bg-cover bg-center object-cover h-full w-full' %></div>
+      <div class="slide-image"><%= image_tag 'fv3.jpg', class: 'bg-cover object-top object-cover h-full w-full' %></div>
     </div>
     <div class='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center w-full '>
-      <h1 class='font-bold text-3xl md:text-5xl sm:text-4xl text-white original-text-shadow'>釣りの楽しさは<br>選び抜かれた道具から</h1>
+      <h1 class='font-heading font-bold text-3xl md:text-5xl sm:text-4xl text-white original-text-shadow'>釣りの楽しさは<br>選び抜かれた道具から</h1>
       <% if logged_in? %>
         <div class="flex-col justify-center md:mt-8 mt-4">
           <%= link_to t('.tackle_found'), new_fishing_gear_path, class: 'btn text-white bg-orange px-10' %>
@@ -19,7 +19,7 @@
   </div>
 
   <div class='md:py-14 py-7 mx-auto container text-center md:px-4 px-2'>
-    <h2 class='text-black font-bold md:text-3xl text-2xl'>Tackle Master</h2>
+    <h2 class='font-heading text-black font-bold md:text-3xl text-2xl'>Tackle Master</h2>
     <p class='text-orange md:text-xl text-lg md:mt-6 mt-3 font-bold'>釣り道具に特化したサービスで<br class="md:hidden block">釣り道具の管理・登録・検索ができます</p>
     <div class="flex justify-center">
       <%= image_tag 'logo.png', class: 'object-cover' %>
@@ -90,7 +90,7 @@
       <div class="text-center relative rounded overflow-hidden md:mt-10 mt-5">
         <%= image_tag 'top-footer.jpg', class: 'w-full max-w-full md:h-80 h-40 bg-cover bg-center object-cover' %>
         <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center w-full">
-          <h2 class='text-center text-orange font-bold md:text-3xl text-2xl original-text-shadow'>釣りを楽しみませんか？</h2>
+          <h2 class='font-heading text-center text-orange font-bold md:text-3xl text-2xl original-text-shadow'>釣りを楽しみませんか？</h2>
           <%= link_to t('.registration_start'), login_path, class: 'btn text-white bg-orange md:mt-8 mt-4 md:px-10 px-5' %>
         </div>
       </div>
