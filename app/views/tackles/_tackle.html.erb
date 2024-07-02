@@ -15,25 +15,25 @@
       <% total_count = rod_count + reel_count + accesory_count %>
 
       <% if tackle.rods.present? %>
-        <li class="border border-2 p-1 rounded-full font-bold">ロッド：<%= tackle.rods.count %></li>
+        <li class="border border-2 p-1 rounded-full font-bold mx-1">ロッド：<%= tackle.rods.count %></li>
       <% else %>
         <li></li>
       <% end %>
 
       <% if tackle.reels.present? %>
-        <li class="border border-2 p-1 rounded-full font-bold mx-2">リール：<%= tackle.reels.count %></li>
+        <li class="border border-2 p-1 rounded-full font-bold mx-1">リール：<%= tackle.reels.count %></li>
       <% else %>
         <li></li>
       <% end %>
 
       <% if tackle.accesories.present? %>
-        <li class="border border-2 p-1 rounded-full font-bold">小物：<%= tackle.accesories.count %></li>
+        <li class="border border-2 p-1 rounded-full font-bold mx-1">小物：<%= tackle.accesories.count %></li>
       <% else %>
         <li></li>
       <% end %>
 
       <% if total_count > 0 %>
-        <li class="text-orange border border-2 p-1 rounded-full font-bold mx-2">合計：<%= total_count %></li>
+        <li class="text-orange border border-2 p-1 rounded-full font-bold mx-1">合計：<%= total_count %></li>
       <% else %>
         <li></li>
       <% end %>

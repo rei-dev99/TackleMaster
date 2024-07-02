@@ -16,10 +16,9 @@ class Tackle < ApplicationRecord
 
   has_many :fishing_plans, dependent: :destroy
 
-  validates :name, presence: true, length: { maximum: 255 }
-
   has_one_attached :image
 
+  validates :name, presence: true, length: { maximum: 255 }
   validate :image_presence
 
   private

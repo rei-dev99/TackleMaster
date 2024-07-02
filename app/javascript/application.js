@@ -2,7 +2,5 @@
 import "@hotwired/turbo-rails"
 import "./controllers"
 import "./tackles_new"
+import "./scroll"
 
-document.addEventListener("turbo:load", function() {
-  new ScrollHint('.js-scrollable');
-});

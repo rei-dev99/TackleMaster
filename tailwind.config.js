@@ -30,6 +30,10 @@ module.exports = {
         '1200': '1200px',
         '700': '700px',
       },
+      fontFamily: {
+        sans: ['Roboto', 'Helvetica', 'Arial', 'Noto Sans JP', 'sans-serif'], // グローバルなテキスト(全体適用)、ユーザー入力
+        heading: ['Montserrat', 'Georgia', 'Noto Serif JP', 'serif'], // 見出しで使用、必要に応じて使用
+      },
       keyframes: {
         flashFade: {
           "0%": { transform: "translateX(180px)", opacity: 0 },

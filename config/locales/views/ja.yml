@@ -16,6 +16,8 @@ ja:
       truncate: "&hellip;"
   tops:
     index:
+      tackle_found: タックルを探す
+      registration_start: 登録して始める！
       tackle_registration: タックルを登録する
     privacy_policy:
       title: プライバシーポリシー
@@ -66,7 +68,7 @@ ja:
     title: Tackle Master
     sign_up: 新規登録
     search_tackle: タックル提案
-    tackles_page: タックル一覧
+    tackles_page: タックル登録
     fishing_plan_page: 釣行プラン
     explanation: 釣り入門
     login: ログイン
@@ -77,7 +79,7 @@ ja:
     explanation: 釣り入門
     terms_of_service: 利用規約
     privacy_policy: プライバシーポリシー
-    tackles_page: タックル一覧
+    tackles_page: タックル登録
     suggestion_page: タックル提案
     fishing_plan_page: 釣行プラン
   tackles:

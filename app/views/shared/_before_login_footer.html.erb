@@ -3,21 +3,7 @@
     <div class='flex justify-between mx-auto container items-center'>
       <div><%= link_to t('footer.title'), root_path, class: 'text-xl md:text-3xl font-bold' %></div>
       <ul class='flex space-x-6'>
-        <li>
-            <%= link_to root_path do %>
-                <i class="fa-brands fa-x-twitter text-blue hover:opacity-70 transition-all duration-300 text-sm md:text-xl"></i>
-            <% end %>
-        </li>
-        <li>
-            <%= link_to root_path do %>
-                <i class="fa-brands fa-facebook-f text-blue hover:opacity-70 transition-all duration-300 text-sm md:text-xl"></i>
-            <% end %>
-        </li>
-        <li>
-            <%= link_to root_path do %>
-                <i class="fa-brands fa-instagram text-blue hover:opacity-70 transition-all duration-300 text-sm md:text-xl"></i>
-            <% end %>
-        </li>
+        <%= render 'shared/common_sns_links' %>
       </ul>
     </div>
     <div class='flex flex-col mx-auto container mt-2 md:justify-between md:flex-row md:mt-6'>

@@ -7,7 +7,7 @@
     <meta name="twitter:site" content="@your_twitter_handle">
     <meta name="twitter:title" content="<%= page_title(yield(:title)) %>">
     <meta name="twitter:description" content="Tackle Master Tacle Mastersは、釣り愛好家のための最も包括的な釣り道具アプリです。あなたのタックルを管理したり、最新の釣りギアを探索しましょう！">
-    <meta name="twitter:image" content="<%= asset_path('fv.jpeg') %>">
+    <meta name="twitter:image" content="<%= asset_path('fv1.jpg') %>">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -26,7 +26,7 @@
     <script src="https://cdn.jsdelivr.net/npm/scroll-hint/js/scroll-hint.min.js"></script>
   </head>
 
-  <body class="md:mt-[84px] mt-[44px] md:mb-0 mb-[36px]">
+  <body class="font-sans md:mt-[84px] mt-[44px] md:mb-0 mb-[36px] bg-white">
     <% if logged_in? %>
       <%= render 'shared/header' %>
     <% else %>
