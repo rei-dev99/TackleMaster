@@ -2,5 +2,4 @@
 import "@hotwired/turbo-rails"
 import "./controllers"
 import "./tackles_new"
-import "./scroll"
-
+import "./react/entrypoints/application"
