@@ -7,12 +7,4 @@ class Accesory < ApplicationRecord
   validates :memo, length: { maximum: 500 }
 
   has_one_attached :image
-
-  validate :image_presence
-
-  private
-
-  def image_presence
-    errors.add(:image, '小物画像をアップロードしてください') unless image.attached?
-  end
 end
