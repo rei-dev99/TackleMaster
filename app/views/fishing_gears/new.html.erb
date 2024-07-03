@@ -46,6 +46,9 @@
                 <p class="text-orange font-bold hidden" id="wait">提案を考えています…しばらくお待ちください…</p>
             </div>
         <% end %>
+        <div class='md:mt-4 mt-2 text-center'>
+            <%= link_to t('.return'), :back, class: 'underline underline-offset-2 text-link hover:opacity-70 font-bold' %>
+        </div>
     </div>
 
     <% if @items.present? %>
@@ -66,7 +69,4 @@
     <% else %>
         <p class="text-center"><%= t('.not_found_products') %></p>
     <% end %>
-    <div class='md:mt-4 mt-2 text-center'>
-      <%= link_to t('.return'), :back, class: 'underline underline-offset-2 text-link hover:opacity-70 font-bold' %>
-    </div>
 </div>
