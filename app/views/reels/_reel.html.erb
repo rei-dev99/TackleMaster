@@ -1,7 +1,12 @@
 <div class='flex flex-col justify-between text-center shadow-xl bg-white rounded-lg overflow-hidden h-full'>
   <div class="overflow-hidden">
-    <%= link_to tackle_reel_path(@tackle, reel) do %>
-      <%= image_tag reel.image, class: "w-full md:h-36 sm:h-32 h-28 object-cover block hover:shadow-lg transition-transform duration-300 transition transform hover:scale-105" if reel.image.attached? %>
+    <%= link_to tackle_reel_path(@tackle, reel), class: 'relative' do %>
+      <% if reel.image.attached? %>
+        <%= image_tag reel.image, class: "w-full md:h-36 sm:h-32 h-28 object-cover block hover:shadow-lg transition-transform duration-300 transition transform hover:scale-105" %>
+      <% else %>
+        <%= image_tag 'default_item.png', class: "w-full md:h-36 sm:h-32 h-28 object-cover block hover:shadow-lg transition-transform duration-300 transition transform hover:scale-105" %>
+      <% end %>
+      <div class="absolute right-3 bottom-3 border-orange border-2 rounded-full text-white bg-orange font-bold px-2 py-1 md:text-sm text-xs opacity-80">リール</div>
     <% end %>
   </div>
   <div class='text-center flex flex-col flex-1 md:p-4 p-2'>

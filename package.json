@@ -6,12 +6,20 @@
     "@dnd-kit/sortable": "^8.0.0",
     "@hotwired/stimulus": "^3.2.2",
     "@hotwired/turbo-rails": "^8.0.4",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@types/react-router-dom": "^5.3.3",
     "autoprefixer": "^10.4.19",
     "daisyui": "^4.11.1",
     "esbuild": "^0.20.2",
     "postcss": "^8.4.38",
+    "react": "^18.3.1",
     "react-beautiful-dnd": "^13.1.1",
-    "tailwindcss": "^3.4.3"
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.24.0",
+    "scroll-hint": "^1.2.5",
+    "tailwindcss": "^3.4.3",
+    "typescript": "^5.5.3"
   },
   "scripts": {
     "build": "esbuild app/javascript/*.* --bundle --sourcemap --format=esm --outdir=app/assets/builds --public-path=/assets",
