@@ -1,7 +1,11 @@
 <div class="flex flex-col justify-between text-center shadow-xl bg-white rounded-lg overflow-hidden">
   <div class="overflow-hidden">
     <%= link_to tackle_path(tackle), class: "block hover:shadow-lg transition-transform duration-300 transition transform hover:scale-105" do %>
-      <%= image_tag tackle.image, class: "w-full md:h-60 h-52 object-cover" if tackle.image.attached? %>
+      <% if tackle.image.attached? %>
+        <%= image_tag tackle.image, class: "w-full md:h-60 h-52 object-cover" %>
+      <% else %>
+        <%= image_tag 'tackle_default.jpg', class: "w-full md:h-60 h-52 object-cover" %>
+      <% end %>
     <% end %>
   </div>
 

@@ -2,7 +2,11 @@
 <div class='md:py-14 py-4 md:max-w-1200 max-w-full mx-auto px-4'>
 
     <div class="rounded overflow-hidden">
+      <% if @tackle.image.attached? %>
         <%= image_tag @tackle.image, class: "w-full md:h-96 h-48 object-cover" %>
+      <% else %>
+        <%= image_tag 'tackle_default.jpg', class: "w-full md:h-96 h-48 object-cover" %>
+      <% end %>
     </div>
 
     <div class='md:mt-8 mt-4'>
