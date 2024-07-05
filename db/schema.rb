@@ -84,9 +84,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_24_230033) do
     t.float "precipitation_probability"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "user_id"
-    t.string "fish_types", null: false
-    t.integer "tackle_id"
   end
 
   create_table "reels", force: :cascade do |t|
@@ -160,7 +157,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_24_230033) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "fishing_gears", "users"
-  add_foreign_key "fishing_plans", "tackles"
   add_foreign_key "tackle_accesories", "accesories"
   add_foreign_key "tackle_accesories", "tackles"
   add_foreign_key "tackle_reels", "reels"
