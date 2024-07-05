@@ -25,6 +25,4 @@ Rails.application.routes.draw do
   get "/terms_of_service", to: "tops#terms_of_service"
 
   resources :fishing_gears
-  resources :fishing_plans
-
 end
