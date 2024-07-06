@@ -1,4 +1,4 @@
-<%= form_with model: [ @tackle, @accesory ], class: 'md:mt-10 mt-5', local: true do |f| %>
+<%= form_with model: [ @tackle, @accesory ], id: 'tackle_form', class: 'md:mt-10 mt-5', local: true do |f| %>
     <%= render 'shared/error_messages', object: f.object %>
     <div class='md:mt-10 mt-5'>
         <%= f.label :name, class: 'text-black font-bold md:text-xl text-lg required' %>
