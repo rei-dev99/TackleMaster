@@ -16,7 +16,13 @@
         <%= f.label :memo, class: 'text-black font-bold md:text-xl text-lg' %>
         <%= f.text_area :memo, class: 'shadow appearance-none border rounded w-full md:py-2 py-1 md:px-3 px-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-blue border-2' %>
     </div>
-    <div class="md:mt-6 mt-3" id="previews"></div>
+    <div class="md:mt-10 mt-5" id="previews_reel">
+        <% if @reel.image.attached? && @reel.persisted? %>
+            <div class="preview">
+                <%= image_tag @reel.image, class: 'preview-image' %>
+            </div>
+        <% end %>
+    </div>
     <div class='md:mt-8 mt-4 text-center'>
         <button type="submit" class="btn font-bold bg-blue text-white hover:bg-blue-700 md:py-2 py-1 md:px-10 px-5 rounded focus:outline-none focus:shadow-outline"><%= t('.submit') %></button>
     </div>
