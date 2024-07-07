@@ -12,6 +12,13 @@
   text-shadow: 3px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
+/* プレビュー画像のCSS */
+.preview-image {
+  width: 100%;
+  height: auto;
+  margin-top: 12px;
+}
+
 /* トップページFVアニメーションここから */
 .slide {
   position: relative;

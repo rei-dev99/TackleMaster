@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_06_24_230033) do
+ActiveRecord::Schema[7.1].define(version: 2024_07_06_110943) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -73,20 +73,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_24_230033) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_fishing_gears_on_user_id"
-  end
-
-  create_table "fishing_plans", force: :cascade do |t|
-    t.date "fishing_date", null: false
-    t.string "location", null: false
-    t.float "temperature"
-    t.float "wind_speed"
-    t.string "weather_condition"
-    t.float "precipitation_probability"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "user_id"
-    t.string "fish_types", null: false
-    t.integer "tackle_id"
   end
 
   create_table "reels", force: :cascade do |t|
@@ -160,7 +146,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_24_230033) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "fishing_gears", "users"
-  add_foreign_key "fishing_plans", "tackles"
   add_foreign_key "tackle_accesories", "accesories"
   add_foreign_key "tackle_accesories", "tackles"
   add_foreign_key "tackle_reels", "reels"
