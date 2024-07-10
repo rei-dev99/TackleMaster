@@ -3,4 +3,4 @@ sorcery:
 
 default_url_options:
   protcol: 'https'
-  host: 'https://tacklemaster.net'
+  host: 'tacklemaster.net'
