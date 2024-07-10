@@ -74,7 +74,7 @@ Rails.application.configure do
 
   config.action_mailer.raise_delivery_errors = true #メール送信に失敗した場合にエラーを発生させる
   config.action_mailer.perform_caching = false
-  config.action_mailer.default_url_options = { host: 'tacklemaster.onrender.com', protocol: 'https' }  #メール内に記載されるURLにホスト名を設定
+  config.action_mailer.default_url_options = { host: 'tacklemaster.net', protocol: 'https' }  #メール内に記載されるURLにホスト名を設定
   config.action_mailer.delivery_method = :smtp #メールの送信方法をSMTP（Simple Mail Transfer Protocol）に設定
   config.action_mailer.smtp_settings = {
     address: 'smtp.gmail.com',
@@ -107,6 +107,5 @@ Rails.application.configure do
   # Skip DNS rebinding protection for the default health check endpoint.
   # config.host_authorization = { exclude: ->(request) { request.path == "/up" } }
   # config.hosts << 'tacklemaster.onrender.com'
-  # config.hosts << 'www.tacklemaster.net'
   config.hosts << "tacklemaster.net"
 end
