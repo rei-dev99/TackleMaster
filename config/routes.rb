@@ -6,7 +6,11 @@ Rails.application.routes.draw do
   root "tops#index"
   resources :users
   resources :tackles do
-    resources :rods, only: %i[show new create edit update destroy]
+    resources :rods, only: %i[show new create edit update destroy] do
+      collection do
+        get :search_makers
+      end
+    end
     resources :reels, only: %i[show new create edit update destroy]
     resources :accesories, only: %i[show new create edit update destroy]
   end
