@@ -32,10 +32,15 @@ class RodsController < ApplicationController
   end
 
   def destroy
-    # rodsテーブルのレコードを削除しようとしたときに、そのレコードがtackle_rodsテーブルで参照されているため、外部キー制約に違反
     @rod.tackle_rods.destroy_all
     @rod.destroy
     redirect_to @tackle, notice: t('rods.destroy.success'), status: :see_other
+  end
+
+  def search_makers
+    query = params[:query]
+    makers = ["シマノ", "ダイワ", "アブガルシア"].select { |maker| maker.include?(query) }
+    render json: makers
   end
 
   private
