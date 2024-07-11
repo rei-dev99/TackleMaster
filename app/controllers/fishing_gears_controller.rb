@@ -24,9 +24,9 @@ class FishingGearsController < ApplicationController
   end
 
   def new
-    @fishing_gear = @user.fishing_gears.build # buildは親インスタンスに子インスタンスを作成するときに必要
-    keyword = params[:keyword] || t('fishing_gears.new.fishing_gear') # デフォルト値を設定、値が存在しなければ釣具で検索される
-    @items = search_rakuten_api(keyword) # search_rakuten_apiメソッドを呼び出し結果を@itemsインスタンス変数に代入。これにより、ビューで@itemsを使って検索結果を表示できるようになる
+    @fishing_gear = @user.fishing_gears.build
+    keyword = params[:keyword] || t('fishing_gears.new.fishing_gear')
+    @items = search_rakuten_api(keyword)
   end
 
   def create
@@ -34,8 +34,7 @@ class FishingGearsController < ApplicationController
     if @user.can_suggest?
       handle_suggestion_creation
     else
-      # 提案回数の上限に達した場合の処理
-      suggestion_limit
+      suggestion_limit # 提案回数の上限に達した場合の処理
     end
   end
 
@@ -91,16 +90,14 @@ class FishingGearsController < ApplicationController
     redirect_to fishing_gears_path, alert: t('fishing_gears.suggestion_limit.failure')
   end
 
-  def self.extract_product_name(text)
-    return unless text =~ /(?:「)([^」]+)(?:」)/ # 「」の中の商品名を抽出する正規表現
+  public_class_method def self.extract_product_name(text)
+    return unless text =~ /(?:「)([^」]+)(?:」)/ # 「」の中の商品名を抽出する
 
     ::Regexp.last_match(1).strip
   end
 
-  # private_class_method :extract_product_name
-
   def handle_suggestion_creation
-    if all_params_present? # ユーザーがフォームで入力したデータを取得
+    if all_params_present?
       create_suggestion
     else
       keyword = params[:keyword] || t('fishing_gears.new.fishing_gear')
@@ -110,15 +107,15 @@ class FishingGearsController < ApplicationController
   end
 
   def create_suggestion
-    @suggestion = OpenaiService.get_chat_response(fishing_gear_params) # OpenAI APIで提案をもらう
-    Rails.logger.info("OpenAI Suggestion: #{@suggestion}") # ここでビューに渡す
+    @suggestion = OpenaiService.get_chat_response(fishing_gear_params)
+    Rails.logger.info("OpenAI Suggestion: #{@suggestion}")
     keyword = self.class.extract_product_name(@suggestion) # 商品名を提案から抽出
     Rails.logger.info("Extracted Keyword: #{keyword}")
 
     @fishing_gear.suggestion = @suggestion
 
     if @fishing_gear.save
-      @user.increment_suggestion_count # 提案回数を増加させる
+      @user.increment_suggestion_count # 提案回数の増加
       redirect_to @fishing_gear, notice: t('fishing_gears.create.success')
     else
       keyword = params[:keyword] || t('fishing_gears.new.fishing_gear')
@@ -128,13 +125,12 @@ class FishingGearsController < ApplicationController
     end
   end
 
-  # 楽天APIを使ってアイテムを検索する
   def search_rakuten_api(keyword)
     return [] if keyword.blank? # キーワードが空の場合は空の配列を返す
 
     items = RakutenWebService::Ichiba::Item.search(keyword:).first(8) # 指定されたkeywordを基にアイテムを検索し、結果はitemsに代入
-    items.map do |item| # itemsをループし、各アイテムを特定のフォーマットに変換
-      { # 各アイテムから必要な情報（名前、価格、URL、画像URL）を抽出
+    items.map do |item|
+      {
         name: item['itemName'],
         price: item['itemPrice'],
         url: item['itemUrl'],
