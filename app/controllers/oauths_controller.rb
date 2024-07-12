@@ -1,9 +1,7 @@
 class OauthsController < ApplicationController
-  # newとcreateアクションに対してrequire_loginというbefore_action（フィルタ）をスキップ(ログイン不要)
   skip_before_action :require_login
   def oauth
-    # 指定されたプロバイダの認証ページにリダイレクト
-    login_at(auth_params[:provider])
+    login_at(auth_params[:provider]) # プロバイダの認証ページにリダイレクト
   end
 
   def callback
@@ -13,7 +11,7 @@ class OauthsController < ApplicationController
       handle_auth_cancellation and return
     end
 
-    # 既存のユーザーをプロバイダ情報を元に検索し、存在すればログイン
+    # 既存のユーザーをプロバイダ情報を元に検索
     if (@user = login_from(provider))
       handle_existing_user(provider)
     else
@@ -42,7 +40,7 @@ class OauthsController < ApplicationController
     redirect_to root_path, notice: t('oauths.success', provider: provider.titleize)
   end
 
-  # ユーザーが存在しない場合はプロバイダ情報を元に新規ユーザーを作成し、ログイン
+  # ユーザーが存在しない場合、プロバイダ情報を元に新規ユーザーを作成し、ログイン
   def handle_new_user(provider)
     signup_and_login(provider)
     redirect_to root_path, notice: t('oauths.success', provider: provider.titleize)

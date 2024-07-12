@@ -2,19 +2,19 @@
     <%= render 'shared/error_messages', object: f.object %>
     <div class='md:mt-10 mt-5'>
         <%= f.label :name, class: 'text-black font-bold md:text-xl text-lg required' %>
-        <%= f.text_field :name, class: 'shadow appearance-none border rounded w-full md:py-2 py-1 md:px-3 px-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-blue border-2' %>
+        <%= f.text_field :name, class: 'shadow appearance-none rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline border-blue border-2' %>
     </div>
     <div class='md:mt-10 mt-5'>
         <%= f.label :maker, class: 'text-black font-bold md:text-xl text-lg required' %>
-        <%= f.text_field :maker, data: { controller: "autocomplete", action: "input->autocomplete#search", autocomplete_url_value: search_makers_tackle_rods_path } ,class: 'shadow appearance-none border rounded w-full md:py-2 py-1 md:px-3 px-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-blue border-2' %>
+        <%= f.text_field :maker, data: { controller: "autocomplete", action: "input->autocomplete#search", autocomplete_url_value: search_makers_tackle_rods_path } ,class: 'shadow appearance-none rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline border-blue border-2' %>
     </div>
     <div class='md:mt-10 mt-5'>
         <%= f.label :image, class: 'text-black font-bold md:text-xl text-lg' %>
-        <%= f.file_field :image, class: 'shadow appearance-none border rounded w-full md:py-2 py-1 md:px-3 px-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-blue border-2' %>
+        <%= f.file_field :image, class: 'shadow appearance-none rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline border-blue border-2' %>
     </div>
     <div class='md:mt-10 mt-5'>
         <%= f.label :memo, class: 'text-black font-bold md:text-xl text-lg' %>
-        <%= f.text_area :memo, class: 'shadow appearance-none border rounded w-full md:py-2 py-1 md:px-3 px-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-blue border-2' %>
+        <%= f.text_area :memo, class: 'shadow appearance-none rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline border-blue border-2' %>
     </div>
     <div class="md:mt-10 mt-5" id="previews_rod">
         <% if @rod.image.attached? && @rod.persisted? %>

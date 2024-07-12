@@ -2,8 +2,6 @@ class User < ApplicationRecord
   authenticates_with_sorcery!
   has_many :tackles, dependent: :destroy
   has_many :authentications, dependent: :destroy
-  accepts_nested_attributes_for :authentications
-  has_many :fishing_plans, dependent: :destroy
   has_many :fishing_gears, dependent: :destroy
 
   validates :name, presence: true, length: { maximum: 255 }
@@ -13,7 +11,7 @@ class User < ApplicationRecord
   validates :password_confirmation, presence: true, if: -> { new_record? || changes[:crypted_password] }
   validates :reset_password_token, uniqueness: true, allow_nil: true
 
-  # 提案回数をチェックし、リセットも行う
+  # 提案回数をチェック、リセット
   def can_suggest?
     reset_suggestion_count_if_needed
     suggestion_count < 3
