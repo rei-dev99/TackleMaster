@@ -28,4 +28,5 @@
 #       enabled: "ON"
 
 en:
-  hello: "Hello world"
+  meta:
+    twitter_description: "Tackle Master is the most comprehensive fishing gear app for fishing enthusiasts. Manage your tackle and explore the latest fishing gear!"

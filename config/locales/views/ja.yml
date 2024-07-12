@@ -19,6 +19,28 @@ ja:
       tackle_found: タックルを探す
       registration_start: 登録して始める！
       tackle_registration: タックルを登録する
+      fishing_fun: 釣りの楽しさは
+      to_items: 選び抜かれた道具から
+      Tackle_Master: Tackle Master
+      Services_specializing_in_fishing_equipment: 釣り道具に特化したサービスで
+      You_can_manage_register_and_search_fishing_gear: 釣り道具の管理・登録・検索ができます
+      TackleMaster_is_an_app_specializing_in_fishing_equipment_for_fishing_enthusiasts: 「タックルマスター」は、釣り愛好家のための釣り道具に特化したアプリです。
+      Manage_your_tackle_and_explore_the_latest_fishing_gear: あなたのタックルを管理したり、最新の釣りギアを探索しましょう！
+      How_to_use: 使い方
+      Read_the_fishing_introduction_page: 釣り入門ページを読む
+      fishing_introduction: 釣り入門
+      Beginners_can_start_here_Deepen_your_knowledge_about_fishing_gear_and_fishing: 初心者はここから。釣り道具や釣りに関する知識を深めましょう。
+      You_can_read_it_without_registering: 〜新規登録しなくても読めます〜
+      Fishing_gear_suggestions: 釣り具の提案
+      receive_a_suggestion: 提案を受ける
+      Please_enter_your_target_fish_budget_fishing_location_type_of_fishing_fishing_experience_level_type_of_fishing_gear_and_manufacturer: 狙う魚、予算、釣りの場所、釣りの種類、釣りの経験レベル、釣り具の種類、メーカーを入力してください。
+      We_will_suggest_the_best_fishing_gear_for_you_and_also_introduce_related_products_Lets_meet_various_fishing_gear: あなたに最適な釣り具を提案し、関連する商品も紹介します。いろんな釣り具に出会いましょう！
+      You_can_receive_up_to_three_suggestions_per_day: 提案は1日3回まで受けることができます。
+      You_need_to_register: 〜新規登録する必要があります〜
+      Fishing_gear_registration: 釣り具登録
+      Register_your_tackle: タックルを登録する
+      Create_your_tackle_and_feel_free_to_add_rods_reels_and_accessories_to_it_Lets_make_your_favorite_tackle_We_recommend_using_your_smartphone: タックルを作成し、そこにロッド、リール、小物を自由に追加してください。お好みのタックルを作りましょう！スマホからの利用をおすすめします。
+      Would_you_like_to_enjoy_fishing: 釣りを楽しみませんか？
     privacy_policy:
       title: プライバシーポリシー
     terms_of_service:
@@ -84,6 +106,10 @@ ja:
     fishing_plan_page: 釣行プラン
   tackles:
     tackle:
+      rod: ロッド：
+      reel: リール：
+      accesory: 小物：
+      total: 合計：
       delete: 削除しますか？
     tackles_form:
       submit: タックル登録
@@ -128,6 +154,7 @@ ja:
       submit: ロッド登録
       return: 戻る
     rod:
+      title: ロッド
       delete: 削除しますか？
     rods_form:
       submit: ロッド登録
@@ -158,6 +185,7 @@ ja:
       success: リールを作成しました
       failure: リールの作成に失敗しました
     reel:
+      title: リール
       delete: 削除しますか？
     reels_form:
       submit: リール登録
@@ -185,6 +213,7 @@ ja:
       success: 小物を作成しました
       failure: 小物の作成に失敗しました
     accesory:
+      title: 小物
       delete: 削除しますか？
     accesories_form:
       submit: 小物登録
@@ -217,6 +246,7 @@ ja:
       price: 価格：¥
       fishing_gear: 釣り具
       not_found_products: 商品が見つかりませんでした。
+      please_wait_suggestion: 提案を考えています…しばらくお待ちください…
       return: 戻る
       placeholder:
         fish_type: 例：アジ
@@ -297,26 +327,3 @@ ja:
       success: 提案を削除しました
     suggestion_limit:
       failure: 提案回数の上限に達しました
-  fishing_plans:
-    index:
-      title: 釣行プラン
-      create_new_plan: 釣行プランを作成する
-      please_create_plan: 釣行プランを作成しましょう
-    new:
-      title: 釣行予定作成
-      return: 戻る
-      submit: 登録
-    create:
-      success: 釣行プランを作成しました
-      failure: 釣行プランの作成に失敗しました
-    fishing_plan:
-      delete: 削除しますか？
-    edit:
-      title: 釣行プラン編集
-      return: 戻る
-      submit: 登録
-    update:
-      success: 釣行プランの更新が完了しました
-      failure: 釣行プランの更新に失敗しました
-    destroy:
-      success: 釣行プランを削除しました
