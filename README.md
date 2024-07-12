@@ -1,4 +1,4 @@
-# TackleMaster(タックルマスター)
+# 🐟TackleMaster(タックルマスター)🎣
 
 ![README](https://github.com/user-attachments/assets/fdad4b47-c7d0-48d0-bd13-1a2571e8d1b9)
 
@@ -9,6 +9,7 @@
 
 # ■サービス概要
 釣りは釣りでも、釣り道具に特化したアプリです。
+
 機能については
 - これから釣りを始めたい方でも釣りや釣り道具について知ることができます。
 - ユーザーの釣り具が登録できます。
