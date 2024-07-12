@@ -6,7 +6,7 @@
       <% else %>
         <%= image_tag 'default_item.png', class: "w-full md:h-36 sm:h-32 h-28 object-cover block hover:shadow-lg transition-transform duration-300 transition transform hover:scale-105" %>
       <% end %>
-      <div class="absolute right-3 bottom-3 border-orange border-2 rounded-full text-white bg-orange font-bold px-2 py-1 md:text-sm text-xs opacity-80">リール</div>
+      <div class="absolute right-3 bottom-3 border-orange border-2 rounded-full text-white bg-orange font-bold px-2 py-1 md:text-sm text-xs opacity-80"><%= t('.title') %></div>
     <% end %>
   </div>
   <div class='text-center flex flex-col flex-1 md:p-4 p-2'>
@@ -24,7 +24,7 @@
     <div class="md:mt-4 mt-2">
       <p class="md:text-sm text-xs text-silver"><%= reel.updated_at.strftime('%Y/%m/%d %H:%M') %></p>
     </div>
-    <div class='flex justify-end mt-auto md:text-base text-sm'>
+    <div class='flex justify-end mt-auto md:text-lg text-base'>
       <%= link_to edit_tackle_reel_path(@tackle, reel) do %>
         <i class="fa-solid fa-pen text-blue"></i>
       <% end %>
