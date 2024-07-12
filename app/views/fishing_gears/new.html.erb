@@ -9,39 +9,39 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-black">
                 <div class="flex flex-col">
                     <%= f.label :fish_type, class: 'text-black font-bold md:text-xl text-lg required' %>
-                    <%= f.text_field :fish_type, class: 'shadow appearance-none border rounded md:mt-2 mt-1 md:py-2 py-1 md:px-3 px-2 leading-tight focus:outline-none focus:shadow-outline border-blue border-2', value: params[:fish_type], placeholder: t('.placeholder.fish_type') %>
+                    <%= f.text_field :fish_type, class: 'shadow appearance-none border-2 border-blue rounded md:mt-2 mt-1 py-2 px-3 leading-tight focus:outline-none focus:shadow-outline', value: params[:fish_type], placeholder: t('.placeholder.fish_type') %>
                 </div>
                 <div class="flex flex-col">
                     <%= f.label :budget, class: 'text-black font-bold md:text-xl text-lg required' %>
-                    <%= f.text_field :budget, class: 'shadow appearance-none border rounded md:mt-2 mt-1 md:py-2 py-1 md:px-3 px-2 leading-tight focus:outline-none focus:shadow-outline border-blue border-2', value: params[:budget], placeholder: t('.placeholder.budget') %>
+                    <%= f.text_field :budget, class: 'shadow appearance-none border-2 border-blue rounded md:mt-2 mt-1 py-2 px-3 leading-tight focus:outline-none focus:shadow-outline', value: params[:budget], placeholder: t('.placeholder.budget') %>
                 </div>
                 <div class="flex flex-col">
                     <%= f.label :location, class: 'text-black font-bold md:text-xl text-lg required' %>
-                    <%= f.text_field :location, class: 'shadow appearance-none border rounded md:mt-2 mt-1 md:py-2 py-1 md:px-3 px-2 leading-tight focus:outline-none focus:shadow-outline border-blue border-2', value: params[:location], placeholder: t('.placeholder.location') %>
+                    <%= f.text_field :location, class: 'shadow appearance-none border-2 border-blue rounded md:mt-2 mt-1 py-2 px-3 leading-tight focus:outline-none focus:shadow-outline', value: params[:location], placeholder: t('.placeholder.location') %>
                 </div>
                 <div class="flex flex-col">
                     <%= f.label :fishing_type, class: 'text-black font-bold md:text-xl text-lg required' %>
-                    <%= f.text_field :fishing_type, class: 'shadow appearance-none border rounded md:mt-2 mt-1 md:py-2 py-1 md:px-3 px-2 leading-tight focus:outline-none focus:shadow-outline border-blue border-2', value: params[:fishing_type], placeholder: t('.placeholder.fishing_type') %>
+                    <%= f.text_field :fishing_type, class: 'shadow appearance-none border-2 border-blue rounded md:mt-2 mt-1 py-2 px-3 leading-tight focus:outline-none focus:shadow-outline', value: params[:fishing_type], placeholder: t('.placeholder.fishing_type') %>
                 </div>
                 <div class="flex flex-col">
                     <%= f.label :skill_level, class: 'text-black font-bold md:text-xl text-lg required' %>
-                    <%= f.select :skill_level, options_for_select([t('.skill_level.beginner'), t('.skill_level.intermediate'), t('.skill_level.advanced')], params[:skill_level]), {}, class: 'shadow appearance-none border rounded md:mt-2 mt-1 md:py-2 py-1 md:px-3 px-2 leading-tight focus:outline-none focus:shadow-outline border-blue border-2' %>
+                    <%= f.select :skill_level, options_for_select([t('.skill_level.beginner'), t('.skill_level.intermediate'), t('.skill_level.advanced')], params[:skill_level]), {}, class: 'shadow appearance-none border-2 border-blue rounded md:mt-2 mt-1 py-2 px-3 leading-tight focus:outline-none focus:shadow-outline' %>
                 </div>
                 <div class="flex flex-col">
                     <%= f.label :tackle_type, class: 'text-black font-bold md:text-xl text-lg required' %>
-                    <%= f.select :tackle_type, options_for_select([t('.tackle_type.rod'), t('.tackle_type.reel'), t('.tackle_type.line'), t('.tackle_type.lure'), t('.tackle_type.all')], params[:tackle_type]), {}, class: 'shadow appearance-none border rounded md:mt-2 mt-1 md:py-2 py-1 md:px-3 px-2 leading-tight focus:outline-none focus:shadow-outline border-blue border-2' %>
+                    <%= f.select :tackle_type, options_for_select([t('.tackle_type.rod'), t('.tackle_type.reel'), t('.tackle_type.line'), t('.tackle_type.lure'), t('.tackle_type.all')], params[:tackle_type]), {}, class: 'shadow appearance-none border-2 border-blue rounded md:mt-2 mt-1 py-2 px-3 leading-tight focus:outline-none focus:shadow-outline' %>
                 </div>
                 <div class="flex flex-col">
                     <%= f.label :tackle_maker, class: 'text-black font-bold md:text-xl text-lg required' %>
-                    <%= f.select :tackle_maker, options_for_select([t('.tackle_maker.all'), t('.tackle_maker.shimano'), t('.tackle_maker.daiwa'), t('.tackle_maker.abugarcia'), t('.tackle_maker.gamakatsu'), t('.tackle_maker.tailwalk'), t('.tackle_maker.olympic'), t('.tackle_maker.major_craft')], params[:tackle_maker]), {}, class: 'shadow appearance-none border rounded md:mt-2 mt-1 md:py-2 py-1 md:px-3 px-2 leading-tight focus:outline-none focus:shadow-outline border-blue border-2' %>
+                    <%= f.select :tackle_maker, options_for_select([t('.tackle_maker.all'), t('.tackle_maker.shimano'), t('.tackle_maker.daiwa'), t('.tackle_maker.abugarcia'), t('.tackle_maker.gamakatsu'), t('.tackle_maker.tailwalk'), t('.tackle_maker.olympic'), t('.tackle_maker.major_craft')], params[:tackle_maker]), {}, class: 'shadow appearance-none border-2 border-blue rounded md:mt-2 mt-1 py-2 px-3 leading-tight focus:outline-none focus:shadow-outline' %>
                 </div>
                 <div class="col-span-1 md:col-span-2 flex flex-col">
                     <%= f.label :memo, class: 'text-black font-bold md:text-xl text-lg' %>
-                    <%= f.text_area :memo, class: 'shadow appearance-none border rounded md:mt-2 mt-1 md:py-2 py-1 md:px-3 px-2 leading-tight focus:outline-none focus:shadow-outline border-blue border-2', placeholder: t('.placeholder.memo') %>
+                    <%= f.text_area :memo, class: 'shadow appearance-none border-2 border-blue rounded md:mt-2 mt-1 py-2 px-3 leading-tight focus:outline-none focus:shadow-outline', placeholder: t('.placeholder.memo') %>
                 </div>
             </div>
             <div class="flex items-center justify-center mt-6">
-                <%= f.submit t('fishing_gears.new.submit'), id: 'suggestion', class: 'underline underline-offset-2 text-link font-bold md:px-4 px-2 md:py-2 py-1 bg-orange text-white rounded no-underline cursor-pointer hover:opacity-70' %>
+                <%= f.submit t('fishing_gears.new.submit'), id: 'suggestion', class: 'btn underline underline-offset-2 text-link font-bold bg-orange text-white rounded no-underline cursor-pointer hover:opacity-70' %>
                 <!-- 待機メッセージ要素 -->
                 <p class="text-orange font-bold hidden" id="wait"><%= t('.please_wait_suggestion') %></p>
             </div>

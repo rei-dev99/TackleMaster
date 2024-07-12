@@ -44,7 +44,7 @@
         <%= render 'shared/error_messages', object: f.object %>
             <div class="flex flex-col">
                 <%= f.label :memo, class: ' font-bold md:text-xl text-lg' %>
-                <%= f.text_area :memo, class: "p-4 border-[#1E90FF] border-2 mt-2 rounded-lg " %>
+                <%= f.text_area :memo, class: "shadow appearance-none border-2 border-blue rounded-lg md:mt-2 mt-1 py-2 px-3 leading-tight focus:outline-none focus:shadow-outline" %>
             </div>
             <div class="flex items-center justify-center mt-8">
                 <%= f.submit t('fishing_gears.edit.submit'), class: 'btn font-bold bg-orange text-white hover:bg-blue-700 md:py-2 py-0 md:px-10 px-5 rounded focus:outline-none focus:shadow-outline' %>

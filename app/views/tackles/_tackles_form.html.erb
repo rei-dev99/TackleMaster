@@ -2,11 +2,11 @@
     <%= render 'shared/error_messages', object: f.object %>
     <div class='md:mt-10 mt-5'>
         <%= f.label :name, class: 'text-black font-bold md:text-xl text-lg required' %>
-        <%= f.text_field :name, class: 'shadow appearance-none border-2 border-blue rounded w-full md:py-2 py-1 md:px-3 px-2 text-black leading-tight focus:outline-none focus:shadow-outline', placeholder: t('.placeholder.name') %>
+        <%= f.text_field :name, class: 'shadow appearance-none border-2 border-blue rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:shadow-outline', placeholder: t('.placeholder.name') %>
     </div>
     <div class='md:mt-10 mt-5'>
         <%= f.label :image, class: 'text-black font-bold md:text-xl text-lg' %>
-        <%= f.file_field :image, class: 'shadow appearance-none border-2 border-blue rounded w-full md:py-2 py-1 md:px-3 px-2 text-black leading-tight focus:outline-none focus:shadow-outline' %>
+        <%= f.file_field :image, class: 'shadow appearance-none border-2 border-blue rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:shadow-outline' %>
     </div>
     <div class="md:mt-10 mt-5" id="previews_tackle">
         <% if @tackle.persisted? && @tackle.image.attached? %>
