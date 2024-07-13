@@ -8,7 +8,7 @@
 
 Googleでログインが可能ですので、新規登録せずに利用することができます。
 
-[Tackle Master(タックルマスター)](https://tacklemaster.net/)
+### [Tackle Master(タックルマスター)](https://tacklemaster.net/)
 
 ## ■サービス概要
 釣りは釣りでも、釣り道具に特化したアプリです。
