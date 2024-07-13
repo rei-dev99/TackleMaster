@@ -107,18 +107,56 @@ Googleでログインが可能ですので、新規登録せずに利用する�
     </tr>
   </thead>
   <tr>
-    <td>[![Image from Gyazo](https://i.gyazo.com/265b959027bacf285678916c0cc3eeb3.gif)](https://gyazo.com/265b959027bacf285678916c0cc3eeb3)</td>
+    <td> [![Image from Gyazo](https://i.gyazo.com/265b959027bacf285678916c0cc3eeb3.gif)](https://gyazo.com/265b959027bacf285678916c0cc3eeb3) </td>
   </tr>
   <tr>
     <td>初心者はここから。釣り道具や釣りに関する知識を深めましょう。</td>
   </tr>
 </table>
 
-### 釣り具提案機能
+<br/>
 
-### 釣り具登録機能
+<table>
+  <thead>
+    <tr>
+      <th>釣り具提案機能</th>
+    </tr>
+  </thead>
+  <tr>
+    <td> [![Image from Gyazo](https://i.gyazo.com/265b959027bacf285678916c0cc3eeb3.gif)](https://gyazo.com/265b959027bacf285678916c0cc3eeb3) </td>
+  </tr>
+  <tr>
+    <td>狙う魚、予算、釣りの場所、釣りの種類、釣りの経験レベル、釣り具の種類、メーカーを入力してください。あなたに最適な釣り具を提案し、関連する商品も紹介します。いろんな釣り具に出会いましょう！提案は1日3回まで受けることができます。</td>
+  </tr>
+  <tr>
+    <td> [![Image from Gyazo](https://i.gyazo.com/265b959027bacf285678916c0cc3eeb3.gif)](https://gyazo.com/265b959027bacf285678916c0cc3eeb3) </td>
+  </tr>
+  <tr>
+    <td>提案内容は保存されるので、随時見返すことが可能です。</td>
+  </tr>
+</table>
 
+<br/>
 
+<table>
+  <thead>
+    <tr>
+      <th>釣り具登録機能</th>
+    </tr>
+  </thead>
+  <tr>
+    <td> [![Image from Gyazo](https://i.gyazo.com/265b959027bacf285678916c0cc3eeb3.gif)](https://gyazo.com/265b959027bacf285678916c0cc3eeb3) </td>
+  </tr>
+  <tr>
+    <td>タックルを作成し、そこにロッド、リール、小物を自由に追加してください。お好みのタックルを作りましょう！スマホからの利用をおすすめします。</td>
+  </tr>
+  <tr>
+    <td> [![Image from Gyazo](https://i.gyazo.com/265b959027bacf285678916c0cc3eeb3.gif)](https://gyazo.com/265b959027bacf285678916c0cc3eeb3) </td>
+  </tr>
+  <tr>
+    <td>タックル一覧ページから登録している各タックルに登録しているロッド、リール、小物の数が確認できます。</td>
+  </tr>
+</table>
 
 # ■今後の展望
 - メーカーを1から入力するのではなく、オートコンプリート機能を使って入力。
