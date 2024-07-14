@@ -112,3 +112,5 @@ gem 'httparty'
 
 # ページネーション
 gem 'kaminari'
+
+gem 'ransack'

@@ -323,6 +323,10 @@ GEM
     rake (13.2.1)
     rakuten_web_service (1.13.2)
       json (~> 2.3)
+    ransack (4.2.0)
+      activerecord (>= 6.1.5)
+      activesupport (>= 6.1.5)
+      i18n
     rdoc (6.7.0)
       psych (>= 4.0.0)
     regexp_parser (2.9.2)
@@ -468,6 +472,7 @@ DEPENDENCIES
   rails (~> 7.1.3, >= 7.1.3.2)
   rails-i18n (~> 7.0.0)
   rakuten_web_service
+  ransack
   rspec-rails
   rubocop
   rubocop-performance
