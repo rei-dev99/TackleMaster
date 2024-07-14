@@ -99,19 +99,12 @@ Googleでログインが可能ですので、新規登録せずに利用する�
 
 順次、動画と画像を入れて機能紹介をしていきます。
 
-<table>
-  <thead>
-    <tr>
-      <th>釣り入門ページ</th>
-    </tr>
-  </thead>
-  <tr>
-    <td> [![Image from Gyazo](https://i.gyazo.com/265b959027bacf285678916c0cc3eeb3.gif)](https://gyazo.com/265b959027bacf285678916c0cc3eeb3) </td>
-  </tr>
-  <tr>
-    <td>初心者はここから。釣り道具や釣りに関する知識を深めましょう。</td>
-  </tr>
-</table>
+[![Image from Gyazo](https://i.gyazo.com/265b959027bacf285678916c0cc3eeb3.gif)](https://gyazo.com/265b959027bacf285678916c0cc3eeb3)
+
+| 釣り入門ページ |
+|:---:|
+| [![Image from Gyazo](https://i.gyazo.com/265b959027bacf285678916c0cc3eeb3.gif)](https://gyazo.com/265b959027bacf285678916c0cc3eeb3) |
+| 初心者はここから。釣り道具や釣りに関する知識を深めましょう。 |
 
 <br/>
 
