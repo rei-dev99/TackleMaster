@@ -99,8 +99,6 @@ Googleでログインが可能ですので、新規登録せずに利用する�
 
 順次、動画と画像を入れて機能紹介をしていきます。
 
-[![Image from Gyazo](https://i.gyazo.com/265b959027bacf285678916c0cc3eeb3.gif)](https://gyazo.com/265b959027bacf285678916c0cc3eeb3)
-
 | 釣り入門ページ |
 |:---:|
 | [![Image from Gyazo](https://i.gyazo.com/265b959027bacf285678916c0cc3eeb3.gif)](https://gyazo.com/265b959027bacf285678916c0cc3eeb3) |
