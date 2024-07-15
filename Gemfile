@@ -112,3 +112,7 @@ gem 'httparty'
 
 # ページネーション
 gem 'kaminari'
+
+gem 'ransack'
+
+gem "meta-tags"

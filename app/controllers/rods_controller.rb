@@ -37,10 +37,10 @@ class RodsController < ApplicationController
     redirect_to @tackle, notice: t('rods.destroy.success'), status: :see_other
   end
 
-  def search_makers
-    query = params[:query]
-    makers = ["シマノ", "ダイワ", "アブガルシア"].select { |maker| maker.include?(query) }
-    render json: makers
+  def search
+    makers = ["シマノ", "ダイワ", "アブガルシア", "ダイソー"]
+    results = makers.select { |maker| maker.downcase.include?(params[:q].downcase) }
+    render json: results
   end
 
   private

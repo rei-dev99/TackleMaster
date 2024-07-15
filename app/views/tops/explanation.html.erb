@@ -1,17 +1,63 @@
 <% content_for(:title, t('.title')) %>
 <div class="container mx-auto md:px-[30px] px-[15px] md:py-[60px] py-[30px] text-black">
   <h1 class="md:text-3xl text-2xl font-bold text-center"><%= t('.title') %></h1>
-  <p class="mt-2 text-center">このページでは、初心者向けにタックルの基本的な知識についてまとめています。</p>
+  <p class="md:mt-4 mt-2 text-center">このページでは、初心者向けにタックルの基本的な知識についてまとめています。</p>
 
-  <section class="md:mt-10 mt-5">
+  <div class="md:mt-10 mt-6 border-2 border-blue rounded max-w-[400px] mx-auto">
+    <div class="flex justify-center p-2 bg-blue text-white font-bold md:text-xl text-lg">
+      <span class="flex items-center">
+        <svg class="inline-block w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M8 4H21V6H8V4ZM3 3.5H6V6.5H3V3.5ZM3 10.5H6V13.5H3V10.5ZM3 17.5H6V20.5H3V17.5ZM8 11H21V13H8V11ZM8 18H21V20H8V18Z" fill="#fff"/>
+        </svg>
+        目次
+      </span>
+    </div>
+    <ol class="list-decimal p-4 pl-8">
+      <li class="py-1 font-semibold">
+        <a href="#rod" class="no-underline">ロッド</a>
+        <ol class="list-decimal pl-4 mt-1">
+          <li class="py-1 font-medium text-sm"><a href="#rod_length" class="no-underline">ロッドの長さ</a></li>
+          <li class="py-1 font-medium text-sm"><a href="#rod_hardness" class="no-underline">ロッドの硬さ</a></li>
+          <li class="py-1 font-medium text-sm"><a href="#rod_property" class="no-underline">ロッドの特性</a></li>
+          <li class="py-1 font-medium text-sm"><a href="#rod_product" class="no-underline">ロッドの商品表記見方</a></li>
+        </ol>
+      </li>
+      <li class="py-1 font-semibold">
+        <a href="#reel" class="no-underline">リール</a>
+        <ol class="list-decimal pl-4 mt-1">
+          <li class="py-1 font-medium text-sm"><a href="#reel_size" class="no-underline">リールの大きさ(番手)</a></li>
+          <li class="py-1 font-medium text-sm"><a href="#reel_ratio" class="no-underline">リールのギア比</a></li>
+          <li class="py-1 font-medium text-sm"><a href="#reel_choose" class="no-underline">リールの選び方</a></li>
+        </ol>
+      </li>
+      <li class="py-1 font-semibold">
+        <a href="#line" class="no-underline">ライン</a>
+        <ol class="list-decimal pl-4 mt-1">
+          <li class="py-1 font-medium text-sm"><a href="#line_nylon" class="no-underline">ナイロンライン</a></li>
+          <li class="py-1 font-medium text-sm"><a href="#line_frollo" class="no-underline">フロロカーボンライン</a></li>
+          <li class="py-1 font-medium text-sm"><a href="#line_pe" class="no-underline">PEライン</a></li>
+        </ol>
+      </li>
+      <li class="py-1 font-semibold"><a href="#lure" class="no-underline">ルアー</a></li>
+      <li class="py-1 font-semibold">
+        <a href="#tackle_combination" class="no-underline">タックルの組み合わせ</a>
+        <ol class="list-decimal pl-4 mt-1">
+          <li class="py-1 font-medium text-sm"><a href="#tackle_combination_point" class="no-underline">組み合わせのポイント</a></li>
+          <li class="py-1 font-medium text-sm"><a href="#tackle_set" class="no-underline">初心者向けタックルセット</a></li>
+        </ol>
+      </li>
+    </ol>
+  </div>
+
+  <section class="md:py-10 py-6">
     <h2 class="md:text-2xl text-xl font-bold">タックルの知識</h2>
     <p class="md:mt-4 mt-2 leading-relaxed">まず初めにタックルの基本を解説します。<br>タックルとは、<span class="text-orange font-bold">釣りのための道具一式</span>のことを指します。ロッド(釣竿)、リール、ライン(糸)、ルアー(擬似)、仕掛け、エサなどこれら一式指します。狙う魚や釣り方によってタックルは変わります。</p>
 
-    <div class="md:mt-8 mt-4">
+    <div class="md:pt-10 pt-6" id="rod">
       <h3 class="md:text-xl text-lg font-bold">ロッド</h3>
       <p class="leading-relaxed md:mt-4 mt-2">ロッドとは釣り竿のことを指します。ロッドの種類には、ジョイント式(繋げるタイプ)、振り出し式(伸びるタイプ)、のべ竿(リールをつけないロッド)があります。さらにそこから、スピニングリール専用ロッドのスピニングロッドとベイトリール専用のベイトロッドに分かれます。狙う魚と釣法に合わせて、硬さと長さを選ぶ必要があります。</p>
 
-      <div class="md:mt-4 mt-2 grid md:grid-cols-3 grid-cols-3 md:gap-2 gap-1 font-bold">
+      <div class="md:mt-6 mt-3 grid md:grid-cols-3 grid-cols-3 md:gap-2 gap-1 font-bold">
         <div class="text-center">
           <p>ジョイント式</p>
           <%= image_tag "joint_rod.jpg", class: "w-full md:h-60 h-32 object-cover mt-1" %>
@@ -26,7 +72,7 @@
         </div>
       </div>
 
-      <div class="md:mt-6 mt-3">
+      <div class="md:pt-10 pt-6" id="rod_length">
         <h4 class="md:text-lg text-base font-bold">ロッドの長さ</h4>
         <p class="md:mt-4 mt-2">以下はロッドの長さについてまとめた表です。長さによって釣り場所と釣法が変わってきますので参考にしてみてください。<br>※ft(フィート)は<span class="text-orange font-bold">1ftあたり30.48cm</span>です。ftの読み方についてですが、例えば<span class="text-orange font-bold">7.6ftは7フィート6インチ</span>の意味です。</p>
         <div class="js-scrollable bg-white md:mt-4 mt-2">
@@ -63,7 +109,7 @@
         </div>
       </div>
 
-      <div class="md:mt-6 mt-3">
+      <div class="md:pt-10 pt-6" id="rod_hardness">
         <h4 class="md:text-lg text-base font-bold">ロッドの硬さ</h4>
         <p class="md:mt-4 mt-2">以下はロッドの硬さについてまとめた表です。硬さによって対応できるルアーの重さが変わってきますので参考にしてみてください。</p>
         <div class="js-scrollable bg-white md:mt-4 mt-2">
@@ -116,31 +162,31 @@
         </div>
       </div>
 
-      <div class="md:mt-6 mt-3">
+      <div class="md:pt-10 pt-6" id="rod_property">
         <h4 class="md:text-lg text-base font-bold">ロッド特性</h4>
         <p class="md:mt-4 mt-2">ロッドの材質はカーボンやグラスファイバーなどがあり、感度や強度が異なります。<br>アクションはロッドのしなり具合でファースト、ミディアム、スローなどがあります。<br>グリップは握りやすさや操作性に影響し、ガイドはラインの摩擦やトラブルを防ぐためのパーツです。</p>
       </div>
 
-      <div class="md:mt-6 mt-3">
+      <div class="md:pt-6 pt-3" id="rod_product">
         <h4 class="md:text-lg text-base font-bold">ロッド商品表記の見方</h4>
         <p></p>
-        <div class="md:mt-4 mt-2">
+        <div class="md:mt-6 mt-3">
           <p class="font-bold">例1：S96ML</p>
           <p class="mt-1"><strong>S</strong>：ロッドの種類やシリーズを示します。これはスピニングのSです。ここがBならベイトになります。</p>
           <p><strong>96</strong>：ロッドの長さを示します。この場合、9.6フィートです。</p>
           <p><strong>MH</strong>：ロッドの硬さを示します。MLはミディアムライトを意味します。</p>
         </div>
-        <div class="md:mt-4 mt-2">
+        <div class="md:mt-6 mt-3">
           <p class="font-bold">例2：172H-2</p>
           <p class="mt-1"><strong>1</strong>：ロッドの種類やシリーズを示します。これはベイトの1です。2ならスピニングになります。</p>
           <p><strong>72</strong>：ロッドの長さを示します。この場合、7フィート2インチです。</p>
           <p><strong>H</strong>：ロッドの硬さを示します。Hはヘビーを意味します。</p>
         </div>
-        <p class="md:mt-4 mt-2">商品表記はメーカーごとに異なりますので、詳しい内容は調べたり、商品概要欄から覗いてみてください。</p>
+        <p class="md:mt-6 mt-3">商品表記はメーカーごとに異なりますので、詳しい内容は調べたり、商品概要欄から覗いてみてください。</p>
       </div>
     </div>
 
-    <div class="md:mt-8 mt-4">
+    <div class="md:pt-10 pt-6" id="reel">
       <h3 class="md:text-xl text-lg font-bold">リール</h3>
       <p class="text-leading-relaxed md:mt-4 mt-2">リールには大きく分けて、スピニングリールとベイトリールの2種類があります。ここではベイトリールの扱いが難しいのでスピニングリールについて解説していきます。基本的にスピニングリールを選んでおくと良いです。</p>
       <div class="md:mt-4 mt-2 grid md:grid-cols-2 grid-cols-2 md:gap-4 gap-2 font-bold">
@@ -153,7 +199,7 @@
           <%= image_tag "bait.jpg", class: "w-full md:h-80 h-40 object-cover" %>
         </div>
       </div>
-      <div class="md:mt-6 mt-3">
+      <div class="md:pt-10 pt-6" id="reel_size">
         <h4 class="md:text-lg text-base font-bold">リールの大きさ(番手)</h4>
         <p class="md:mt-4 mt-2">以下はスピニングリールの大きさ(番手)についてまとめた表になります。</p>
         <div class="js-scrollable bg-white md:mt-4 mt-2">
@@ -194,7 +240,7 @@
             </tbody>
           </table>
         </div>
-        <div class="md:mt-6 mt-3">
+        <div class="md:pt-10 pt-6" id="reel_ratio">
           <h4 class="md:text-lg text-base font-bold">リールのギア比</h4>
           <p class="md:mt-4 mt-2">以下はスピニングリールのギア比についてまとめた表になります。</p>
           <div class="js-scrollable bg-white md:mt-4 mt-2">
@@ -231,7 +277,7 @@
             </table>
           </div>
         </div>
-        <div class="md:mt-6 mt-3">
+        <div class="md:pt-10 pt-6" id="reel_choose">
           <h4 class="md:text-lg text-base font-bold">リールの選び方</h4>
           <p class="md:mt-4 mt-2">
           上記の番手とギア比を参考に、釣りたい魚と場所に合わせてラインの太さ、長さを決めて、リールを決めます。<br>
@@ -242,11 +288,11 @@
       </div>
     </div>
 
-    <div class="md:mt-8 mt-4">
+    <div class="md:pt-10 pt-6" id="line">
       <h3 class="md:text-xl text-lg font-bold">ライン</h3>
       <p class="leading-relaxed md:mt-4 mt-2">釣りには「ライン」と呼ばれる糸が必要でラインにはさまざまな種類があります。ここでは代表的なナイロンライン、フロロカーボンライン、PEラインについて紹介します。</p>
       <%= image_tag "top-lines.jpg", class: "md:mt-2 mt-1 w-auto" %>
-      <div class="md:mt-6 mt-3">
+      <div class="md:pt-10 pt-6" id="line_nylon">
         <h4 class="md:text-lg text-base font-bold">ナイロンライン</h4>
         <p class="md:mt-4 mt-2">柔軟で伸びやすいので扱いやすく、魚の引きに対してショックを吸収してくれます。</p>
         <div class="js-scrollable bg-white md:mt-4 mt-2">
@@ -283,8 +329,7 @@
           </table>
         </div>
       </div>
-
-      <div class="md:mt-6 mt-3">
+      <div class="md:pt-10 pt-6" id="line_frollo">
         <h4 class="md:text-lg text-base font-bold">フロロカーボンライン</h4>
         <p class="md:mt-4 mt-2">透明で魚に見えにくい耐摩耗性が高く、岩場や障害物に強いです。ルアーフィシングにおいて、PEラインの先端にリーダーとして結びつけて使用します。</p>
         <div class="js-scrollable bg-white md:mt-4 mt-2">
@@ -326,8 +371,7 @@
           </table>
         </div>
       </div>
-
-      <div class="md:mt-6 mt-3">
+      <div class="md:pt-10 pt-6" id="line_pe">
         <h4 class="md:text-lg text-base font-bold">PEライン</h4>
         <p class="md:mt-4 mt-2">感度と強度が非常に高く、細いラインでも大物を狙えて遠投しやすいです。</p>
         <div class="js-scrollable bg-white md:mt-4 mt-2">
@@ -366,7 +410,7 @@
       </div>
     </div>
 
-    <div class="md:mt-8 mt-4">
+    <div class="md:pt-10 pt-6" id="lure">
       <h3 class="md:text-xl text-lg font-bold">ルアー</h3>
       <p class="text-leading-relaxed md:mt-4 mt-2">ルアーは魚を引き寄せるための疑似餌です。</p>
       <%= image_tag "top-lures.jpg", class: "md:mt-2 mt-1 w-auto" %>
@@ -416,11 +460,11 @@
       </div>
     </div>
 
-    <div class="md:mt-8 mt-4">
+    <div class="md:pt-10 pt-6" id="tackle_combination">
       <h3 class="md:text-xl text-lg font-bold">タックルの組み合わせ</h3>
       <p class="text-leading-relaxed md:mt-4 mt-2">ここまでの知識でタックルの組み合わせについて解説します。</p>
       <%= image_tag "tackles.jpg", class: "md:mt-2 mt-1 w-auto" %>
-      <div class="md:mt-6 mt-3">
+      <div class="md:pt-10 pt-6" id="tackle_combination_point">
         <h4 class="md:text-lg text-md font-bold text-black mb-2">組み合わせのポイント</h4>
         <p class="md:mt-4 mt-2">タックルを組み合わせる際の参考にしてみてください。</p>
         <div class="md:mt-4 mt-2">
@@ -431,12 +475,12 @@
             <li>メンテナンスも忘れずに行います。釣行後にはタックルの洗浄とオイル注油などのメンテナンスを行うことが大事です。特に海で使った場合は、塩分をしっかり落としましょう。</li>
           </ul>
         </div>
-        <div class='md:mt-6 mt-3 text-center'>
+        <div class='md:mt-10 mt-6 text-center'>
           <%= link_to 'タックルを探してみる', new_fishing_gear_path, class: 'btn bg-orange text-white md:py-2 py-1 md:px-10 px-5 underline-offset-2 hover:orange font-bold ' %>
         </div>
       </div>
 
-      <div class="md:mt-6 mt-3">
+      <div class="md:pt-10 pt-6" id="tackle_set">
         <h4 class="md:text-lg text-md font-bold text-black mb-2">初心者向けタックルセット</h4>
         <p class="md:mt-4 mt-2">初めての海釣りタックルなら下記のセットがおすすめです。</p>
         <ul class="list-disc list-inside md:mt-2 mt-1 md:pl-5 pl-2 md:space-y-2 space-y-1">
@@ -450,10 +494,12 @@
       </div>
     </div>
   </section>
-  <div class="md:mt-10 mt-5">
-    <h2 class="md:text-2xl text-xl font-bold text-orange text-center">さあ、次は実際に釣りに行って楽しもう！</h2>
+  <div class="md:mt-10 mt-6">
+    <h2 class="md:text-2xl text-xl font-bold text-orange text-center">次は釣りに行って楽しもう！</h2>
     <div class="md:mt-6 mt-3 flex justify-center">
       <%= image_tag "buri.jpg" %>
     </div>
   </div>
+
+  <div class="to-top fixed md:right-10 right-3 md:bottom-10 bottom-16 z-10 rounded w-10 h-10 flex items-center justify-center text-orange bg-white border-orange border-2 hover:bg-orange hover:text-white transition transform"><a href="#"><i class="fa-solid fa-angles-up"></i></a></div>
 </div>

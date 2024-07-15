@@ -7,4 +7,8 @@ class Rod < ApplicationRecord
   validates :memo, length: { maximum: 500 }
 
   has_one_attached :image
+
+  def self.ransackable_attributes(auth_object = nil)
+    ["name", "created_at", "updated_at", "memo", "id", "maker"]
+  end
 end
