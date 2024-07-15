@@ -7,9 +7,7 @@ Rails.application.routes.draw do
   resources :users, only: %i[new create]
   resources :tackles do
     resources :rods, only: %i[show new create edit update destroy] do
-      collection do
-        get :search_makers
-      end
+      get :search, on: :collection
     end
     resources :reels, only: %i[show new create edit update destroy]
     resources :accesories, only: %i[show new create edit update destroy]

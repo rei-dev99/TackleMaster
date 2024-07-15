@@ -4,9 +4,12 @@
         <%= f.label :name, class: 'text-black font-bold md:text-xl text-lg required' %>
         <%= f.text_field :name, class: 'shadow appearance-none rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline border-blue border-2' %>
     </div>
-    <div class='md:mt-10 mt-5'>
-        <%= f.label :maker, class: 'text-black font-bold md:text-xl text-lg required' %>
-        <%= f.text_field :maker, data: { controller: "autocomplete", action: "input->autocomplete#search", autocomplete_url_value: search_makers_tackle_rods_path } ,class: 'shadow appearance-none rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline border-blue border-2' %>
+    <div data-controller="autocomplete" data-autocomplete-url-value="/rods/search" role="combobox">
+        <div class='md:mt-10 mt-5'>
+            <%= f.label :maker, class: 'text-black font-bold md:text-xl text-lg required' %>
+            <%= f.text_field :maker, data: { autocomplete_target: 'input' }, class: 'shadow appearance-none rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline border-blue border-2' %>
+            <ul class="list-group" data-autocomplete-target="results"></ul>
+        </div>
     </div>
     <div class='md:mt-10 mt-5'>
         <%= f.label :image, class: 'text-black font-bold md:text-xl text-lg' %>
