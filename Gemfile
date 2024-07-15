@@ -114,3 +114,5 @@ gem 'httparty'
 gem 'kaminari'
 
 gem 'ransack'
+
+gem "meta-tags"
