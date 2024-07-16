@@ -2,7 +2,7 @@
 
 釣り道具に特化したサービスで釣り道具の管理・登録・検索ができます。
 
-![README](https://github.com/user-attachments/assets/fdad4b47-c7d0-48d0-bd13-1a2571e8d1b9)
+![釣り具のサービス](https://github.com/user-attachments/assets/a8c28363-62e1-4547-a7ad-4bcbc31d03f3)
 
 ## 🐟 サービスURL 🐟
 
