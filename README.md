@@ -97,56 +97,30 @@ Googleでログインが可能ですので、新規登録せずに利用する�
 
 ## ■機能紹介
 
-順次、動画と画像を入れて機能紹介をしていきます。
-
 | 釣り入門ページ |
 |:---:|
-| [![Image from Gyazo](https://i.gyazo.com/265b959027bacf285678916c0cc3eeb3.gif)](https://gyazo.com/265b959027bacf285678916c0cc3eeb3) |
+|[![Image from Gyazo](https://i.gyazo.com/fe99f726f398ef124e8bbd296806d8d4.jpg)](https://gyazo.com/fe99f726f398ef124e8bbd296806d8d4)|
 | 初心者はここから。釣り道具や釣りに関する知識を深めましょう。 |
 
 <br/>
 
-<table>
-  <thead>
-    <tr>
-      <th>釣り具提案機能</th>
-    </tr>
-  </thead>
-  <tr>
-    <td> [![Image from Gyazo](https://i.gyazo.com/fd9dec53bfc5a6407379274012c2e646.gif)](https://gyazo.com/fd9dec53bfc5a6407379274012c2e646)　</td>
-  </tr>
-  <tr>
-    <td>狙う魚、予算、釣りの場所、釣りの種類、釣りの経験レベル、釣り具の種類、メーカーを入力してください。あなたに最適な釣り具を提案し、関連する商品も紹介します。いろんな釣り具に出会いましょう！提案は1日3回まで受けることができます。</td>
-  </tr>
-  <tr>
-    <td> [![Image from Gyazo](https://i.gyazo.com/265b959027bacf285678916c0cc3eeb3.gif)](https://gyazo.com/265b959027bacf285678916c0cc3eeb3) </td>
-  </tr>
-  <tr>
-    <td>提案内容は保存されるので、随時見返すことが可能です。</td>
-  </tr>
-</table>
+| 釣り具提案機能 |
+|:---:|
+|[![Image from Gyazo](https://i.gyazo.com/62d6f001fb5493c76bb9b694805e198f.gif)](https://gyazo.com/62d6f001fb5493c76bb9b694805e198f)|
+| 狙う魚、予算、釣りの場所、釣りの種類、釣りの経験レベル、釣り具の種類、メーカーを入力してください。あなたに最適な釣り具を提案し、関連する商品も紹介します。いろんな釣り具に出会いましょう！提案は1日3回まで受けることができます。 |
+|[![Image from Gyazo](https://i.gyazo.com/5bd35e9423a1eed96359574c59f01253.gif)](https://gyazo.com/5bd35e9423a1eed96359574c59f01253)|
+| 提案内容は保存されるので、随時見返すことが可能です。 |
 
 <br/>
 
-<table>
-  <thead>
-    <tr>
-      <th>釣り具登録機能</th>
-    </tr>
-  </thead>
-  <tr>
-    <td> [![Image from Gyazo](https://i.gyazo.com/3e33b4a7329ff730529a87f2683609c9.jpg)](https://gyazo.com/3e33b4a7329ff730529a87f2683609c9) </td>
-  </tr>
-  <tr>
-    <td>タックルを作成し、そこにロッド、リール、小物を自由に追加してください。お好みのタックルを作りましょう！スマホからの利用をおすすめします。</td>
-  </tr>
-  <tr>
-    <td> [![Image from Gyazo](https://i.gyazo.com/5ca47d1d4b654c12ca6779f9fee1219b.jpg)](https://gyazo.com/5ca47d1d4b654c12ca6779f9fee1219b) </td>
-  </tr>
-  <tr>
-    <td>タックル一覧ページから登録している各タックルに登録しているロッド、リール、小物の数が確認できます。</td>
-  </tr>
-</table>
+| 釣り具登録機能 |
+|:---:|
+| [![Image from Gyazo](https://i.gyazo.com/ba759856d7ad1fae0d441b843cbddd2a.gif)](https://gyazo.com/ba759856d7ad1fae0d441b843cbddd2a) |
+| タックルを作成し、そこにロッド、リール、小物を自由に追加してください。お好みのタックルを作りましょう！画像の登録は任意で、なければデフォルトの画像が設定されます。スマホからの利用をおすすめします。 |
+|[![Image from Gyazo](https://i.gyazo.com/781879d225c85104f4596b4a82fab2b3.gif)](https://gyazo.com/781879d225c85104f4596b4a82fab2b3)|
+| 作成したタックルに、ロッド、リール、小物お好きな分追加してください。こちらも画像登録は任意で、なければデフォルトの画像が設定されます。|
+|[![Image from Gyazo](https://i.gyazo.com/5ca47d1d4b654c12ca6779f9fee1219b.jpg)](https://gyazo.com/5ca47d1d4b654c12ca6779f9fee1219b) |
+| タックル一覧ページから登録している各タックルに登録しているロッド、リール、小物の数が確認できます。 |
 
 ## ■今後の展望
 - メーカーを1から入力するのではなく、オートコンプリート機能を使って入力。
