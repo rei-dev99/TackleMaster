@@ -134,34 +134,17 @@ Googleログインが可能で、すぐに利用することができます。
 
 ## 🐟 技術構成 🐟
 ### 🐠 使用技術 🐠
-<table>
-  <thead>
-    <tr>
-      <th>カテゴリ</th> <th>技術内容</th>
-    </tr>
-  </thead>
-  <tr>
-    <td>バックエンド</td> <td>Ruby3.2.3/Ruby on Rails7.1.3.4</td>
-  </tr>
-  <tr>
-    <td>フロントエンド</td> <td>JavaScript</td>
-  </tr>
-  <tr>
-    <td>CSSフレームワーク</td> <td>Tailwindcss/daisyUI</td>
-  </tr>
-  <tr>
-    <td>Web API</td> <td>OpenAI API(GPT-4o)/Rakuten API/Google OAuth</td>
-  </tr>
-  <tr>
-    <td>データベース</td> <td>PostgreSQL</td>
-  </tr>
-  <tr>
-    <td>環境構築</td> <td>Docker</td>
-  </tr>
-  <tr>
-    <td>インフラ</td> <td>Render/AWS S3</td>
-  </tr>
-</table>
+| カテゴリ |　使用技術　|
+|:-------|:-------|
+|バックエンド|Ruby 3.2.3 ・ Ruby on Rails 7.1.3.4|
+|フロントエンド|JavaScript|
+|CSSフレームワーク|TailwindCSS ・ daisyUI|
+|Web API|OpenAI API(GPT-4o) ・ Rakuten API|
+|データベース|PostgreSQL|
+|環境構築|Docker|
+|インフラ|Render ・ AWS S3|
+|認証|Sorcery ・ Google OAuth|
+
 
 ## 🐟 画面遷移図 🐟
 https://www.figma.com/file/IyTFoHXk37hss5w02hBsEs/Tackle-Master-%E7%94%BB%E9%9D%A2%E9%81%B7%E7%A7%BB%E5%9B%B3?type=design&node-id=0%3A1&mode=design&t=WoHDNdJyvihqRo84-1
