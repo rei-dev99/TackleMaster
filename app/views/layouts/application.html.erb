@@ -23,6 +23,10 @@
   </head>
 
   <body class="font-sans md:mt-[84px] mt-[60px] md:mb-0 mb-[60px] bg-white">
+    <!-- ローディング画面 -->
+    <div id="loading">
+      <div class="spinner"></div>
+    </div>
     <% if logged_in? %>
       <%= render 'shared/header' %>
     <% else %>
