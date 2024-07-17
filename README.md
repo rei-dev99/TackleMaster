@@ -97,10 +97,10 @@ Googleログインが可能で、すぐに利用することができます。
 
 ## 🐟 機能紹介 🐟
 
-| 釣り入門ページ |
-|:---:|
-|[![Image from Gyazo](https://i.gyazo.com/fe99f726f398ef124e8bbd296806d8d4.jpg)](https://gyazo.com/fe99f726f398ef124e8bbd296806d8d4)|
-| 初心者はここから。釣り道具や釣りに関する知識を深めましょう。 |
+| 釣り入門ページ | スムーススクロール・ページトップへ戻るボタン|
+|:---:|:---:|
+|[![Image from Gyazo](https://i.gyazo.com/3d0089c7c01b42b0ca1120c6a34776a9.gif)](https://gyazo.com/3d0089c7c01b42b0ca1120c6a34776a9)|[![Image from Gyazo](https://i.gyazo.com/17d934ab76b3909afaad6cc41c90eb11.gif)](https://gyazo.com/17d934ab76b3909afaad6cc41c90eb11)|
+| 初心者はここから。釣り道具や釣りに関する知識を深めましょう。 | 目次から知りたい情報にアクセスできます。また、右下のボタンからページトップに戻ることができます。|
 
 <br/>
 
