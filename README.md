@@ -144,7 +144,7 @@ Googleログインが可能で、すぐに利用することができます。
     <td>バックエンド</td> <td>Ruby3.2.3/Ruby on Rails7.1.3.4</td>
   </tr>
   <tr>
-    <td>フロントエンド</td> <td>Javascript/ScrollHint.js</td>
+    <td>フロントエンド</td> <td>JavaScript</td>
   </tr>
   <tr>
     <td>CSSフレームワーク</td> <td>Tailwindcss/daisyUI</td>
