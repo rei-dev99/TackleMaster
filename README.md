@@ -99,7 +99,7 @@ Googleログインが可能で、すぐに利用することができます。
 
 | 釣り入門ページ | スムーススクロール・ページトップへ戻るボタン|
 |:---:|:---:|
-|[![Image from Gyazo](https://i.gyazo.com/3d0089c7c01b42b0ca1120c6a34776a9.gif)](https://gyazo.com/3d0089c7c01b42b0ca1120c6a34776a9)|[![Image from Gyazo](https://i.gyazo.com/17d934ab76b3909afaad6cc41c90eb11.gif)](https://gyazo.com/17d934ab76b3909afaad6cc41c90eb11)|
+|[![Image from Gyazo](https://i.gyazo.com/e71588ebf79b6952cc090fc2c191bafb.jpg)](https://gyazo.com/e71588ebf79b6952cc090fc2c191bafb)|[![Image from Gyazo](https://i.gyazo.com/17d934ab76b3909afaad6cc41c90eb11.gif)](https://gyazo.com/17d934ab76b3909afaad6cc41c90eb11)|
 | 初心者はここから。釣り道具や釣りに関する知識を深めましょう。 | 目次から知りたい情報にアクセスできます。また、右下のボタンからページトップに戻ることができます。|
 
 <br/>
