@@ -123,7 +123,7 @@ ja:
       placeholder:
         name: 例：ダイソータックル
     index:
-      title: マイページタックル一覧
+      title: タックル一覧
       create_new_tackle: 新しいタックルを作成する
       please_create_tackle: タックルを登録しましょう
     new:
