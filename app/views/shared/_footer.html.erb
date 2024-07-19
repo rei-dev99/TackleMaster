@@ -14,6 +14,7 @@
     <div class='hidden md:flex justify-between mx-auto container items-center mt-6'>
       <ul class='flex space-x-6 font-bold'>
         <%= render 'shared/common_footer_links' %>
+        <li><%= link_to t('footer.user_destroy'), user_path(current_user), class: 'md:text-lg text-sm font-bold hover:opacity-70 transition-all duration-300', data: { turbo_method: :delete, turbo_confirm: t('footer.delete') } %></li>
       </ul>
       <div><p>&copy; 2024 Tackle Master</p></div>
     </div>
