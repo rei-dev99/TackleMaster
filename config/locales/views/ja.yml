@@ -72,6 +72,9 @@ ja:
     create:
       success: ユーザー登録に成功しました
       failure: ユーザー登録に失敗しました
+    destroy:
+      success: ユーザー削除に成功しました
+      failure: ユーザー削除に失敗しました
   password_resets:
     new:
       title: パスワードリセット申請
@@ -95,6 +98,8 @@ ja:
     explanation: 釣り入門
     login: ログイン
     logout: ログアウト
+    user_destroy: アカウント削除
+    delete: 削除しますか？
   footer:
     title: Tackle Master
     contact: お問い合わせ
@@ -104,6 +109,8 @@ ja:
     tackles_page: タックル登録
     suggestion_page: タックル提案
     fishing_plan_page: 釣行プラン
+    user_destroy: アカウント削除
+    delete: 削除しますか？
   tackles:
     tackle:
       rod: ロッド：
