@@ -15,6 +15,16 @@ class UsersController < ApplicationController
     end
   end
 
+  def destroy
+    @user = User.find(params[:id])
+    if @user.destroy
+      redirect_to root_path, notice: t('users.destroy.success')
+    else
+      flash[:alert] = t('users.destroy.failure')
+      redirect_to root_path, status: :unprocessable_entity
+    end
+  end
+
   private
 
   def user_params
