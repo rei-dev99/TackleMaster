@@ -1,7 +1,12 @@
 <header class="bg-blue p-4 text-white md:p-6 fixed w-full top-0 left-0 z-10">
   <nav class="flex justify-between mx-auto container items-center">
-    <div><%= link_to t('header.title'), root_path, class: 'text-xl font-bold md:text-3xl' %></div>
-    <div class="md:space-x-6 space-x-2 font-bold">
+    <div class="flex items-center">
+      <%= link_to root_path, class: 'flex items-center' do %>
+        <span class="text-lg font-bold md:text-3xl"><%= t('header.title') %></span>
+        <%= image_tag "logo", class: "ml-2 h-6 w-6 md:h-10 md:w-10" %>
+      <% end %>
+    </div>
+    <div class="md:space-x-6 space-x-1 font-bold">
       <%= link_to t('header.login'), login_path, class: 'text-sm hover:opacity-70 transition-all duration-300 md:text-lg' %>
       <%= link_to t('header.sign_up'), new_user_path, class: 'text-sm hover:opacity-70 transition-all duration-300 md:text-lg' %>
       <%= link_to t('header.explanation'), explanation_path, class: 'text-sm hover:opacity-70 transition-all duration-300 md:text-lg' %>

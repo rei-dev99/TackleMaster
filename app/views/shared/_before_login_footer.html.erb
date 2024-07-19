@@ -1,7 +1,12 @@
 <footer class='bg-silver p-4 text-white md:p-6'>
   <nav class='container mx-auto'>
     <div class='flex justify-between mx-auto container items-center'>
-      <div><%= link_to t('footer.title'), root_path, class: 'text-xl md:text-3xl font-bold' %></div>
+      <div class="flex items-center">
+        <%= link_to root_path, class: 'flex items-center' do %>
+          <span class="text-lg font-bold md:text-3xl"><%= t('header.title') %></span>
+          <%= image_tag "logo", class: "ml-2 h-6 w-6 md:h-10 md:w-10" %>
+        <% end %>
+      </div>
       <ul class='flex space-x-6'>
         <%= render 'shared/common_sns_links' %>
       </ul>
