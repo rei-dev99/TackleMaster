@@ -15,7 +15,7 @@ module ApplicationHelper
       canonical: request.original_url,
       icon: [
         { href: image_url('favicon.ico') },
-        { href: image_url('tackle_service.jpg'), rel: 'apple-touch-icon', sizes: '180x180', type: 'image/jpg' },
+        { href: image_url('tackle_service.jpg'), rel: 'apple-touch-icon', sizes: '180x180', type: 'image/jpg' }
       ],
       og: {
         site_name: 'Tackle Master',
