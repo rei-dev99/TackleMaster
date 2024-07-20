@@ -8,10 +8,10 @@ class FishingGearsController < ApplicationController
   end
 
   def show
-    keyword = self.class.extract_product_name(@fishing_gear.suggestion) # 提案内容から商品名を抽出
-    if keyword.present?
+    @keyword = self.class.extract_product_name(@fishing_gear.suggestion) # 提案内容から商品名を抽出
+    if @keyword.present?
       begin
-        @items = search_rakuten_api(keyword) # 抽出した商品名で楽天APIを検索
+        @items = search_rakuten_api(@keyword) # 抽出した商品名で楽天APIを検索
       rescue RakutenWebService::WrongParameter => e
         Rails.logger.error("Rakuten API Error: #{e.message}")
         @items = [] # 検索が失敗した場合、空の配列を設定
