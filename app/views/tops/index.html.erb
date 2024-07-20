@@ -43,45 +43,66 @@
     <div class='mx-auto md:mt-10 mt-5 text-black'>
       <h2 class='text-center text-black font-bold md:text-3xl text-2xl'><%= t('.How_to_use') %></h2>
       <div class="md:mt-10 mt-5">
-        <div class="p-4 md:flex md:items-center border-2 border-blue rounded-lg">
-          <div class="md:w-1/2 w-full">
-            <h3 class="md:text-2xl text-xl font-bold text-orange"><%= t('.Read_the_fishing_introduction_page') %></h3>
-            <%= link_to t('.fishing_introduction') , explanation_path, class: 'btn text-white bg-blue md:mt-4 mt-2 md:px-6 px-3' %>
-            <p class='font-bold md:text-lg text-base leading-relaxed md:mt-4 mt-2'><%= t('.Beginners_can_start_here_Deepen_your_knowledge_about_fishing_gear_and_fishing') %></p>
-            <% unless logged_in? %>
-              <p class="md:text-sm text-xs text-orange"><%= t('.You_can_read_it_without_registering') %></p>
-            <% end %>
+        <div class="p-4 border-2 border-blue rounded-lg">
+          <h3 class="md:text-2xl text-xl font-bold text-orange"><%= t('.Read_the_fishing_introduction_page') %></h3>
+          <div class="md:mt-6 mt-3">
+            <a class="btn bg-silver text-white toggle-button"><%= t('.this_click_open_close') %></a>
           </div>
-          <div class="md:w-1/2 w-full mt-4 md:mt-0 md:ml-4">
-            <%= image_tag 'https://i.gyazo.com/265b959027bacf285678916c0cc3eeb3.gif', alt: 'Image from Gyazo', width: 1000 %>
-          </div>
-        </div>
-
-        <div class="p-4 md:flex md:flex-row-reverse md:items-center border-2 border-blue rounded-lg md:mt-10 mt-5">
-          <div class="md:w-1/2 w-full">
-            <h3 class="md:text-2xl text-xl font-bold text-orange"><%= t('.Fishing_gear_suggestions') %></h3>
-            <%= link_to t('.receive_a_suggestion') , new_fishing_gear_path, class: 'btn text-white bg-blue md:mt-4 mt-2 md:px-6 px-3' %>
-            <p class='font-bold md:text-lg text-base leading-relaxed md:mt-4 mt-2'><%= t('.Please_enter_your_target_fish_budget_fishing_location_type_of_fishing_fishing_experience_level_type_of_fishing_gear_and_manufacturer') %><br><%= t('.We_will_suggest_the_best_fishing_gear_for_you_and_also_introduce_related_products_Lets_meet_various_fishing_gear') %><br><%= t('.You_can_receive_up_to_three_suggestions_per_day') %></p>
-            <% unless logged_in? %>
-              <p class="md:text-sm text-xs text-orange"><%= t('.You_need_to_register') %></p>
-            <% end %>
-          </div>
-          <div class="md:w-1/2 w-full mt-4 md:mt-0 md:ml-4">
-            <%= image_tag 'https://i.gyazo.com/fd9dec53bfc5a6407379274012c2e646.gif', alt: 'Image from Gyazo', width: 1000 %>
+          <div class="slide-content">
+            <div class="md:mt-6 mt-3 md:flex items-center">
+              <div class="md:w-1/2 w-full">
+                <p class='font-bold md:text-lg text-base leading-relaxed md:mt-4 mt-2'><%= t('.Beginners_can_start_here_Deepen_your_knowledge_about_fishing_gear_and_fishing') %></p>
+                <%= link_to t('.fishing_introduction') , explanation_path, class: 'btn text-white bg-blue md:mt-4 mt-2 md:px-6 px-3' %>
+                <% unless logged_in? %>
+                  <p class="md:text-sm text-xs text-orange md:mt-6 mt-3"><%= t('.You_can_read_it_without_registering') %></p>
+                <% end %>
+              </div>
+              <div class="md:w-1/2 w-full mt-4 md:mt-0 md:ml-4">
+                <%= image_tag 'https://i.gyazo.com/265b959027bacf285678916c0cc3eeb3.gif', alt: 'Image from Gyazo', width: 1000 %>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="p-4 md:flex md:items-center border-2 border-blue rounded-lg md:mt-10 mt-5">
-          <div class="md:w-1/2 w-full">
-            <h3 class="md:text-2xl text-xl font-bold text-orange"><%= t('.Fishing_gear_registration') %></h3>
-            <%= link_to t('.Register_your_tackle') , new_tackle_path, class: 'btn text-white bg-blue md:mt-4 mt-2 md:px-6 px-3' %>
-            <p class='font-bold md:text-lg text-base leading-relaxed md:mt-4 mt-2'><%= t('.Create_your_tackle_and_feel_free_to_add_rods_reels_and_accessories_to_it_Lets_make_your_favorite_tackle_We_recommend_using_your_smartphone') %></p>
-            <% unless logged_in? %>
-              <p class="md:text-sm text-xs text-orange"><%= t('.You_need_to_register') %></p>
-            <% end %>
+        <div class="p-4 border-2 border-blue rounded-lg md:mt-10 mt-5">
+          <h3 class="md:text-2xl text-xl font-bold text-orange"><%= t('.Fishing_gear_suggestions') %></h3>
+          <div class="md:mt-6 mt-3">
+            <a class="btn bg-silver text-white toggle-button"><%= t('.this_click_open_close') %></a>
           </div>
-          <div class="md:w-1/2 w-full mt-4 md:mt-0 md:ml-4">
-            <%= image_tag 'https://i.gyazo.com/c324393e8b384913c6f385677b6624de.jpg', alt: 'Image from Gyazo', width: 1000 %>
+          <div class="slide-content hidden">
+            <div class="md:mt-6 mt-3 md:flex md:items-center md:flex-row-reverse">
+              <div class="md:w-1/2 w-full">
+                <p class='font-bold md:text-lg text-base leading-relaxed md:mt-4 mt-2'><%= t('.Please_enter_your_target_fish_budget_fishing_location_type_of_fishing_fishing_experience_level_type_of_fishing_gear_and_manufacturer') %><br><%= t('.We_will_suggest_the_best_fishing_gear_for_you_and_also_introduce_related_products_Lets_meet_various_fishing_gear') %><br><%= t('.You_can_receive_up_to_three_suggestions_per_day') %></p>
+                <%= link_to t('.receive_a_suggestion') , new_fishing_gear_path, class: 'btn text-white bg-blue md:mt-4 mt-2 md:px-6 px-3' %>
+                <% unless logged_in? %>
+                  <p class="md:text-sm text-xs text-orange md:mt-6 mt-3"><%= t('.You_need_to_register') %></p>
+                <% end %>
+              </div>
+              <div class="md:w-1/2 w-full mt-4 md:mt-0 md:ml-4">
+                <%= image_tag 'https://i.gyazo.com/fd9dec53bfc5a6407379274012c2e646.gif', alt: 'Image from Gyazo', width: 1000 %>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-4 border-2 border-blue rounded-lg md:mt-10 mt-5">
+          <h3 class="md:text-2xl text-xl font-bold text-orange"><%= t('.Fishing_gear_registration') %></h3>
+          <div class="md:mt-6 mt-3">
+            <a class="btn bg-silver text-white toggle-button"><%= t('.this_click_open_close') %></a>
+          </div>
+          <div class="slide-content hidden">
+            <div class="md:mt-6 mt-3 md:flex items-center">
+              <div class="md:w-1/2 w-full">
+                <p class='font-bold md:text-lg text-base leading-relaxed md:mt-4 mt-2'><%= t('.Create_your_tackle_and_feel_free_to_add_rods_reels_and_accessories_to_it_Lets_make_your_favorite_tackle_We_recommend_using_your_smartphone') %></p>
+                <%= link_to t('.Register_your_tackle') , new_tackle_path, class: 'btn text-white bg-blue md:mt-4 mt-2 md:px-6 px-3' %>
+                <% unless logged_in? %>
+                  <p class="md:text-sm text-xs text-orange md:mt-6 mt-3"><%= t('.You_need_to_register') %></p>
+                <% end %>
+              </div>
+              <div class="md:w-1/2 w-full mt-4 md:mt-0 md:ml-4">
+                <%= image_tag 'https://i.gyazo.com/c324393e8b384913c6f385677b6624de.jpg', alt: 'Image from Gyazo', width: 1000 %>
+              </div>
+            </div>
           </div>
         </div>
       </div>
