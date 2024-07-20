@@ -36,7 +36,7 @@ ja:
       receive_a_suggestion: 提案を受ける
       Please_enter_your_target_fish_budget_fishing_location_type_of_fishing_fishing_experience_level_type_of_fishing_gear_and_manufacturer: 狙う魚、予算、釣りの場所、釣りの種類、釣りの経験レベル、釣り具の種類、メーカーを入力してください。
       We_will_suggest_the_best_fishing_gear_for_you_and_also_introduce_related_products_Lets_meet_various_fishing_gear: あなたに最適な釣り具を提案し、関連する商品も紹介します。いろんな釣り具に出会いましょう！
-      You_can_receive_up_to_three_suggestions_per_day: 提案は1日3回まで受けることができます。
+      You_can_receive_up_to_three_suggestions_per_day: 提案は1日5回まで受けることができます。
       You_need_to_register: 〜新規登録する必要があります〜
       Fishing_gear_registration: 釣り具登録
       Register_your_tackle: タックルを登録する
@@ -242,7 +242,7 @@ ja:
       please_create_suggestion: 釣り具の提案を受けましょう！
     new:
       title: タックル提案
-      suggestion_limit_desc: 提案は1日3回まで受けることができます。次の日にリセットされます。
+      suggestion_limit_desc: 提案は1日5回まで受けることができます。次の日にリセットされます。
       submit: 提案を受ける
       fish_type: 狙う魚
       budget: 予算
