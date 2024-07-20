@@ -14,8 +14,8 @@
                 <% end %>
             </div>
 
-            <div class="">
-                <%#= link_to 'Xで共有する', "https://twitter.com/intent/tweet?url=https://insect-log.onrender.com&text=#{CGI.escape("#{@insect[:name]}を#{params[:place]}でつかまえたよ！みんなもインセクトログで昆虫探しの冒険に出かけよう！#インセクトログ")}", title: 'Xで共有する', target: '_blank', class: '' %>
+            <div class="md:mt-6 mt-3 text-right">
+                <%= link_to t('.x_share'), "https://twitter.com/intent/tweet?url=https://tacklemaster.net/&text=#{CGI.escape("「#{@fishing_gear.fish_type}」狙い、予算「#{@fishing_gear.budget}」、釣りの場所「#{@fishing_gear.location}」、釣りの種類「#{@fishing_gear.fishing_type}」、「#{@fishing_gear.tackle_type}」の提案で「#{@keyword}」を見つけたよ！タックルマスターで釣り具を探してみよう！ #tacklemaster")}", title: t('.x_share'), target: '_blank', class: 'btn text-blue' %>
             </div>
 
             <h2 class="text-black font-bold md:text-xl text-lg md:mt-4 mt-2"><%= t('.content') %></h2>
