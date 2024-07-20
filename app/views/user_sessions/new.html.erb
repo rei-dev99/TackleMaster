@@ -16,10 +16,11 @@
         <button type="submit" class="btn font-bold bg-blue text-white hover:bg-blue-700 py-2 px-10 rounded focus:outline-none focus:shadow-outline"><%= t('.login') %></button>
       </div>
     <% end %>
-    <div class='mt-8 text-center'>
-      <%= link_to t('.google_login'), auth_at_provider_path(provider: :google), class: 'btn font-bold bg-orange text-white hover:bg-blue-700 py-2 px-10 rounded focus:outline-none focus:shadow-outline' %>
-    </div>
+    <div class=" mt-4 text-center text-black">- - - - - <%= t('.or') %> - - - - -</div>
 
+    <div class='mt-4 text-center'>
+      <%= link_to t('.google_login').html_safe, auth_at_provider_path(provider: :google), class: 'btn font-bold bg-orange text-white hover:bg-blue-700 py-2 px-10 rounded focus:outline-none focus:shadow-outline' %>
+    </div>
     <div class='mt-8 text-center'>
       <%= link_to t('.to_register_page'), new_user_path, class: 'underline underline-offset-2 text-link hover:orange font-bold hover:opacity-70' %>
     </div>
