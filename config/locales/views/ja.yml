@@ -52,7 +52,8 @@ ja:
     new:
       title: ログイン
       login: ログイン
-      google_login: Googleでログインする
+      or: or
+      google_login: <i class="fa-brands fa-google" style="color:#1e90ff ;"></i> Googleでログインする
       to_register_page: 新規登録ページへ
       password_forget: パスワードをお忘れの方はこちら
     create:
