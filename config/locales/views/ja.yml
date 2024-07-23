@@ -27,7 +27,8 @@ ja:
       TackleMaster_is_an_app_specializing_in_fishing_equipment_for_fishing_enthusiasts: 「タックルマスター」は、釣り愛好家のための釣り道具に特化したアプリです。
       Manage_your_tackle_and_explore_the_latest_fishing_gear: あなたのタックルを管理したり、最新の釣りギアを探索しましょう！
       How_to_use: 使い方
-      Read_the_fishing_introduction_page: 釣り入門ページを読む
+      Read_the_fishing_introduction_page: 釣り入門ページ
+      this_click_open_close: 〜ここをクリックすると開閉します〜
       fishing_introduction: 釣り入門
       Beginners_can_start_here_Deepen_your_knowledge_about_fishing_gear_and_fishing: 初心者はここから。釣り道具や釣りに関する知識を深めましょう。
       You_can_read_it_without_registering: 〜新規登録しなくても読めます〜
@@ -35,7 +36,7 @@ ja:
       receive_a_suggestion: 提案を受ける
       Please_enter_your_target_fish_budget_fishing_location_type_of_fishing_fishing_experience_level_type_of_fishing_gear_and_manufacturer: 狙う魚、予算、釣りの場所、釣りの種類、釣りの経験レベル、釣り具の種類、メーカーを入力してください。
       We_will_suggest_the_best_fishing_gear_for_you_and_also_introduce_related_products_Lets_meet_various_fishing_gear: あなたに最適な釣り具を提案し、関連する商品も紹介します。いろんな釣り具に出会いましょう！
-      You_can_receive_up_to_three_suggestions_per_day: 提案は1日3回まで受けることができます。
+      You_can_receive_up_to_three_suggestions_per_day: 提案は1日5回まで受けることができます。
       You_need_to_register: 〜新規登録する必要があります〜
       Fishing_gear_registration: 釣り具登録
       Register_your_tackle: タックルを登録する
@@ -51,7 +52,8 @@ ja:
     new:
       title: ログイン
       login: ログイン
-      google_login: Googleでログインする
+      or: or
+      google_login: <i class="fa-brands fa-google" style="color:#1e90ff ;"></i> Googleでログインする
       to_register_page: 新規登録ページへ
       password_forget: パスワードをお忘れの方はこちら
     create:
@@ -72,6 +74,9 @@ ja:
     create:
       success: ユーザー登録に成功しました
       failure: ユーザー登録に失敗しました
+    destroy:
+      success: ユーザー削除に成功しました
+      failure: ユーザー削除に失敗しました
   password_resets:
     new:
       title: パスワードリセット申請
@@ -95,6 +100,8 @@ ja:
     explanation: 釣り入門
     login: ログイン
     logout: ログアウト
+    user_destroy: アカウント削除
+    delete: 削除しますか？
   footer:
     title: Tackle Master
     contact: お問い合わせ
@@ -104,6 +111,8 @@ ja:
     tackles_page: タックル登録
     suggestion_page: タックル提案
     fishing_plan_page: 釣行プラン
+    user_destroy: アカウント削除
+    delete: 削除しますか？
   tackles:
     tackle:
       rod: ロッド：
@@ -116,7 +125,7 @@ ja:
       placeholder:
         name: 例：ダイソータックル
     index:
-      title: マイページタックル一覧
+      title: タックル一覧
       create_new_tackle: 新しいタックルを作成する
       please_create_tackle: タックルを登録しましょう
     new:
@@ -233,7 +242,7 @@ ja:
       please_create_suggestion: 釣り具の提案を受けましょう！
     new:
       title: タックル提案
-      suggestion_limit_desc: 提案は1日3回まで受けることができます。次の日にリセットされます。
+      suggestion_limit_desc: 提案は1日5回まで受けることができます。次の日にリセットされます。
       submit: 提案を受ける
       fish_type: 狙う魚
       budget: 予算
@@ -277,6 +286,7 @@ ja:
       title: 提案詳細
       edit: 編集
       destroy: 削除
+      x_share: Xで共有する
       content: 内容
       fish_type: 狙う魚
       budget: 予算

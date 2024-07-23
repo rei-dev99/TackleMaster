@@ -14,7 +14,7 @@ class User < ApplicationRecord
   # 提案回数をチェック、リセット
   def can_suggest?
     reset_suggestion_count_if_needed
-    suggestion_count < 3
+    suggestion_count < 5
   end
 
   def increment_suggestion_count

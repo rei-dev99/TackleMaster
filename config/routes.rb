@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
   root "tops#index"
-  resources :users, only: %i[new create]
+  resources :users, only: %i[new create destroy]
   resources :tackles do
     resources :rods, only: %i[show new create edit update destroy] do
       get :search, on: :collection

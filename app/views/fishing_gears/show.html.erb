@@ -14,6 +14,10 @@
                 <% end %>
             </div>
 
+            <div class="md:mt-6 mt-3 text-right">
+                <%= link_to t('.x_share'), "https://twitter.com/intent/tweet?url=https://tacklemaster.net/&text=#{CGI.escape("「#{@fishing_gear.fish_type}」狙い、予算「#{@fishing_gear.budget}」、釣りの場所「#{@fishing_gear.location}」、釣りの種類「#{@fishing_gear.fishing_type}」、「#{@fishing_gear.tackle_type}」の提案で「#{@keyword}」を見つけたよ！タックルマスターで釣り具を探してみよう！ #tacklemaster")}", title: t('.x_share'), target: '_blank', class: 'btn text-blue' %>
+            </div>
+
             <h2 class="text-black font-bold md:text-xl text-lg md:mt-4 mt-2"><%= t('.content') %></h2>
             <div class="md:mt-4 mt-2 p-4 border-blue border-2 rounded-lg text-black">
                 <div>
@@ -86,4 +90,7 @@
     <div class='md:mt-8 mt-4 text-center'>
         <%= link_to t('.return'), fishing_gears_path, class: 'underline underline-offset-2 text-link hover:opacity-70 font-bold' %>
     </div>
+</div>
+<div id="loading">
+  <div class="spinner"></div>
 </div>

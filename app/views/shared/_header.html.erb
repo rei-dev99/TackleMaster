@@ -1,6 +1,11 @@
 <header class="bg-blue text-white p-4 md:p-6 fixed w-full top-0 left-0 z-10">
   <nav class="flex justify-between mx-auto container items-center">
-    <div><%= link_to t('header.title'), root_path, class: 'text-xl font-bold md:text-3xl' %></div>
+    <div class="flex items-center">
+      <%= link_to root_path, class: 'flex items-center' do %>
+        <span class="text-lg font-bold md:text-3xl"><%= t('header.title') %></span>
+        <%= image_tag "logo", class: "ml-2 h-6 w-6 md:h-10 md:w-10" %>
+      <% end %>
+    </div>
     <div class="space-x-6 font-bold hidden md:block">
       <%= link_to t('header.search_tackle'), fishing_gears_path, class: 'text-lg hover:opacity-70 transition-all duration-300' %>
       <%= link_to t('header.tackles_page'), tackles_path, class: 'text-lg hover:opacity-70 transition-all duration-300' %>
@@ -13,8 +18,9 @@
   <dialog id="my_modal_2" class="modal"><!-- モーダルウィンドウ -->
     <div class="modal-box bg-silver flex flex-col justify-center text-center">
       <ul class="flex justify-center flex-col text-bold">
-        <li><%= link_to t('header.logout'), logout_path, class: 'md:text-lg text-sm font-bold hover:opacity-70 transition-all duration-300', data: { turbo_method: :delete } %></li>
         <%= render 'shared/common_footer_links' %>
+        <li><%= link_to t('header.logout'), logout_path, class: 'md:text-lg text-sm font-bold hover:opacity-70 transition-all duration-300', data: { turbo_method: :delete } %></li>
+        <li><%= link_to t('header.user_destroy'), user_path(current_user), class: 'md:text-lg text-sm font-bold hover:opacity-70 transition-all duration-300', data: { turbo_method: :delete, turbo_confirm: t('header.delete') } %></li>
       </ul>
       <ul class='flex space-x-6 justify-center mt-4'>
         <%= render 'shared/common_sns_links' %>
