@@ -1,3 +1,0 @@
-<li><%= link_to t('footer.contact'), 'https://docs.google.com/forms/d/e/1FAIpQLScL-iN4VsmofpoysNffvmbGMVUPAZTgsvtGoIPGMjQys7DBWQ/viewform', class: 'md:text-lg text-sm font-bold hover:opacity-70 transition-all duration-300' %></li>
-<li><%= link_to t('footer.terms_of_service'), terms_of_service_path, class: 'md:text-lg text-sm font-bold hover:opacity-70 transition-all duration-300' %></li>
-<li><%= link_to t('footer.privacy_policy'), privacy_policy_path, class: 'md:text-lg text-sm font-bold hover:opacity-70 transition-all duration-300' %></li>
