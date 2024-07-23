@@ -37,12 +37,6 @@ class RodsController < ApplicationController
     redirect_to @tackle, notice: t('rods.destroy.success'), status: :see_other
   end
 
-  def search
-    makers = ["シマノ", "ダイワ", "アブガルシア", "ダイソー"]
-    results = makers.select { |maker| maker.downcase.include?(params[:q].downcase) }
-    render json: results
-  end
-
   private
 
   def set_tackle
