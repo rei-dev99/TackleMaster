@@ -11,7 +11,7 @@ class FishingSuggestionsController < ApplicationController
     @keyword = self.class.extract_product_name(@fishing_suggestion.suggestion) # 提案内容から商品名を抽出
     if @keyword.present?
       begin
-        @items = search_rakuten_api(@keyword) # 抽出した商品名で楽天APIを検索
+        @items = RakutenService.search_rakuten_api(@keyword) # 抽出した商品名で楽天APIを検索
       rescue RakutenWebService::WrongParameter => e
         Rails.logger.error("Rakuten API Error: #{e.message}")
         @items = [] # 検索が失敗した場合、空の配列を設定
@@ -26,7 +26,7 @@ class FishingSuggestionsController < ApplicationController
   def new
     @fishing_suggestion = @user.fishing_suggestions.build
     keyword = params[:keyword] || t('fishing_suggestions.new.fishing_gear')
-    @items = search_rakuten_api(keyword)
+    @items = RakutenService.search_rakuten_api(keyword)
   end
 
   def create
@@ -122,20 +122,6 @@ class FishingSuggestionsController < ApplicationController
       @items = search_rakuten_api(keyword)
       flash.now[:alert] = t('tackles.create.failure')
       render :new, status: :unprocessable_entity
-    end
-  end
-
-  def search_rakuten_api(keyword)
-    return [] if keyword.blank? # キーワードが空の場合は空の配列を返す
-
-    items = RakutenWebService::Ichiba::Item.search(keyword:).first(8) # 指定されたkeywordを基にアイテムを検索し、結果はitemsに代入
-    items.map do |item|
-      {
-        name: item['itemName'],
-        price: item['itemPrice'],
-        url: item['itemUrl'],
-        image: item['mediumImageUrls'].first
-      }
     end
   end
 end
