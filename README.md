@@ -157,7 +157,7 @@ erDiagram
     timestamp updated_at "更新日"
   }
 
-  fishing_gear {
+  fishing_suggestions {
     bigint id PK "釣り具提案ID"
     bigint user_id FK "ユーザーID"
     string fish_type "狙う魚種"
