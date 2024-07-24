@@ -4,7 +4,7 @@
     <p class='text-center text-black mt-2'><%= t('.suggestion_limit_desc') %></p>
 
     <div class="md:mt-8 mt-4">
-        <%= form_with model: @fishing_gear, local: true, id: 'fishing-gear-form' do |f| %>
+        <%= form_with model: @fishing_suggestion, local: true, id: 'fishing-suggetion-form' do |f| %>
         <%= render 'shared/error_messages', object: f.object %>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-black">
                 <div class="flex flex-col">
@@ -41,7 +41,7 @@
                 </div>
             </div>
             <div class="flex items-center justify-center mt-6">
-                <%= f.submit t('fishing_gears.new.submit'), id: 'suggestion', class: 'btn underline underline-offset-2 text-link font-bold bg-orange text-white rounded no-underline cursor-pointer hover:opacity-70' %>
+                <%= f.submit t('.submit'), id: 'suggestion', class: 'btn underline underline-offset-2 text-link font-bold bg-orange text-white rounded no-underline cursor-pointer hover:opacity-70' %>
                 <!-- 待機メッセージ要素 -->
                 <p class="text-orange font-bold hidden" id="wait"><%= t('.please_wait_suggestion') %></p>
             </div>

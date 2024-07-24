@@ -9,7 +9,7 @@
       <h1 class='font-heading font-bold text-3xl md:text-5xl sm:text-4xl text-white original-text-shadow'><%= t('.fishing_fun') %><br><%= t('.to_items') %></h1>
       <% if logged_in? %>
         <div class="flex-col justify-center md:mt-8 mt-4">
-          <%= link_to t('.tackle_found'), new_fishing_gear_path, class: 'btn text-white bg-orange px-10' %>
+          <%= link_to t('.tackle_found'), new_fishing_suggestion_path, class: 'btn text-white bg-orange px-10' %>
           <%= link_to t('.tackle_registration'), new_tackle_path, class: 'btn text-white bg-blue px-10 md:mt-0 mt-3 md:ml-5 ml-0' %>
         </div>
       <% else %>
@@ -24,7 +24,7 @@
     <div class="flex justify-center md:mt-10 mt-5">
       <%= image_tag 'tackle-service.jpg', class: 'object-cover md:w-auto md:w-1/2 w-full' %>
     </div>
-    <p class='font-bold text-black md:text-xl text-lg md:mt-10 mt-5'><%= t('.TackleMaster_is_an_app_specializing_in_fishing_equipment_for_fishing_enthusiasts') %><br class="md:block hidden"><%= t('.Manage_your_tackle_and_explore_the_latest_fishing_gear') %></p>
+    <p class='font-bold text-black md:text-xl text-lg md:mt-10 mt-5'><%= t('.TackleMaster_is_an_app_specializing_in_fishing_equipment_for_fishing_enthusiasts') %><br class="md:block hidden"><%= t('.You_can_manage_register_and_search_fishing_gear') %></p>
     <div class='w-full md:mt-10 mt-5 grid md:grid-cols-4 grid-cols-2 md:gap-4 gap-2'>
       <div class='w-full'>
         <%= image_tag 'top-rods.jpg', class: 'w-full h-full bg-contain bg-center object-cover' %>
@@ -72,8 +72,8 @@
           <div class="slide-content hidden">
             <div class="md:mt-6 mt-3 md:flex md:items-center md:flex-row-reverse">
               <div class="md:w-1/2 w-full">
-                <p class='font-bold md:text-lg text-base leading-relaxed md:mt-4 mt-2'><%= t('.Please_enter_your_target_fish_budget_fishing_location_type_of_fishing_fishing_experience_level_type_of_fishing_gear_and_manufacturer') %><br><%= t('.We_will_suggest_the_best_fishing_gear_for_you_and_also_introduce_related_products_Lets_meet_various_fishing_gear') %><br><%= t('.You_can_receive_up_to_three_suggestions_per_day') %></p>
-                <%= link_to t('.receive_a_suggestion') , new_fishing_gear_path, class: 'btn text-white bg-blue md:mt-4 mt-2 md:px-6 px-3' %>
+                <p class='font-bold md:text-lg text-base leading-relaxed md:mt-4 mt-2'><%= t('.Please_enter_your_target_fish_budget_fishing_location_type_of_fishing_fishing_experience_level_type_of_fishing_gear_and_manufacturer') %><br><%= t('.We_will_suggest_the_best_fishing_gear_for_you_and_also_introduce_related_products_Lets_meet_various_fishing_gear') %><br><%= t('.You_can_receive_up_to_fifth_suggestions_per_day') %></p>
+                <%= link_to t('.receive_a_suggestion') , new_fishing_suggestion_path, class: 'btn text-white bg-blue md:mt-4 mt-2 md:px-6 px-3' %>
                 <% unless logged_in? %>
                   <p class="md:text-sm text-xs text-orange md:mt-6 mt-3"><%= t('.You_need_to_register') %></p>
                 <% end %>

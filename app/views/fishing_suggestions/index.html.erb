@@ -2,17 +2,17 @@
 <div class="md:py-14 py-7 md:max-w-1200 mx-auto px-4">
     <h1 class="text-center md:text-3xl text-2xl text-black font-bold"><%= t('.title') %></h1>
     <div class='md:mt-10 mt-5 text-center'>
-      <%= link_to t('.create_new_suggestion'), new_fishing_gear_path, class: 'btn bg-orange text-white md:py-2 py-1 md:px-10 px-5 underline-offset-2 hover:orange font-bold ' %>
+      <%= link_to t('.create_new_suggestion'), new_fishing_suggestion_path, class: 'btn bg-orange text-white md:py-2 py-1 md:px-10 px-5 underline-offset-2 hover:orange font-bold ' %>
     </div>
     <!-- 提案を一覧表示 -->
     <div class="md:mt-10 mt-5 grid grid-cols-1 md:grid-cols-2 md:gap-6 gap-3">
-      <% if @fishing_gears.present? %>
-        <%= render partial: 'fishing_gear', collection: @fishing_gears %>
+      <% if @fishing_suggestions.present? %>
+        <%= render partial: 'fishing_suggestion', collection: @fishing_suggestions %>
       <% else %>
         <div class="md:mb-3 mb-2"><%= t('.please_create_suggestion') %></div>
       <% end %>
     </div>
-    <%= paginate @fishing_gears %>
+    <%= paginate @fishing_suggestions %>
 </div>
 <div id="loading">
   <div class="spinner"></div>

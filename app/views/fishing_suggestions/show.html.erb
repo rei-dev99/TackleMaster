@@ -6,59 +6,59 @@
         <div class="md:max-w-3xl w-full mx-auto">
             <!-- Edit and Delete Buttons -->
             <div class="flex justify-end md:space-x-4 space-x-2">
-                <%= link_to edit_fishing_gear_path(@fishing_gear), class: 'bg-blue text-white md:px-4 px-2 md:py-2 py-1 rounded flex items-center hover:opacity-70' do %>
+                <%= link_to edit_fishing_suggestion_path(@fishing_suggestion), class: 'bg-blue text-white md:px-4 px-2 md:py-2 py-1 rounded flex items-center hover:opacity-70' do %>
                     <i class="fa fa-edit mr-2"></i> <%= t('.edit') %>
                 <% end %>
-                <%= link_to fishing_gear_path(@fishing_gear), method: :delete, data: { turbo_method: :delete, turbo_confirm: t('.delete') }, class: 'bg-orange text-white md:px-4 px-2 md:py-2 py-1 rounded flex items-center hover:opacity-70' do %>
+                <%= link_to fishing_suggestion_path(@fishing_suggestion), method: :delete, data: { turbo_method: :delete, turbo_confirm: t('.delete') }, class: 'bg-orange text-white md:px-4 px-2 md:py-2 py-1 rounded flex items-center hover:opacity-70' do %>
                     <i class="fa fa-trash mr-2"></i> <%= t('.destroy') %>
                 <% end %>
             </div>
 
             <div class="md:mt-6 mt-3 text-right">
-                <%= link_to t('.x_share'), "https://twitter.com/intent/tweet?url=https://tacklemaster.net/&text=#{CGI.escape("「#{@fishing_gear.fish_type}」狙い、予算「#{@fishing_gear.budget}」、釣りの場所「#{@fishing_gear.location}」、釣りの種類「#{@fishing_gear.fishing_type}」、「#{@fishing_gear.tackle_type}」の提案で「#{@keyword}」を見つけたよ！タックルマスターで釣り具を探してみよう！ #tacklemaster")}", title: t('.x_share'), target: '_blank', class: 'btn text-blue' %>
+                <%= link_to t('.x_share'), "https://twitter.com/intent/tweet?url=https://tacklemaster.net/&text=#{CGI.escape("「#{@fishing_suggestion.fish_type}」狙い、予算「#{@fishing_suggestion.budget}」、釣りの場所「#{@fishing_suggestion.location}」、釣りの種類「#{@fishing_suggestion.fishing_type}」、「#{@fishing_suggestion.tackle_type}」の提案で「#{@keyword}」を見つけたよ！タックルマスターで釣り具を探してみよう！ #tacklemaster")}", title: t('.x_share'), target: '_blank', class: 'btn text-blue' %>
             </div>
 
             <h2 class="text-black font-bold md:text-xl text-lg md:mt-4 mt-2"><%= t('.content') %></h2>
             <div class="md:mt-4 mt-2 p-4 border-blue border-2 rounded-lg text-black">
                 <div>
                     <h3 class="text-black font-bold text-lg"><%= t('.fish_type') %></h3>
-                    <p class="mt-1 text-black"><%= @fishing_gear.fish_type %></p>
+                    <p class="mt-1 text-black"><%= @fishing_suggestion.fish_type %></p>
                 </div>
                 <div class="md:mt-4 mt-2">
                     <h3 class="text-black font-bold text-lg"><%= t('.budget') %></h3>
-                    <p class="mt-1 text-black"><%= @fishing_gear.budget %></p>
+                    <p class="mt-1 text-black"><%= @fishing_suggestion.budget %></p>
                 </div>
                 <div class="md:mt-4 mt-2">
                     <h3 class="text-black font-bold text-lg"><%= t('.location') %></h3>
-                    <p class="mt-1 text-black"><%= @fishing_gear.location %></p>
+                    <p class="mt-1 text-black"><%= @fishing_suggestion.location %></p>
                 </div>
                 <div class="md:mt-4 mt-2">
                     <h3 class="text-black font-bold text-lg"><%= t('.fishing_type') %></h3>
-                    <p class="mt-1 text-black"><%= @fishing_gear.fishing_type %></p>
+                    <p class="mt-1 text-black"><%= @fishing_suggestion.fishing_type %></p>
                 </div>
                 <div class="md:mt-4 mt-2">
                     <h3 class="text-black font-bold text-lg"><%= t('.skill_level') %></h3>
-                    <p class="mt-1 text-black"><%= @fishing_gear.skill_level %></p>
+                    <p class="mt-1 text-black"><%= @fishing_suggestion.skill_level %></p>
                 </div>
                 <div class="md:mt-4 mt-2">
                     <h3 class="text-black font-bold text-lg"><%= t('.tackle_type') %></h3>
-                    <p class="mt-1 text-black"><%= @fishing_gear.tackle_type %></p>
+                    <p class="mt-1 text-black"><%= @fishing_suggestion.tackle_type %></p>
                 </div>
                 <div class="md:mt-4 mt-2">
                     <h3 class="text-black font-bold text-lg"><%= t('.tackle_maker') %></h3>
-                    <p class="mt-1 text-black"><%= @fishing_gear.tackle_maker %></p>
+                    <p class="mt-1 text-black"><%= @fishing_suggestion.tackle_maker %></p>
                 </div>
             </div>
 
             <h2 class="text-black font-bold md:text-xl text-lg md:mt-8 mt-4"><%= t('.suggestion_content') %></h2>
             <div class="p-4 border-blue border-2 mt-2 rounded-lg text-black">
-                <%= @fishing_gear.suggestion %>
+                <%= @fishing_suggestion.suggestion %>
             </div>
 
             <h2 class="text-black font-bold text-xl mt-8"><%= t('.memo') %></h2>
             <div class="p-4 border-blue border-2 mt-2 rounded-lg text-black">
-                <% if @fishing_gear.memo.present? %>
-                    <%= @fishing_gear.memo %>
+                <% if @fishing_suggestion.memo.present? %>
+                    <%= @fishing_suggestion.memo %>
                 <% else %>
                     <%= t('.none') %>
                 <% end %>
@@ -88,7 +88,7 @@
     </div>
 
     <div class='md:mt-8 mt-4 text-center'>
-        <%= link_to t('.return'), fishing_gears_path, class: 'underline underline-offset-2 text-link hover:opacity-70 font-bold' %>
+        <%= link_to t('.return'), fishing_suggestions_path, class: 'underline underline-offset-2 text-link hover:opacity-70 font-bold' %>
     </div>
 </div>
 <div id="loading">

@@ -1,4 +1,4 @@
-class FishingGear < ApplicationRecord
+class FishingSuggestion < ApplicationRecord
   belongs_to :user
 
   validates :fish_type, presence: true

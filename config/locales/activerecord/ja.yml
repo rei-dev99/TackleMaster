@@ -26,7 +26,7 @@ ja:
         maker: メーカー
         image: 画像
         memo: メモ
-      fishing_gear:
+      fishing_suggestion:
         fish_type: 狙う魚
         budget: 予算
         location: 釣りの場所
@@ -36,12 +36,3 @@ ja:
         tackle_maker: メーカー
         memo: メモ
         create_new_suggestion: 新しく提案を受ける
-      fishing_plan:
-        fish_types: 目的魚種
-        tackles: 使用するタックル
-        location: 釣行場所
-        fishing_date: 釣行日
-        temperature: 気温
-        wind_speed: 風速
-        weather_condition: 天気状態
-        precipitation_probability: 降水確率

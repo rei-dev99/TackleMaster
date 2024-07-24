@@ -1,0 +1,15 @@
+<div class="flex flex-col shadow-xl text-black rounded">
+    <%= link_to fishing_suggestion_path(fishing_suggestion), class: 'block h-full' do %>
+        <div class="bg-white rounded-lg md:p-6 p-3 md:mb-6 mb-3 flex flex-col h-full border-blue border-2 hover:shadow-lg transition transform hover:scale-105">
+            <h2 class="md:text-2xl text-xl font-bold flex-shrink-0"><%= fishing_suggestion.fish_type %><%= t('fishing_suggestions.fishing_suggestion.target') %></h2>
+            <p class="mt-4 flex-shrink-0"><strong><%= t('fishing_suggestions.fishing_suggestion.budget') %>:</strong> <%= fishing_suggestion.budget %></p>
+            <p class="mt-2 flex-shrink-0"><strong><%= t('fishing_suggestions.fishing_suggestion.location') %>:</strong> <%= fishing_suggestion.location %></p>
+            <p class="mt-2 flex-shrink-0"><strong><%= t('fishing_suggestions.fishing_suggestion.fishing_type') %>:</strong> <%= fishing_suggestion.fishing_type %></p>
+            <p class="mt-2 flex-shrink-0"><strong><%= t('fishing_suggestions.fishing_suggestion.tackle_type') %>:</strong> <%= fishing_suggestion.tackle_type %></p>
+            <p class="mt-2 flex-shrink-0"><strong><%= t('fishing_suggestions.fishing_suggestion.tackle_maker') %>:</strong> <%= fishing_suggestion.tackle_maker %></p>
+            <p class="mt-2 flex-shrink-0"><strong><%= t('fishing_suggestions.fishing_suggestion.skill_level') %>:</strong> <%= fishing_suggestion.skill_level %></p>
+            <p class="mt-2 flex-grow"><strong><%= t('fishing_suggestions.fishing_suggestion.suggestion') %>:</strong><br><%= fishing_suggestion.suggestion %></p>
+            <p><strong><%= t('fishing_suggestions.fishing_suggestion.memo') %>:</strong><br><%= fishing_suggestion.memo %></p>
+        </div>
+    <% end %>
+</div>

@@ -36,7 +36,7 @@ ja:
       receive_a_suggestion: 提案を受ける
       Please_enter_your_target_fish_budget_fishing_location_type_of_fishing_fishing_experience_level_type_of_fishing_gear_and_manufacturer: 狙う魚、予算、釣りの場所、釣りの種類、釣りの経験レベル、釣り具の種類、メーカーを入力してください。
       We_will_suggest_the_best_fishing_gear_for_you_and_also_introduce_related_products_Lets_meet_various_fishing_gear: あなたに最適な釣り具を提案し、関連する商品も紹介します。いろんな釣り具に出会いましょう！
-      You_can_receive_up_to_three_suggestions_per_day: 提案は1日5回まで受けることができます。
+      You_can_receive_up_to_fifth_suggestions_per_day: 提案は1日5回まで受けることができます。
       You_need_to_register: 〜新規登録する必要があります〜
       Fishing_gear_registration: 釣り具登録
       Register_your_tackle: タックルを登録する
@@ -235,7 +235,7 @@ ja:
       failure: 小物の更新に失敗しました
     destroy:
       success: 小物を削除しました
-  fishing_gears:
+  fishing_suggestions:
     index:
       title: タックル提案一覧
       create_new_suggestion: 提案を受ける
@@ -303,7 +303,7 @@ ja:
       not_found_products: 商品が見つかりませんでした
       return: 戻る
       delete: 削除しますか？
-    fishing_gear:
+    fishing_suggestion:
       target: 狙い
       view_details: 詳細
       budget: 予算

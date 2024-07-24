@@ -2,7 +2,7 @@ class User < ApplicationRecord
   authenticates_with_sorcery!
   has_many :tackles, dependent: :destroy
   has_many :authentications, dependent: :destroy
-  has_many :fishing_gears, dependent: :destroy
+  has_many :fishing_suggestions, dependent: :destroy
 
   validates :name, presence: true, length: { maximum: 255 }
   validates :email, presence: true, uniqueness: true

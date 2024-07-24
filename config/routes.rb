@@ -26,5 +26,5 @@ Rails.application.routes.draw do
   get "/privacy_policy", to: "tops#privacy_policy"
   get "/terms_of_service", to: "tops#terms_of_service"
 
-  resources :fishing_gears
+  resources :fishing_suggestions
 end
