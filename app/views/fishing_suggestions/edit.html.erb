@@ -1,0 +1,59 @@
+<% content_for(:title, t('.title')) %>
+<div class="md:py-14 py-7 md:max-w-700 max-q-full mx-auto px-4 text-black">
+    <h1 class="text-center md:text-3xl text-2xl font-bold"><%= t('.title') %></h1>
+
+    <div class="md:mt-8 mt-4">
+        <h2 class=" font-bold md:text-xl text-lg"><%= t('.content') %></h2>
+        <div class="p-4 md:mt-4 mt-2 border-blue border-2 rounded-lg">
+            <div>
+                <h3 class="font-bold md:text-lg text-base"><%= t('.target_fish') %></h3>
+                <p class="mt-1"><%= @fishing_suggestion.fish_type %></p>
+            </div>
+            <div class="md:mt-4 mt-2">
+                <h3 class=" font-bold md:text-lg text-base"><%= t('.budget') %></h3>
+                <p class="mt-1"><%= @fishing_suggestion.budget %></p>
+            </div>
+            <div class="md:mt-4 mt-2">
+                <h3 class=" font-bold md:text-lg text-base"><%= t('.location') %></h3>
+                <p class="mt-1 "><%= @fishing_suggestion.location %></p>
+            </div>
+            <div class="md:mt-4 mt-2">
+                <h3 class=" font-bold md:text-lg text-base"><%= t('.fishing_type') %></h3>
+                <p class="mt-1 "><%= @fishing_suggestion.fishing_type %></p>
+            </div>
+            <div class="md:mt-4 mt-2">
+                <h3 class=" font-bold md:text-lg text-base"><%= t('.skill_level') %></h3>
+                <p class="mt-1 "><%= @fishing_suggestion.skill_level %></p>
+            </div>
+            <div class="md:mt-4 mt-2">
+                <h3 class=" font-bold md:text-lg text-base"><%= t('.tackle_type') %></h3>
+                <p class="mt-1 "><%= @fishing_suggestion.tackle_type %></p>
+            </div>
+            <div class="md:mt-4 mt-2">
+                <h3 class=" font-bold md:text-lg text-base"><%= t('.tackle_maker') %></h3>
+                <p class="mt-1 "><%= @fishing_suggestion.tackle_maker %></p>
+            </div>
+        </div>
+
+        <h2 class="font-bold md:text-xl text-lg md:mt-8 mt-4"><%= t('.suggestion') %></h2>
+        <div class="p-4 border-[#1E90FF] border-2 mt-2 rounded-lg ">
+            <%= @fishing_suggestion.suggestion %>
+        </div>
+
+        <%= form_with model: @fishing_suggestion,class: "md:mt-8 mt-4", local: true do |f| %>
+        <%= render 'shared/error_messages', object: f.object %>
+            <div class="flex flex-col">
+                <%= f.label :memo, class: ' font-bold md:text-xl text-lg' %>
+                <%= f.text_area :memo, class: "shadow appearance-none border-2 border-blue rounded-lg md:mt-2 mt-1 py-2 px-3 leading-tight focus:outline-none focus:shadow-outline" %>
+            </div>
+            <div class="flex items-center justify-center mt-8">
+                <%= f.submit t('fishing_suggestions.edit.submit'), class: 'btn font-bold bg-orange text-white hover:bg-blue-700 md:py-2 py-0 md:px-10 px-5 rounded focus:outline-none focus:shadow-outline' %>
+            </div>
+        <% end %>
+
+    </div>
+
+    <div class='md:mt-8 mt-4 text-center'>
+        <%= link_to t('.return'), fishing_suggestion_path(@fishing_suggestion), class: 'underline underline-offset-2 text-link hover:opacity-70 font-bold' %>
+    </div>
+</div>
