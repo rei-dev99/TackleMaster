@@ -138,7 +138,7 @@ https://www.figma.com/file/IyTFoHXk37hss5w02hBsEs/Tackle-Master-%E7%94%BB%E9%9D%
 ## 🐟 ER図 🐟
 ```mermaid
 erDiagram
-  users ||--o{ fishing_gear: "ユーザーは複数の釣り具提案内容を持つ"
+  users ||--o{ fishing_suggestion: "ユーザーは複数の釣り具提案内容を持つ"
   users ||--o{ tackles: "ユーザーは複数のタックルを持つ"
   tackles ||--o{ tackle_rods: "タックルに対して複数のロッドを持つ"
   rods ||--o{ tackle_rods: "ロッドに対して複数のタックルを持つ"
@@ -157,7 +157,7 @@ erDiagram
     timestamp updated_at "更新日"
   }
 
-  fishing_suggestions {
+  fishing_suggestion {
     bigint id PK "釣り具提案ID"
     bigint user_id FK "ユーザーID"
     string fish_type "狙う魚種"
