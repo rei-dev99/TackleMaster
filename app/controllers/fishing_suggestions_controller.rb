@@ -100,9 +100,8 @@ class FishingSuggestionsController < ApplicationController
     if all_params_present?
       create_suggestion
     else
-      keyword = params[:keyword] || t('fishing_suggestions.new.fishing_suggestion')
-      @items = search_rakuten_api(keyword)
-      render :new
+      flash.now[:alert] = t('fishing_suggestions.create.failure')
+      render :new, status: :unprocessable_entity
     end
   end
 
