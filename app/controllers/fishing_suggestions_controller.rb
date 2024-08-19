@@ -26,13 +26,13 @@ class FishingSuggestionsController < ApplicationController
   def new
     @fishing_suggestion = @user.fishing_suggestions.build
     keyword = params[:keyword] || t('fishing_suggestions.new.fishing_gear')
-    @items = RakutenService.search_rakuten_api(keyword)
+    @items = RakutenService.search_rakuten_api(keyword) # 初期表示用の楽天API検索
   end
 
   def create
     @fishing_suggestion = @user.fishing_suggestions.build(fishing_suggestion_params)
     if @user.can_suggest?
-      handle_suggestion_creation
+      handle_suggestion_creation # 提案の作成処理
     else
       suggestion_limit # 提案回数の上限に達した場合の処理
     end
@@ -64,6 +64,7 @@ class FishingSuggestionsController < ApplicationController
     @fishing_suggestion = @user.fishing_suggestions.find(params[:id])
   end
 
+  # 提案内容の保存に必要なパラメータを設定
   def fishing_suggestion_params
     required_params = [
       :fish_type,
@@ -78,6 +79,7 @@ class FishingSuggestionsController < ApplicationController
     params.require(:fishing_suggestion).permit(*required_params)
   end
 
+  # 提案作成(OpenAI APIに渡す)パラメータが全て揃っているか確認
   def all_params_present?
     required_params = [
       :fish_type, :budget, :location, :fishing_type,
@@ -86,16 +88,12 @@ class FishingSuggestionsController < ApplicationController
     required_params.all? { |param| params[:fishing_suggestion][param].present? }
   end
 
+  # 提案回数上限に達した際の処理
   def suggestion_limit
     redirect_to fishing_suggestions_path, alert: t('fishing_suggestions.suggestion_limit.failure')
   end
 
-  public_class_method def self.extract_product_name(text)
-    return unless text =~ /(?:「)([^」]+)(?:」)/ # 「」の中の商品名を抽出する
-
-    ::Regexp.last_match(1).strip
-  end
-
+  # 提案作成のメイン処理
   def handle_suggestion_creation
     if all_params_present?
       create_suggestion
@@ -105,10 +103,11 @@ class FishingSuggestionsController < ApplicationController
     end
   end
 
+  # 提案作成時の処理（OpenAI APIの呼び出しを含む）
   def create_suggestion
     @suggestion = OpenaiService.get_chat_response(fishing_suggestion_params)
     Rails.logger.info("OpenAI Suggestion: #{@suggestion}")
-    keyword = self.class.extract_product_name(@suggestion) # 商品名を提案から抽出
+    keyword = self.class.extract_product_name(@suggestion)
     Rails.logger.info("Extracted Keyword: #{keyword}")
 
     @fishing_suggestion.suggestion = @suggestion
@@ -122,5 +121,12 @@ class FishingSuggestionsController < ApplicationController
       flash.now[:alert] = t('tackles.create.failure')
       render :new, status: :unprocessable_entity
     end
+  end
+
+  # 提案内容から商品名を抽出するメソッド（クラスメソッド）
+  public_class_method def self.extract_product_name(text)
+    return unless text =~ /(?:「)([^」]+)(?:」)/ # 「」の中の商品名を正規表現抽出
+
+    ::Regexp.last_match(1).strip
   end
 end
